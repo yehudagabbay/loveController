@@ -515,3 +515,13 @@ D:\LoveGameController\LoveGameConreollers\controlersLoveGame\obj\Debug\net8.0\re
 D:\LoveGameController\LoveGameConreollers\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.pdb
 D:\LoveGameController\LoveGameConreollers\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.genruntimeconfig.cache
 D:\LoveGameController\LoveGameConreollers\controlersLoveGame\obj\Debug\net8.0\ref\controlersLoveGame.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\service-account.json
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\FirebaseAdmin.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Google.Api.Gax.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Google.Apis.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Google.Apis.Auth.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Google.Apis.Core.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\System.Management.dll
+D:\LoveGameController\LoveGameConreollers\controlersLoveGame\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

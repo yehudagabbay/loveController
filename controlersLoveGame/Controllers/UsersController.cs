@@ -1,7 +1,9 @@
 ﻿using controlersLoveGame.Data;
 using controlersLoveGame.Models;
+using FirebaseAdmin.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace controlersLoveGame.Controllers
 {
@@ -66,6 +68,48 @@ namespace controlersLoveGame.Controllers
             }
         }
 
+        // 🔑 התחברות דרך Firebase עם Google/Facebook
+        [HttpPost("social-login")]
+        public async Task<IActionResult> SocialLogin([FromBody] SocialLoginRequest request)
+        {
+            try
+            {
+                // ✅ אימות ה-Token מול Firebase
+                FirebaseToken decodedToken = await FirebaseAuth.DefaultInstance.VerifyIdTokenAsync(request.IdToken);
+                string firebaseUid = decodedToken.Uid;
+
+                // 🔎 חיפוש המשתמש בבסיס הנתונים לפי SocialID
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.SocialID == firebaseUid);
+
+                if (user == null)
+                {
+                    // 🆕 אם המשתמש לא קיים - יצירת משתמש חדש
+                    user = new User
+                    {
+                        SocialID = firebaseUid,
+                        Email = request.Email,
+                        Nickname = request.Nickname,
+                        Gender = request.Gender,
+                        Age = request.Age
+                    };
+
+                    _context.Users.Add(user);
+                    await _context.SaveChangesAsync();
+                }
+
+                // ✅ מחזירים תמיד את ה-UserID כדי לעבוד עם שאר המערכת
+                return Ok(new { Message = "User logged in successfully", UserID = user.UserID });
+            }
+            catch (FirebaseAuthException ex)
+            {
+                return Unauthorized(new { Message = "Invalid Firebase token", Error = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
+        }
+
 
         [HttpPost("login")]
         public async Task<ActionResult<User>> Login([FromBody] controlersLoveGame.Models.LoginRequest loginRequest)
@@ -78,6 +122,11 @@ namespace controlersLoveGame.Controllers
                 {
                     return Unauthorized("Invalid email or password.");
                 }
+                // ❌ אם המשתמש הגיע מרשת חברתית - נחסום אותו מהתחברות רגילה
+                if (user.FirebaseUID != null)
+                {
+                    return Unauthorized("This account is linked to a social login. Please use Google/Facebook login.");
+                }   
 
                 // בדיקה אם הסיסמה תואמת
                 if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash))

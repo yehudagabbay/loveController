@@ -3,6 +3,9 @@
     public class User
     {
         public int UserID { get; set; }
+        public string FirebaseUID { get; set; } // 🔥 מזהה ייחודי של Firebase (יכול להיות ריק עבור משתמשים רגילים)
+        public string? SocialID { get; set; } // מזהה מהרשת החברתית (Google/Facebook)
+
         public string Nickname { get; set; }
         public string Gender { get; set; }
         public string Email { get; set; }

@@ -249,25 +249,15 @@ namespace controlersLoveGame.Controllers
 
             return Ok(completedCards);
         }
+
         [HttpGet("get-all-feedbacks")]
         public async Task<ActionResult<IEnumerable<Feedback>>> GetAllFeedbacks()
         {
             try
             {
                 var feedbacks = await _context.Feedback
-                    .Include(f => f.User)
-                    .Include(f => f.Card)
-                    .Select(f => new
-                    {
-                        f.FeedbackID,
-                        f.UserID,
-                        f.CardID,
-                        f.Rating,
-                        f.Comment,
-                        f.FeedbackDate,
-                        User = f.User != null ? new { f.User.UserID, f.User.Nickname, f.User.Email } : null,
-                        Card = f.Card != null ? new { f.Card.CardID } : null
-                    })
+                    .Include(f => f.User) // מציג פרטי המשתמש
+                    .Include(f => f.Card) // מציג את הכרטיס, אם קיים
                     .ToListAsync();
 
                 if (!feedbacks.Any())
@@ -282,7 +272,6 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error retrieving feedbacks: {ex.Message}");
             }
         }
-
 
 
 

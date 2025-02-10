@@ -9,7 +9,7 @@ namespace controlersLoveGame.Models
         public int FeedbackID { get; set; }
 
         [Required]
-        public int UserID { get; set; }  // מי המשתמש ששלח את המשוב
+        public int UserID { get; set; }  // מזהה המשתמש ששלח את המשוב
 
         public int? CardID { get; set; } // יכול להיות NULL עבור משוב כללי
 
@@ -21,9 +21,9 @@ namespace controlersLoveGame.Models
 
         public DateTime FeedbackDate { get; set; } = DateTime.UtcNow;
 
-        // קשרים
-        [JsonIgnore] // מונע הצגה מיותרת ב-Swagger
-        public User User { get; set; }
+        // ✅ הופכים את User ל-nullable ומוסיפים JsonIgnore
+        [JsonIgnore]
+        public User? User { get; set; }
 
         [JsonIgnore]
         public Card? Card { get; set; } // קשר אופציונלי לכרטיס

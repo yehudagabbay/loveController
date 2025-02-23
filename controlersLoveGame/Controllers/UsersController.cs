@@ -41,32 +41,35 @@ namespace controlersLoveGame.Controllers
         }
 
 
-        // יצירת משתמש חדש
-        [HttpPost]
-        public async Task<ActionResult<User>> CreateUser(User user)
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] User user)
         {
             try
             {
-                // בדיקה אם האימייל כבר קיים
-                var existingUser = await _context.Users.AnyAsync(u => u.Email == user.Email);
-                if (existingUser)
+                if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.PasswordHash))
                 {
-                    return BadRequest("A user with this email already exists.");
+                    return BadRequest("Email and Password are required.");
                 }
 
-                // הצפנת הסיסמה לפני השמירה
+                // 🔹 הבטחת ערכים לא NULL לשדות של רשת חברתית
+                user.FirebaseUID = "N/A";
+                user.SocialID = "N/A";
+                //user.SocialMediaID = "N/A";
+
+                // הצפנת הסיסמה
                 user.HashPassword();
 
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetUsers), new { id = user.UserID }, user);
+                return Ok(new { Message = "User registered successfully", UserID = user.UserID });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
+                return StatusCode(500, $"Error registering user: {ex.Message}");
             }
         }
+
 
         // 🔑 התחברות דרך Firebase עם Google/Facebook
         [HttpPost("social-login")]
@@ -123,7 +126,7 @@ namespace controlersLoveGame.Controllers
                     return Unauthorized("Invalid email or password.");
                 }
                 // ❌ אם המשתמש הגיע מרשת חברתית - נחסום אותו מהתחברות רגילה
-                if (user.FirebaseUID != null)
+                if (user.FirebaseUID != "N/A" || user.SocialID != "N/A")
                 {
                     return Unauthorized("This account is linked to a social login. Please use Google/Facebook login.");
                 }   

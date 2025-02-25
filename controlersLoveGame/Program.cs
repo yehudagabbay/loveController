@@ -15,17 +15,16 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // הוספת תמיכה ב-CORS
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-builder.Services.AddCors(options =>
+builder.Services.AddCors(opt =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-                      policy =>
-                      {
-                          // עדכון ה-Origin להתאים לשרת הפיתוח של React Native
-                          policy.WithOrigins("http://10.0.2.2:8081", "http://192.168.1.197:8081")
-                                .AllowAnyHeader()
-                                .AllowAnyMethod();
-                      });
+    opt.AddPolicy("CorsPolicy", policy =>
+    {
+        policy
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials()
+    .WithOrigins("http://localhost:8081");
+    });
 });
 
 var app = builder.Build();
@@ -44,11 +43,11 @@ if (app.Environment.IsDevelopment())
 }
 
 // הפעלת CORS
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-// קישור לכל הממשקים (0.0.0.0) במקום localhost בלבד
-app.Run("http://0.0.0.0:7279");
+// הרצת האפליקציה
+app.Run();

@@ -17,5 +17,8 @@ namespace controlersLoveGame.Models
         public string CardDescription { get; set; }
 
         public bool IsActive { get; set; } = true;
+        // מצב משחק: 1=זוגי, 2=משפחה, 3=חברים/משרד
+        [Required]
+        public int ModeID { get; set; } = 1;
     }
 }

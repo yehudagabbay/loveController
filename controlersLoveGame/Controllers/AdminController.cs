@@ -15,6 +15,136 @@ namespace controlersLoveGame.Controllers
         {
             _context = context;
         }
+        [HttpPost("create-admin")]
+        public async Task<IActionResult> CreateAdmin([FromBody] AdminLoginRequest request)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+                {
+                    return BadRequest("Email and Password are required.");
+                }
+
+                bool exists = await _context.Admins.AnyAsync(a => a.Email == request.Email);
+                if (exists)
+                {
+                    return BadRequest("Admin already exists.");
+                }
+
+                var admin = new Admin
+                {
+                    Email = request.Email.Trim().ToLower(),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                    FullName = "Admin",
+                    Role = "Admin",
+                    IsActive = true,
+                    CreatedAt = DateTime.UtcNow
+                };
+
+                _context.Admins.Add(admin);
+                await _context.SaveChangesAsync();
+
+                return Ok("Admin created successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] AdminLoginRequest request)
+        {
+            try
+            {
+                if (request == null || string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+                {
+                    return BadRequest("Email and Password are required.");
+                }
+
+                string email = request.Email.Trim().ToLower();
+
+                var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Email.ToLower() == email);
+
+                if (admin == null)
+                {
+                    return Unauthorized("Invalid email or password.");
+                }
+
+                if (!admin.IsActive)
+                {
+                    return Unauthorized("Admin account is disabled.");
+                }
+
+                bool ok = BCrypt.Net.BCrypt.Verify(request.Password, admin.PasswordHash);
+
+                if (!ok)
+                {
+                    return Unauthorized("Invalid email or password.");
+                }
+
+                // ✅ כרגע מחזירים הצלחה (בלי JWT עדיין)
+                return Ok(new
+                {
+                    Message = "Admin logged in successfully",
+                    Admin = new
+                    {
+                        admin.AdminID,
+                        admin.Email,
+                        admin.FullName,
+                        admin.Role
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error logging in: {ex.Message}");
+            }
+        }
+        [HttpPut("change-password")]
+        public async Task<IActionResult> ChangePassword([FromBody] AdminChangePasswordRequest request)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(request.Email) ||
+                    string.IsNullOrWhiteSpace(request.OldPassword) ||
+                    string.IsNullOrWhiteSpace(request.NewPassword))
+                {
+                    return BadRequest("All fields are required.");
+                }
+
+                string email = request.Email.Trim().ToLower();
+
+                var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Email == email);
+
+                if (admin == null)
+                {
+                    return NotFound("Admin not found.");
+                }
+
+                if (!admin.IsActive)
+                {
+                    return Unauthorized("Admin account is disabled.");
+                }
+
+                // בדיקת סיסמה ישנה
+                bool validOldPassword = BCrypt.Net.BCrypt.Verify(request.OldPassword, admin.PasswordHash);
+                if (!validOldPassword)
+                {
+                    return Unauthorized("Old password is incorrect.");
+                }
+
+                // הצפנת סיסמה חדשה
+                admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+                await _context.SaveChangesAsync();
+
+                return Ok("Password changed successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error changing password: {ex.Message}");
+            }
+        }
 
         // שליפת כל הכרטיסים
         [HttpGet("get-all-cards")]
@@ -155,6 +285,12 @@ namespace controlersLoveGame.Controllers
                     return BadRequest("Invalid card data.");
                 }
 
+                // ✅ אם לא נשלח ModeID – נניח זוגי כברירת מחדל
+                if (newCard.ModeID == 0)
+                {
+                    newCard.ModeID = 1;
+                }
+
                 _context.Cards.Add(newCard);
                 await _context.SaveChangesAsync();
 
@@ -165,6 +301,8 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error creating card: {ex.Message}");
             }
         }
+
+        // עדכון כרטיס קיים
         // עדכון כרטיס קיים
         [HttpPut("update-card/{cardId}")]
         public async Task<IActionResult> UpdateCard(int cardId, [FromBody] Card updatedCard)
@@ -177,11 +315,13 @@ namespace controlersLoveGame.Controllers
                     return NotFound($"Card with ID {cardId} not found.");
                 }
 
-                // עדכון הנתונים של הכרטיס
                 existingCard.CategoryID = updatedCard.CategoryID;
                 existingCard.LevelID = updatedCard.LevelID;
                 existingCard.CardDescription = updatedCard.CardDescription;
                 existingCard.IsActive = updatedCard.IsActive;
+
+                // ✅ עדכון מצב משחק (עם ברירת מחדל לזוגי אם הגיע 0)
+                existingCard.ModeID = updatedCard.ModeID == 0 ? 1 : updatedCard.ModeID;
 
                 await _context.SaveChangesAsync();
 
@@ -192,6 +332,7 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error updating card: {ex.Message}");
             }
         }
+
         // שליפת כרטיס לפי ID
         [HttpGet("get-card/{cardId}")]
         public async Task<ActionResult<Card>> GetCardById(int cardId)
@@ -282,10 +423,5 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error retrieving feedbacks: {ex.Message}");
             }
         }
-
-
-
-
-
     }
 }

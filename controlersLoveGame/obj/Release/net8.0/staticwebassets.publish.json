@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "djNDtRzOkjaDGppWma7GpsVVlW9YqwQjfX92soQ9Grg=",
-  "Source": "controlersLoveGame",
-  "BasePath": "_content/controlersLoveGame",
-  "Mode": "Default",
-  "ManifestType": "Publish",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"fqPf8XRiMt3OJLivVkj180WV4IpBFaV8D5jvmLeTTro=","Source":"controlersLoveGame","BasePath":"_content/controlersLoveGame","Mode":"Default","ManifestType":"Publish","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

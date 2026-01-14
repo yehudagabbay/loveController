@@ -1,22 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\prog\\LoveGameConreollers\\",
+  "WorkspaceRootPath": "C:\\project code\\loveGame\\controlers\\loveController\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\prog\\lovegameconreollers\\controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\adminchangepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\adminchangepasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\adminloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\adminloginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\data\\lovegamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\data\\lovegamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\prog\\lovegameconreollers\\controlerslovegame\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\drawcardrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\drawcardrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\prog\\lovegameconreollers\\controlerslovegame\\controlerslovegame.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controlerslovegame.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controlerslovegame.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\prog\\lovegameconreollers\\controlerslovegame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,59 +62,171 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminChangePasswordRequest.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\AdminChangePasswordRequest.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\AdminChangePasswordRequest.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\AdminChangePasswordRequest.cs",
+              "RelativeToolTip": "controlersLoveGame\\Models\\AdminChangePasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T18:31:35.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminLoginRequest.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\AdminLoginRequest.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\AdminLoginRequest.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\AdminLoginRequest.cs",
+              "RelativeToolTip": "controlersLoveGame\\Models\\AdminLoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T18:17:20.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoveGameDbContext.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Data\\LoveGameDbContext.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Data\\LoveGameDbContext.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Data\\LoveGameDbContext.cs",
+              "RelativeToolTip": "controlersLoveGame\\Data\\LoveGameDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T18:14:45.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\Admin.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\Admin.cs",
+              "RelativeToolTip": "controlersLoveGame\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-10T18:12:48.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\appsettings.json",
+              "RelativeDocumentMoniker": "controlersLoveGame\\appsettings.json",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\appsettings.json",
+              "RelativeToolTip": "controlersLoveGame\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-25T12:15:29.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DrawCardRequest.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\DrawCardRequest.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\DrawCardRequest.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\DrawCardRequest.cs",
+              "RelativeToolTip": "controlersLoveGame\\Models\\DrawCardRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:31:22.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\Card.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\Card.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\Card.cs",
+              "RelativeToolTip": "controlersLoveGame\\Models\\Card.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:30:33.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "controlersLoveGame\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:18:48.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "controlersLoveGame\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAmwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:18:40.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\Controllers\\UsersController.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "controlersLoveGame\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\UsersController.cs",
               "RelativeToolTip": "controlersLoveGame\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAiwHwAAABbAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAEoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T13:01:41.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "WeatherForecast.cs",
-              "DocumentMoniker": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\WeatherForecast.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "controlersLoveGame\\WeatherForecast.cs",
-              "ToolTip": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\WeatherForecast.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\WeatherForecast.cs",
               "RelativeToolTip": "controlersLoveGame\\WeatherForecast.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:01:35.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T13:01:35.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "controlersLoveGame.http",
-              "DocumentMoniker": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\controlersLoveGame.http",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\controlersLoveGame.http",
               "RelativeDocumentMoniker": "controlersLoveGame\\controlersLoveGame.http",
-              "ToolTip": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\controlersLoveGame.http",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\controlersLoveGame.http",
               "RelativeToolTip": "controlersLoveGame\\controlersLoveGame.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-02-05T13:01:33.335Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T13:01:33.335Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\Program.cs",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Program.cs",
               "RelativeDocumentMoniker": "controlersLoveGame\\Program.cs",
-              "ToolTip": "C:\\prog\\LoveGameConreollers\\controlersLoveGame\\Program.cs",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Program.cs",
               "RelativeToolTip": "controlersLoveGame\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T13:01:26.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T13:01:26.691Z"
             }
           ]
         }

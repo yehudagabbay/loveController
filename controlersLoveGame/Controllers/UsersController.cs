@@ -222,44 +222,48 @@ namespace controlersLoveGame.Controllers
         {
             try
             {
-                // רשימה לשמירת הכרטיסים שנבחרו
                 List<Card> selectedCards = new List<Card>();
-                Random random = new Random(); // יצירת אובייקט לבחירה רנדומלית
+                Random random = new Random();
 
-                // לולאה על כל בחירה שהמשתמש שלח (קטגוריה + רמת קושי + כמות כרטיסים)
                 foreach (var selection in request.Selections)
                 {
-                    int categoryId = selection.CategoryID; // מזהה הקטגוריה
-                    int levelId = selection.LevelID; // מזהה רמת הקושי
-                    int numberOfCards = selection.NumberOfCards; // מספר הכרטיסים שהמשתמש רוצה לקבל מהשילוב הזה
+                    // ✅ מצב משחק (עם ברירת מחדל לזוגי כדי לא לשבור קליינטים ישנים)
+                    int modeId = selection.ModeID == 0 ? 1 : selection.ModeID;
 
-                    // שליפת כרטיסים מהמסד שמתאימים לקטגוריה ולרמת הקושי שנבחרו
+                    int categoryId = selection.CategoryID;
+                    int levelId = selection.LevelID;
+                    int numberOfCards = selection.NumberOfCards;
+
                     var cards = await _context.Cards
-                        .Where(c => c.CategoryID == categoryId && c.LevelID == levelId && c.IsActive) // תנאים לבחירת הכרטיסים
-                        .ToListAsync(); // שליפת הנתונים מהמסד
+                        .Where(c =>
+                            c.ModeID == modeId &&                // ✅ סינון לפי מצב משחק
+                            c.CategoryID == categoryId &&
+                            c.LevelID == levelId &&
+                            c.IsActive)
+                        .ToListAsync();
 
-                    // ערבוב רשימת הכרטיסים ובחירת כמות רנדומלית לפי בקשת המשתמש
-                    var shuffledCards = cards.OrderBy(x => random.Next()).Take(numberOfCards).ToList();
+                    var shuffledCards = cards
+                        .OrderBy(x => random.Next())
+                        .Take(numberOfCards)
+                        .ToList();
 
-                    // הוספת הכרטיסים שנבחרו לרשימה הסופית של הכרטיסים שיוחזרו
                     selectedCards.AddRange(shuffledCards);
                 }
 
-                // אם לא נמצאו כרטיסים בכלל, מחזירים הודעה למשתמש
                 if (selectedCards.Count == 0)
                 {
-                    return NotFound("No cards found for the selected categories and levels.");
+                    return NotFound("No cards found for the selected categories, levels and modes.");
                 }
 
-                // החזרת הכרטיסים שנבחרו
                 return Ok(selectedCards);
             }
             catch (Exception ex)
             {
-                // במקרה של תקלה, מחזירים שגיאת 500 עם פרטי השגיאה
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
+
         [HttpPost("update-card-status")]
         public async Task<IActionResult> UpdateCardStatus([FromBody] UserCardStatus request)
         {

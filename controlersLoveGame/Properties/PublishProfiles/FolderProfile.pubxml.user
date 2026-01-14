@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\LoveGameController\publish0.1</_PublishTargetUrl>
-    <History>True|2025-02-23T22:00:10.1739547Z;True|2025-02-23T23:49:08.5789307+02:00;True|2025-02-23T23:21:46.2037777+02:00;True|2025-02-16T21:50:32.5141228+02:00;</History>
+    <_PublishTargetUrl>C:\project code\loveGame\controlers\publish0.3 AdminsTools</_PublishTargetUrl>
+    <History>True|2026-01-10T18:58:16.6039215Z||;True|2025-11-25T14:15:53.3046834+02:00||;True|2025-11-22T21:40:56.9581558+02:00||;True|2025-11-21T11:16:30.5394190+02:00||;True|2025-02-24T00:00:10.1739547+02:00||;True|2025-02-23T23:49:08.5789307+02:00||;True|2025-02-23T23:21:46.2037777+02:00||;True|2025-02-16T21:50:32.5141228+02:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

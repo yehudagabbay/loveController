@@ -707,10 +707,10 @@ C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.development.json
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controle.496BDD1D.Up2Date
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.dll
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\refint\controlersLoveGame.dll
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.pdb
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.genruntimeconfig.cache
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\ref\controlersLoveGame.dll
+C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

@@ -101,46 +101,6 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.AdminController",
-    "Method": "GetAllCompletedCards",
-    "RelativePath": "api/Admin/get-all-completed-cards",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "controlersLoveGame.Controllers.AdminController",
-    "Method": "GetAllFavoriteCards",
-    "RelativePath": "api/Admin/get-all-favorite-cards",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "controlersLoveGame.Controllers.AdminController",
     "Method": "GetAllFeedbacks",
     "RelativePath": "api/Admin/get-all-feedbacks",
     "HttpMethod": "GET",
@@ -150,26 +110,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Feedback, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "controlersLoveGame.Controllers.AdminController",
-    "Method": "GetAllLikedCards",
-    "RelativePath": "api/Admin/get-all-liked-cards",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -363,6 +303,88 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "GetAvailableCards",
+    "RelativePath": "api/Users/available-cards",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "modeId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "categoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "levelId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "take",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "GetCompletedCardsByUser",
+    "RelativePath": "api/Users/completed-cards/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "DebugEmailSettings",
+    "RelativePath": "api/Users/debug-email-settings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "DeleteUserByEmail",
     "RelativePath": "api/Users/deleteByEmail/{email}",
     "HttpMethod": "DELETE",
@@ -379,6 +401,32 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "GetFavoriteCardsByUser",
+    "RelativePath": "api/Users/favorite-cards/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "GetSelectedCards",
     "RelativePath": "api/Users/get-selected-cards",
     "HttpMethod": "POST",
@@ -388,6 +436,32 @@
       {
         "Name": "request",
         "Type": "controlersLoveGame.Models.DrawCardRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[controlersLoveGame.Models.Card, controlersLoveGame, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "GetLikedCardsByUser",
+    "RelativePath": "api/Users/liked-cards/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -431,6 +505,54 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "MarkCardCompleted",
+    "RelativePath": "api/Users/mark-card-completed",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "controlersLoveGame.Models.MarkCardCompletedRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "PasswordResetConfirm",
+    "RelativePath": "api/Users/password-reset/confirm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "controlersLoveGame.Models.PasswordResetConfirmDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "PasswordResetRequest",
+    "RelativePath": "api/Users/password-reset/request",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "controlersLoveGame.Models.PasswordResetRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "Register",
     "RelativePath": "api/Users/register",
     "HttpMethod": "POST",
@@ -440,22 +562,6 @@
       {
         "Name": "user",
         "Type": "controlersLoveGame.Models.User",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "controlersLoveGame.Controllers.UsersController",
-    "Method": "ResetPassword",
-    "RelativePath": "api/Users/reset-password",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "controlersLoveGame.Models.ResetPasswordRequest",
         "IsRequired": true
       }
     ],
@@ -495,6 +601,16 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "TestEmail",
+    "RelativePath": "api/Users/test-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "UpdateCardStatus",
     "RelativePath": "api/Users/update-card-status",
     "HttpMethod": "POST",
@@ -505,6 +621,43 @@
         "Name": "request",
         "Type": "controlersLoveGame.Models.UserCardStatus",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "UpdateUserDetails",
+    "RelativePath": "api/Users/update-details/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "controlersLoveGame.Models.UpdateUserDetailsRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "VerifyEmail",
+    "RelativePath": "api/Users/verify-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

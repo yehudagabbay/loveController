@@ -1,4 +1,6 @@
 using controlersLoveGame.Data;
+using controlersLoveGame.Models;
+using controlersLoveGame.Services;
 using FirebaseAdmin;
 using Google.Apis.Auth.OAuth2;
 using Microsoft.EntityFrameworkCore;
@@ -14,16 +16,19 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ✅ רישום שירות שליחת מייל (EmailService)
+builder.Services.AddScoped<EmailService>();
+
 // הוספת תמיכה ב-CORS
 builder.Services.AddCors(opt =>
 {
     opt.AddPolicy("CorsPolicy", policy =>
     {
         policy
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials()
-    .WithOrigins("http://localhost:8081");
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()
+            .WithOrigins("http://localhost:8081");
     });
 });
 

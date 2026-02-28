@@ -1,5 +1,6 @@
 ﻿using controlersLoveGame.Data;
 using controlersLoveGame.Models;
+using controlersLoveGame.Services;
 using FirebaseAdmin.Auth;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,15 @@ namespace controlersLoveGame.Controllers
     public class UsersController : ControllerBase
     {
         private readonly LoveGameDbContext _context;
+        private readonly EmailService _emailService;
 
-        public UsersController(LoveGameDbContext context)
+        private readonly IConfiguration _config;
+
+        public UsersController(LoveGameDbContext context, EmailService emailService, IConfiguration config)
         {
             _context = context;
+            _emailService = emailService;
+            _config = config;
         }
 
         // שליפת כל המשתמשים
@@ -54,13 +60,29 @@ namespace controlersLoveGame.Controllers
                 // 🔹 הבטחת ערכים לא NULL לשדות של רשת חברתית
                 user.FirebaseUID = "N/A";
                 user.SocialID = "N/A";
-                //user.SocialMediaID = "N/A";
+
+                // ✅ [ADDED] אימות מייל – השרת קובע
+                user.EmailVerified = false;
+                user.EmailVerificationToken = Guid.NewGuid().ToString("N");
+                user.EmailVerificationExpiry = DateTime.UtcNow.AddMinutes(15);
 
                 // הצפנת הסיסמה
                 user.HashPassword();
 
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
+
+                var verifyLink =
+                    $"{Request.Scheme}://{Request.Host}/api/Users/verify-email?token={user.EmailVerificationToken}";
+
+                try
+                {
+                    await _emailService.SendVerifyEmailAsync(user.Email, verifyLink);
+                }
+                catch (Exception mailEx)
+                {
+                    return StatusCode(500, $"User registered BUT email failed: {mailEx.Message}");
+                }
 
                 return Ok(new { Message = "User registered successfully", UserID = user.UserID });
             }
@@ -70,8 +92,42 @@ namespace controlersLoveGame.Controllers
             }
         }
 
+        [HttpGet("test-email")]
+        public async Task<IActionResult> TestEmail([FromServices] EmailService emailService)
+        {
+            await emailService.SendVerifyEmailAsync(
+                "yehuda.gabbay@gmail.com",
+                "https://example.com/verify?token=TEST123"
+            );
 
-        // 🔑 התחברות דרך Firebase עם Google/Facebook
+            return Ok("Email sent");
+        }
+
+        [HttpGet("verify-email")]
+        public async Task<IActionResult> VerifyEmail([FromQuery] string token)
+        {
+            if (string.IsNullOrEmpty(token))
+                return BadRequest("Missing token");
+
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.EmailVerificationToken == token);
+
+            if (user == null)
+                return BadRequest("Invalid token");
+
+            if (user.EmailVerificationExpiry < DateTime.UtcNow)
+                return BadRequest("Token expired");
+
+            user.EmailVerified = true;
+            user.EmailVerificationToken = null;
+            user.EmailVerificationExpiry = null;
+
+            await _context.SaveChangesAsync();
+
+            return Ok("Email verified successfully");
+        }
+
+
         [HttpPost("social-login")]
         public async Task<IActionResult> SocialLogin([FromBody] SocialLoginRequest request)
         {
@@ -125,11 +181,18 @@ namespace controlersLoveGame.Controllers
                 {
                     return Unauthorized("Invalid email or password.");
                 }
+
                 // ❌ אם המשתמש הגיע מרשת חברתית - נחסום אותו מהתחברות רגילה
                 if (user.FirebaseUID != "N/A" || user.SocialID != "N/A")
                 {
                     return Unauthorized("This account is linked to a social login. Please use Google/Facebook login.");
-                }   
+                }
+
+                // ✅ [ADDED] חסימת התחברות אם המייל לא אומת
+                if (user.EmailVerified == false)
+                {
+                    return Unauthorized("Please verify your email before logging in.");
+                }
 
                 // בדיקה אם הסיסמה תואמת
                 if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash))
@@ -144,6 +207,7 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
@@ -190,32 +254,143 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
-        [HttpPost("reset-password")]
-        public async Task<IActionResult> ResetPassword([FromBody] controlersLoveGame.Models.ResetPasswordRequest request)
-
+        [HttpPost("password-reset/request")]
+        public async Task<IActionResult> PasswordResetRequest([FromBody] PasswordResetRequestDto dto)
         {
             try
             {
-                // בדיקה אם המשתמש קיים במערכת
-                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+                var email = dto?.Email?.Trim();
+
+                if (string.IsNullOrWhiteSpace(email))
+                    return Ok("If the email exists, a reset link has been sent.");
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                    return Ok("If the email exists, a reset link has been sent.");
+
+                if (user.FirebaseUID != "N/A" || user.SocialID != "N/A")
+                    return Ok("This account uses social login.");
+
+                // ✅ משתמש בשדות שכבר קיימים אצלך
+                user.PasswordResetToken = Guid.NewGuid().ToString("N");
+                user.PasswordResetExpiry = DateTime.UtcNow.AddMinutes(15);
+
+                await _context.SaveChangesAsync();
+
+                var link =
+                    $"https://lovegame.somee.com/reset-password?email={Uri.EscapeDataString(user.Email)}&token={user.PasswordResetToken}";
+
+                await _emailService.SendVerifyEmailAsync(user.Email, link);
+
+                return Ok("If the email exists, a reset link has been sent.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpPost("password-reset/confirm")]
+        public async Task<IActionResult> PasswordResetConfirm([FromBody] PasswordResetConfirmDto dto)
+        {
+            try
+            {
+                var email = dto?.Email?.Trim();
+                var token = dto?.Token?.Trim();
+                var newPassword = dto?.NewPassword;
+
+                if (string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(token) ||
+                    string.IsNullOrWhiteSpace(newPassword))
+                {
+                    return BadRequest("Email, Token and NewPassword are required.");
+                }
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                    return BadRequest("Invalid email or token.");
+
+                if (user.PasswordResetToken != token)
+                    return BadRequest("Invalid email or token.");
+
+                if (user.PasswordResetExpiry == null ||
+                    user.PasswordResetExpiry < DateTime.UtcNow)
+                    return BadRequest("Token expired.");
+
+                // ✅ הצפנה ישירה
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
+
+                // מנקים כדי שלא יהיה שימוש חוזר
+                user.PasswordResetToken = null;
+                user.PasswordResetExpiry = null;
+
+                await _context.SaveChangesAsync();
+
+                return Ok("Password reset successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpGet("debug-email-settings")]
+        public IActionResult DebugEmailSettings()
+        {
+            var from = _config["EmailSettings:From"];
+            var smtp = _config["EmailSettings:SmtpServer"];
+            var port = _config["EmailSettings:Port"];
+            var user = _config["EmailSettings:Username"];
+            var pass = _config["EmailSettings:Password"];
+
+            return Ok(new
+            {
+                From = string.IsNullOrWhiteSpace(from) ? "MISSING" : "OK",
+                SmtpServer = string.IsNullOrWhiteSpace(smtp) ? "MISSING" : "OK",
+                Port = string.IsNullOrWhiteSpace(port) ? "MISSING" : "OK",
+                Username = string.IsNullOrWhiteSpace(user) ? "MISSING" : "OK",
+                Password = string.IsNullOrWhiteSpace(pass) ? "MISSING" : "OK"
+            });
+        }
+
+
+
+        [HttpPut("update-details/{userId}")]
+        public async Task<IActionResult> UpdateUserDetails(
+    int userId,
+    [FromBody] UpdateUserDetailsRequest request)
+        {
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.UserID == userId);
                 if (user == null)
                 {
                     return NotFound("User not found.");
                 }
 
-                // הצפנת הסיסמה החדשה
-                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+                // עדכון שדות מותרים בלבד
+                user.Nickname = request.Nickname;
+                user.Gender = request.Gender;
+                user.Age = request.Age;
 
-                // שמירת השינויים במסד הנתונים
                 await _context.SaveChangesAsync();
 
-                return Ok("Password has been reset successfully.");
+                return Ok(new
+                {
+                    Message = "User details updated successfully",
+                    user.UserID,
+                    user.Nickname,
+                    user.Gender,
+                    user.Age
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
+                return StatusCode(500, $"Error updating user details: {ex.Message}");
             }
         }
+
+
 
         [HttpPost("get-selected-cards")]
         public async Task<ActionResult<IEnumerable<Card>>> GetSelectedCards([FromBody] DrawCardRequest request)
@@ -302,6 +477,112 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        // ✅ כרטיסים שאהבו במיוחד 💖 לפי משתמש
+        [HttpGet("favorite-cards/{userId}")]
+        public async Task<ActionResult<IEnumerable<Card>>> GetFavoriteCardsByUser(int userId)
+        {
+            var cards = await _context.UserCardStatus
+                .Where(ucs => ucs.UserID == userId && ucs.LikeStatus == 2)
+                .Select(ucs => ucs.Card)
+                .Distinct()
+                .ToListAsync();
+
+            return Ok(cards);
+        }
+
+
+
+        // ✅ כרטיסים שאהבו ❤️ לפי משתמש
+        [HttpGet("liked-cards/{userId}")]
+        public async Task<ActionResult<IEnumerable<Card>>> GetLikedCardsByUser(int userId)
+        {
+            var cards = await _context.UserCardStatus
+                .Where(ucs => ucs.UserID == userId && ucs.LikeStatus == 1)
+                .Select(ucs => ucs.Card)
+                .Distinct()
+                .ToListAsync();
+
+            return Ok(cards);
+        }
+
+
+        // ✅ כרטיסים שסומנו כבוצעו ✅ לפי משתמש
+        [HttpGet("completed-cards/{userId}")]
+        public async Task<ActionResult<IEnumerable<Card>>> GetCompletedCardsByUser(int userId)
+        {
+            var cards = await _context.UserCardStatus
+                .Where(ucs => ucs.UserID == userId && ucs.IsCompleted)
+                .Select(ucs => ucs.Card)
+                .Distinct()
+                .ToListAsync();
+
+            return Ok(cards);
+        }
+
+        [HttpPost("mark-card-completed")]
+        public async Task<IActionResult> MarkCardCompleted([FromBody] MarkCardCompletedRequest request)
+        {
+            try
+            {
+                var status = await _context.UserCardStatus
+                    .FirstOrDefaultAsync(u => u.UserID == request.UserID && u.CardID == request.CardID);
+
+                if (status == null)
+                {
+                    status = new UserCardStatus
+                    {
+                        UserID = request.UserID,
+                        CardID = request.CardID,
+                        IsCompleted = request.IsCompleted,
+                        LikeStatus = request.LikeStatus
+                    };
+
+                    _context.UserCardStatus.Add(status);
+                }
+                else
+                {
+                    status.IsCompleted = request.IsCompleted;
+                    status.LikeStatus = request.LikeStatus;
+                }
+
+                await _context.SaveChangesAsync();
+                return Ok("Card marked as completed.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error marking card as completed: {ex.Message}");
+            }
+        }
+
+        // ✅ קלפים שלא בוצעו עדיין ע"י משתמש (כדי לא לחזור על קלפים)
+        [HttpGet("available-cards")]
+        public async Task<ActionResult<IEnumerable<Card>>> GetAvailableCards(
+            [FromQuery] int userId,
+            [FromQuery] int modeId,
+            [FromQuery] int categoryId,
+            [FromQuery] int levelId,
+            [FromQuery] int take = 20)
+        {
+            // כל ה-CardIDs שהמשתמש כבר ביצע
+            var completedCardIds = await _context.UserCardStatus
+                .Where(ucs => ucs.UserID == userId && ucs.IsCompleted)
+                .Select(ucs => ucs.CardID)
+                .ToListAsync();
+
+            // מחזירים רק קלפים פעילים שלא נמצאים ברשימת ה"בוצעו"
+            var cards = await _context.Cards
+                .Where(c =>
+                    c.IsActive &&
+                    c.ModeID == modeId &&
+                    c.CategoryID == categoryId &&
+                    c.LevelID == levelId &&
+                    !completedCardIds.Contains(c.CardID))
+                .Take(take)
+                .ToListAsync();
+
+            return Ok(cards);
+        }
+
         [HttpPost("submit-feedback")]
         public async Task<IActionResult> SubmitFeedback([FromBody] Feedback feedback)
         {

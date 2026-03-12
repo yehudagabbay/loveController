@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "C:\\project code\\loveGame\\controlers\\loveController\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\passwordresetrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\passwordresetrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\controlerslovegame.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\controlerslovegame.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|c:\\project code\\lovegame\\controlers\\lovecontroller\\controlerslovegame\\models\\passwordresetconfirmdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5A261994-090C-44C5-BED4-FB7F34CCE890}|controlersLoveGame\\controlersLoveGame.csproj|solutionrelative:controlerslovegame\\models\\passwordresetconfirmdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,24 +34,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "controlersLoveGame\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Properties\\launchSettings.json",
+              "RelativeToolTip": "controlersLoveGame\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAowC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-04T14:52:17.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\appsettings.json",
               "RelativeDocumentMoniker": "controlersLoveGame\\appsettings.json",
               "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\appsettings.json",
               "RelativeToolTip": "controlersLoveGame\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-27T13:05:31.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T13:05:31.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Program.cs",
               "RelativeDocumentMoniker": "controlersLoveGame\\Program.cs",
@@ -67,21 +70,7 @@
               "RelativeToolTip": "controlersLoveGame\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T12:30:24.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "controlersLoveGame",
-              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\controlersLoveGame.csproj",
-              "RelativeDocumentMoniker": "controlersLoveGame\\controlersLoveGame.csproj",
-              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\controlersLoveGame.csproj",
-              "RelativeToolTip": "controlersLoveGame\\controlersLoveGame.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-02-25T10:37:08.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T12:30:24.367Z"
             },
             {
               "$type": "Document",
@@ -93,34 +82,7 @@
               "RelativeToolTip": "controlersLoveGame\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T09:46:33.914Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PasswordResetConfirmDto.cs",
-              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\PasswordResetConfirmDto.cs",
-              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\PasswordResetConfirmDto.cs",
-              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\PasswordResetConfirmDto.cs",
-              "RelativeToolTip": "controlersLoveGame\\Models\\PasswordResetConfirmDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T09:44:08.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PasswordResetRequestDto.cs",
-              "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\PasswordResetRequestDto.cs",
-              "RelativeDocumentMoniker": "controlersLoveGame\\Models\\PasswordResetRequestDto.cs",
-              "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Models\\PasswordResetRequestDto.cs",
-              "RelativeToolTip": "controlersLoveGame\\Models\\PasswordResetRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T09:43:28.718Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-25T09:46:33.914Z"
             },
             {
               "$type": "Document",
@@ -130,20 +92,19 @@
               "RelativeDocumentMoniker": "controlersLoveGame\\Services\\EmailService.cs",
               "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Services\\EmailService.cs",
               "RelativeToolTip": "controlersLoveGame\\Services\\EmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T12:17:16.534Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-11T12:17:16.534Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "controlersLoveGame\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\UsersController.cs",
               "RelativeToolTip": "controlersLoveGame\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAEMBAAAAAAAAAAAswE8BAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAoBAAAAAAAAAAAkwCQBAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T13:01:41.311Z",
               "EditorCaption": ""

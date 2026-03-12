@@ -521,6 +521,27 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "OpenReset",
+    "RelativePath": "api/Users/open-reset",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "PasswordResetConfirm",
     "RelativePath": "api/Users/password-reset/confirm",
     "HttpMethod": "POST",

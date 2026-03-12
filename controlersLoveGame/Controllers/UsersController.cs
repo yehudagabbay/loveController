@@ -254,6 +254,17 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"An error occurred: {ex.Message}");
             }
         }
+        [HttpGet("open-reset")]
+        public IActionResult OpenReset([FromQuery] string email, [FromQuery] string token)
+        {
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(token))
+                return BadRequest("Missing email or token");
+
+            var deepLink =
+                $"loveclient://reset-password?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}";
+
+            return Redirect(deepLink);
+        }
         [HttpPost("password-reset/request")]
         public async Task<IActionResult> PasswordResetRequest([FromBody] PasswordResetRequestDto dto)
         {
@@ -278,15 +289,15 @@ namespace controlersLoveGame.Controllers
 
                 await _context.SaveChangesAsync();
 
-                var link =
-                    $"https://lovegame.somee.com/reset-password?email={Uri.EscapeDataString(user.Email)}&token={user.PasswordResetToken}";
+                   var link =
+                     $"http://lovegame.somee.com/api/Users/open-reset?email={Uri.EscapeDataString(user.Email)}&token={user.PasswordResetToken}";
 
                 await _emailService.SendVerifyEmailAsync(user.Email, link);
 
                 return Ok("If the email exists, a reset link has been sent.");
             }
             catch (Exception ex)
-            {
+            { 
                 return StatusCode(500, ex.Message);
             }
         }

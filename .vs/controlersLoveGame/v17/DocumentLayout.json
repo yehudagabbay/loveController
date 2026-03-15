@@ -82,7 +82,8 @@
               "RelativeToolTip": "controlersLoveGame\\Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-25T09:46:33.914Z"
+              "WhenOpened": "2026-02-25T09:46:33.914Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -94,7 +95,8 @@
               "RelativeToolTip": "controlersLoveGame\\Services\\EmailService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T12:17:16.534Z"
+              "WhenOpened": "2026-02-11T12:17:16.534Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -104,7 +106,7 @@
               "RelativeDocumentMoniker": "controlersLoveGame\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\project code\\loveGame\\controlers\\loveController\\controlersLoveGame\\Controllers\\UsersController.cs",
               "RelativeToolTip": "controlersLoveGame\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAoBAAAAAAAAAAAkwCQBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAIQBAAAAAAAAAAAiwKsBAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-05T13:01:41.311Z",
               "EditorCaption": ""

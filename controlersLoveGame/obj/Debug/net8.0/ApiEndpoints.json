@@ -590,6 +590,22 @@
   },
   {
     "ContainingType": "controlersLoveGame.Controllers.UsersController",
+    "Method": "ResendVerificationEmail",
+    "RelativePath": "api/Users/resend-verification-email",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "controlersLoveGame.Models.PasswordResetRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "controlersLoveGame.Controllers.UsersController",
     "Method": "SocialLogin",
     "RelativePath": "api/Users/social-login",
     "HttpMethod": "POST",

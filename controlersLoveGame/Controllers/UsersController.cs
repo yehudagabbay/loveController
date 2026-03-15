@@ -106,17 +106,23 @@ namespace controlersLoveGame.Controllers
         [HttpGet("verify-email")]
         public async Task<IActionResult> VerifyEmail([FromQuery] string token)
         {
-            if (string.IsNullOrEmpty(token))
-                return BadRequest("Missing token");
+            if (string.IsNullOrWhiteSpace(token))
+            {
+                return Redirect("loveclient://login?verified=0&reason=missing-token");
+            }
 
             var user = await _context.Users
                 .FirstOrDefaultAsync(u => u.EmailVerificationToken == token);
 
             if (user == null)
-                return BadRequest("Invalid token");
+            {
+                return Redirect("loveclient://login?verified=0&reason=invalid-token");
+            }
 
-            if (user.EmailVerificationExpiry < DateTime.UtcNow)
-                return BadRequest("Token expired");
+            if (user.EmailVerificationExpiry == null || user.EmailVerificationExpiry < DateTime.UtcNow)
+            {
+                return Redirect("loveclient://login?verified=0&reason=expired-token");
+            }
 
             user.EmailVerified = true;
             user.EmailVerificationToken = null;
@@ -124,9 +130,10 @@ namespace controlersLoveGame.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Ok("Email verified successfully");
-        }
+            var email = Uri.EscapeDataString(user.Email ?? "");
 
+            return Redirect($"loveclient://login?verified=1&email={email}");
+        }
 
         [HttpPost("social-login")]
         public async Task<IActionResult> SocialLogin([FromBody] SocialLoginRequest request)
@@ -175,36 +182,53 @@ namespace controlersLoveGame.Controllers
         {
             try
             {
-                // בדיקה אם כתובת האימייל קיימת במסד הנתונים
                 var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == loginRequest.Email);
+
                 if (user == null)
                 {
-                    return Unauthorized("Invalid email or password.");
+                    return Unauthorized(new
+                    {
+                        message = "Invalid email or password."
+                    });
                 }
 
-                // ❌ אם המשתמש הגיע מרשת חברתית - נחסום אותו מהתחברות רגילה
                 if (user.FirebaseUID != "N/A" || user.SocialID != "N/A")
                 {
-                    return Unauthorized("This account is linked to a social login. Please use Google/Facebook login.");
+                    return Unauthorized(new
+                    {
+                        message = "This account is linked to a social login. Please use Google/Facebook login."
+                    });
                 }
 
-                // ✅ [ADDED] חסימת התחברות אם המייל לא אומת
                 if (user.EmailVerified == false)
                 {
-                    return Unauthorized("Please verify your email before logging in.");
+                    return Unauthorized(new
+                    {
+                        message = "Please verify your email before logging in.",
+                        emailNotVerified = true
+                    });
                 }
 
-                // בדיקה אם הסיסמה תואמת
                 if (!BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash))
                 {
-                    return Unauthorized("Invalid email or password.");
+                    return Unauthorized(new
+                    {
+                        message = "Invalid email or password."
+                    });
                 }
 
-                return Ok(new { Message = $"{user.Nickname} is logged in", User = user });
+                return Ok(new
+                {
+                    Message = $"{user.Nickname} is logged in",
+                    User = user
+                });
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"An error occurred: {ex.Message}");
+                return StatusCode(500, new
+                {
+                    message = $"An error occurred: {ex.Message}"
+                });
             }
         }
 
@@ -343,6 +367,62 @@ namespace controlersLoveGame.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpPost("resend-verification-email")]
+        public async Task<IActionResult> ResendVerificationEmail([FromBody] PasswordResetRequestDto dto)
+        {
+            try
+            {
+                var email = dto?.Email?.Trim();
+
+                if (string.IsNullOrWhiteSpace(email))
+                {
+                    return BadRequest(new
+                    {
+                        message = "Email is required."
+                    });
+                }
+
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                {
+                    return Ok(new
+                    {
+                        message = "If the email exists, a verification email has been sent."
+                    });
+                }
+
+                if (user.EmailVerified)
+                {
+                    return BadRequest(new
+                    {
+                        message = "Email already verified."
+                    });
+                }
+
+                user.EmailVerificationToken = Guid.NewGuid().ToString("N");
+                user.EmailVerificationExpiry = DateTime.UtcNow.AddHours(24);
+
+                await _context.SaveChangesAsync();
+
+                var verificationLink =
+                    $"http://lovegame.somee.com/api/Users/verify-email?token={user.EmailVerificationToken}";
+
+                await _emailService.SendVerifyEmailAsync(user.Email, verificationLink);
+
+                return Ok(new
+                {
+                    message = "Verification email sent."
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = ex.Message
+                });
             }
         }
         [HttpGet("debug-email-settings")]

@@ -713,4 +713,3 @@ C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.pdb
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\controlersLoveGame.genruntimeconfig.cache
 C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\ref\controlersLoveGame.dll
-C:\project code\loveGame\controlers\loveController\controlersLoveGame\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

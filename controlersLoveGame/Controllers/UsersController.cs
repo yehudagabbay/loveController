@@ -488,12 +488,13 @@ namespace controlersLoveGame.Controllers
         {
             try
             {
+                string lang = string.IsNullOrWhiteSpace(request?.Lang) ? "he" : request.Lang.Trim().ToLower();
+
                 List<Card> selectedCards = new List<Card>();
                 Random random = new Random();
 
                 foreach (var selection in request.Selections)
                 {
-                    // ✅ מצב משחק (עם ברירת מחדל לזוגי כדי לא לשבור קליינטים ישנים)
                     int modeId = selection.ModeID == 0 ? 1 : selection.ModeID;
 
                     int categoryId = selection.CategoryID;
@@ -502,7 +503,7 @@ namespace controlersLoveGame.Controllers
 
                     var cards = await _context.Cards
                         .Where(c =>
-                            c.ModeID == modeId &&                // ✅ סינון לפי מצב משחק
+                            c.ModeID == modeId &&
                             c.CategoryID == categoryId &&
                             c.LevelID == levelId &&
                             c.IsActive)
@@ -513,7 +514,27 @@ namespace controlersLoveGame.Controllers
                         .Take(numberOfCards)
                         .ToList();
 
-                    selectedCards.AddRange(shuffledCards);
+                    foreach (var card in shuffledCards)
+                    {
+                        var translation = await _context.CardTranslations
+                            .FirstOrDefaultAsync(t => t.CardID == card.CardID && t.LanguageCode == lang);
+
+                        if (translation == null)
+                        {
+                            translation = await _context.CardTranslations
+                                .FirstOrDefaultAsync(t => t.CardID == card.CardID && t.LanguageCode == "he");
+                        }
+
+                        if (translation == null)
+                        {
+                            translation = await _context.CardTranslations
+                                .FirstOrDefaultAsync(t => t.CardID == card.CardID && t.LanguageCode == "en");
+                        }
+
+                        card.CardDescription = translation?.CardText ?? card.CardDescription;
+
+                        selectedCards.Add(card);
+                    }
                 }
 
                 if (selectedCards.Count == 0)

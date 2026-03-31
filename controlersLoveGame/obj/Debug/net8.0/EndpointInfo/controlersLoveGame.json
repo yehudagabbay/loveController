@@ -1410,6 +1410,10 @@
             "items": {
               "$ref": "#/components/schemas/CategoryLevelSelection"
             }
+          },
+          "lang": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -6,6 +6,8 @@ namespace controlersLoveGame.Models
     {
         [Required]
         public List<CategoryLevelSelection> Selections { get; set; } // רשימת הבחירות
+                                                                     // 🔹 DrawCardRequest (הוספה)
+        public string? Lang { get; set; }
 
         public class CategoryLevelSelection
         {

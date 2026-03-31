@@ -6,6 +6,7 @@ namespace controlersLoveGame.Data
     public class LoveGameDbContext : DbContext
     {
         public LoveGameDbContext(DbContextOptions<LoveGameDbContext> options) : base(options) { }
+        public DbSet<CardTranslation> CardTranslations { get; set; }
 
         public DbSet<User> Users { get; set; }
         public DbSet<Card> Cards { get; set; }

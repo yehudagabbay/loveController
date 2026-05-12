@@ -1,0 +1,26 @@
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+
+# .NET build output
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Local secrets
+service-account.json
+appsettings.Secrets.json
+.secrets/
+*.pfx
+*.p12
+*.key
+
+# Local nested copy
+liba controler 0.1/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

@@ -27,6 +27,7 @@
 
         public int? Age { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.UtcNow;
+        public ICollection<Subscription> Subscriptions { get; set; } = new List<Subscription>();
 
         // ✅ פונקציה להצפנת סיסמה - תפעל רק אם יש סיסמה
         public void HashPassword()

@@ -17,6 +17,7 @@ namespace controlersLoveGame.Models
         [Range(1, 5)]
         public int Rating { get; set; } // דירוג בין 1 ל-5
 
+        [MaxLength(300)]
         public string? Comment { get; set; } // תוכן המשוב
 
         public DateTime FeedbackDate { get; set; } = DateTime.UtcNow;

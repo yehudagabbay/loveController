@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace controlersLoveGame.Models
 {
@@ -20,5 +21,14 @@ namespace controlersLoveGame.Models
         // מצב משחק: 1=זוגי, 2=משפחה, 3=חברים/משרד
         [Required]
         public int ModeID { get; set; } = 1;
+
+        [NotMapped]
+        public int LikeStatus { get; set; } = 0;
+
+        [NotMapped]
+        public bool HasFeedback { get; set; }
+
+        [NotMapped]
+        public bool IsShared { get; set; }
     }
 }

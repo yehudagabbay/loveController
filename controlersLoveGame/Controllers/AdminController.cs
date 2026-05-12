@@ -1,5 +1,7 @@
-﻿using controlersLoveGame.Data;
+using controlersLoveGame.Data;
 using controlersLoveGame.Models;
+using controlersLoveGame.Models.AdminCards;
+using controlersLoveGame.Services.Admin;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,11 +12,25 @@ namespace controlersLoveGame.Controllers
     public class AdminController : ControllerBase
     {
         private readonly LoveGameDbContext _context;
+        private readonly IConfiguration _config;
+        private readonly AdminPendingCreationStore _pendingCreationStore;
+        private readonly AdminAuthEmailService _adminAuthEmailService;
+        private readonly AdminSessionTokenService _adminSessionTokenService;
 
-        public AdminController(LoveGameDbContext context)
+        public AdminController(
+            LoveGameDbContext context,
+            IConfiguration config,
+            AdminPendingCreationStore pendingCreationStore,
+            AdminAuthEmailService adminAuthEmailService,
+            AdminSessionTokenService adminSessionTokenService)
         {
             _context = context;
+            _config = config;
+            _pendingCreationStore = pendingCreationStore;
+            _adminAuthEmailService = adminAuthEmailService;
+            _adminSessionTokenService = adminSessionTokenService;
         }
+
         [HttpPost("create-admin")]
         public async Task<IActionResult> CreateAdmin([FromBody] AdminLoginRequest request)
         {
@@ -25,26 +41,44 @@ namespace controlersLoveGame.Controllers
                     return BadRequest("Email and Password are required.");
                 }
 
-                bool exists = await _context.Admins.AnyAsync(a => a.Email == request.Email);
+                var email = request.Email.Trim().ToLowerInvariant();
+                var approverEmails = (_config["AdminSecurity:AllowedCreatorEmails"] ?? string.Empty)
+                    .Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries)
+                    .Select(x => x.Trim().ToLowerInvariant())
+                    .Where(x => !string.IsNullOrWhiteSpace(x))
+                    .Distinct()
+                    .ToList();
+
+                if (approverEmails.Count == 0)
+                {
+                    return StatusCode(500, "No admin approver emails are configured.");
+                }
+
+                bool exists = await _context.Admins.AnyAsync(a => a.Email.ToLower() == email);
                 if (exists)
                 {
                     return BadRequest("Admin already exists.");
                 }
 
-                var admin = new Admin
+                var token = _pendingCreationStore.Create(
+                    email,
+                    BCrypt.Net.BCrypt.HashPassword(request.Password),
+                    "Admin",
+                    "Admin",
+                    TimeSpan.FromMinutes(15));
+
+                foreach (var approverEmail in approverEmails)
                 {
-                    Email = request.Email.Trim().ToLower(),
-                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
-                    FullName = "Admin",
-                    Role = "Admin",
-                    IsActive = true,
-                    CreatedAt = DateTime.UtcNow
-                };
+                    var verifyLink =
+                        $"https://libagame.somee.com/api/admin-auth/verify-create-admin?email={Uri.EscapeDataString(email)}&token={Uri.EscapeDataString(token)}&approverEmail={Uri.EscapeDataString(approverEmail)}";
 
-                _context.Admins.Add(admin);
-                await _context.SaveChangesAsync();
+                    await _adminAuthEmailService.SendAdminVerificationEmailAsync(
+                        approverEmail,
+                        email,
+                        verifyLink);
+                }
 
-                return Ok("Admin created successfully.");
+                return Ok("Approval email sent to the configured admin approvers.");
             }
             catch (Exception ex)
             {
@@ -62,7 +96,7 @@ namespace controlersLoveGame.Controllers
                     return BadRequest("Email and Password are required.");
                 }
 
-                string email = request.Email.Trim().ToLower();
+                string email = request.Email.Trim().ToLowerInvariant();
 
                 var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Email.ToLower() == email);
 
@@ -83,10 +117,25 @@ namespace controlersLoveGame.Controllers
                     return Unauthorized("Invalid email or password.");
                 }
 
-                // ✅ כרגע מחזירים הצלחה (בלי JWT עדיין)
+                var rawToken = _adminSessionTokenService.GenerateToken();
+                var expiresAtUtc = DateTime.UtcNow.AddHours(24);
+
+                _context.AdminSessions.Add(new AdminSession
+                {
+                    AdminId = admin.AdminID,
+                    TokenHash = _adminSessionTokenService.HashToken(rawToken),
+                    CreatedAt = DateTime.UtcNow,
+                    ExpiresAt = expiresAtUtc,
+                    IsActive = true
+                });
+
+                await _context.SaveChangesAsync();
+
                 return Ok(new
                 {
                     Message = "Admin logged in successfully",
+                    Token = rawToken,
+                    ExpiresAtUtc = expiresAtUtc,
                     Admin = new
                     {
                         admin.AdminID,
@@ -101,6 +150,35 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error logging in: {ex.Message}");
             }
         }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout()
+        {
+            try
+            {
+                if (!HttpContext.Items.TryGetValue("AdminSessionId", out var sessionIdRaw) ||
+                    !int.TryParse(sessionIdRaw?.ToString(), out var sessionId))
+                {
+                    return Unauthorized("Admin session is invalid or expired.");
+                }
+
+                var session = await _context.AdminSessions.FindAsync(sessionId);
+                if (session == null)
+                {
+                    return Unauthorized("Admin session is invalid or expired.");
+                }
+
+                session.IsActive = false;
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "Admin logged out successfully." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error logging out: {ex.Message}");
+            }
+        }
+
         [HttpPut("change-password")]
         public async Task<IActionResult> ChangePassword([FromBody] AdminChangePasswordRequest request)
         {
@@ -113,7 +191,7 @@ namespace controlersLoveGame.Controllers
                     return BadRequest("All fields are required.");
                 }
 
-                string email = request.Email.Trim().ToLower();
+                string email = request.Email.Trim().ToLowerInvariant();
 
                 var admin = await _context.Admins.FirstOrDefaultAsync(a => a.Email == email);
 
@@ -127,14 +205,12 @@ namespace controlersLoveGame.Controllers
                     return Unauthorized("Admin account is disabled.");
                 }
 
-                // בדיקת סיסמה ישנה
                 bool validOldPassword = BCrypt.Net.BCrypt.Verify(request.OldPassword, admin.PasswordHash);
                 if (!validOldPassword)
                 {
                     return Unauthorized("Old password is incorrect.");
                 }
 
-                // הצפנת סיסמה חדשה
                 admin.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
                 await _context.SaveChangesAsync();
 
@@ -146,7 +222,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // שליפת כל הכרטיסים
         [HttpGet("get-all-cards")]
         public async Task<ActionResult<IEnumerable<Card>>> GetAllCards()
         {
@@ -183,7 +258,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // שליפת כרטיסים לפי רמת קושי
         [HttpGet("get-cards-by-level/{levelId}")]
         public async Task<ActionResult<IEnumerable<Card>>> GetCardsByLevel(int levelId)
         {
@@ -206,7 +280,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // שליפת כרטיסים לפי סוג ורמת קושי
         [HttpGet("get-cards-by-category-and-level/{categoryId}/{levelId}")]
         public async Task<ActionResult<IEnumerable<Card>>> GetCardsByCategoryAndLevel(int categoryId, int levelId)
         {
@@ -228,7 +301,7 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error retrieving cards: {ex.Message}");
             }
         }
-        // מחיקת כרטיס לחלוטין מהמערכת
+
         [HttpDelete("delete-card/{cardId}")]
         public async Task<IActionResult> DeleteCard(int cardId)
         {
@@ -240,10 +313,23 @@ namespace controlersLoveGame.Controllers
                     return NotFound($"Card with ID {cardId} not found.");
                 }
 
+                var translations = await _context.CardTranslations
+                    .Where(t => t.CardID == cardId)
+                    .ToListAsync();
+
+                if (translations.Count > 0)
+                {
+                    _context.CardTranslations.RemoveRange(translations);
+                }
+
                 _context.Cards.Remove(card);
                 await _context.SaveChangesAsync();
 
-                return Ok($"Card with ID {cardId} has been deleted.");
+                return Ok(new
+                {
+                    Message = $"Card with ID {cardId} has been deleted.",
+                    DeletedTranslations = translations.Count
+                });
             }
             catch (Exception ex)
             {
@@ -251,7 +337,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // הפיכת כרטיס ללא זמין (IsActive = false)
         [HttpPut("disable-card/{cardId}")]
         public async Task<IActionResult> DisableCard(int cardId)
         {
@@ -263,7 +348,7 @@ namespace controlersLoveGame.Controllers
                     return NotFound($"Card with ID {cardId} not found.");
                 }
 
-                card.IsActive = false; // שינוי סטטוס הכרטיס ללא פעיל
+                card.IsActive = false;
                 await _context.SaveChangesAsync();
 
                 return Ok($"Card with ID {cardId} has been disabled.");
@@ -273,9 +358,9 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error disabling card: {ex.Message}");
             }
         }
-        // יצירת כרטיס חדש
+
         [HttpPost("create-card")]
-        public async Task<IActionResult> CreateCard([FromBody] Card newCard)
+        public async Task<IActionResult> CreateCard([FromBody] AdminCardUpdateRequest newCard)
         {
             try
             {
@@ -284,16 +369,54 @@ namespace controlersLoveGame.Controllers
                     return BadRequest("Invalid card data.");
                 }
 
-                // ✅ אם לא נשלח ModeID – נניח זוגי כברירת מחדל
-                if (newCard.ModeID == 0)
-                {
-                    newCard.ModeID = 1;
-                }
+                var translations = newCard.Translations ?? new List<AdminCardTranslationInput>();
+                var normalizedTranslations = translations
+                    .Where(t => !string.IsNullOrWhiteSpace(t.LanguageCode))
+                    .GroupBy(t => t.LanguageCode!.Trim().ToLowerInvariant())
+                    .Select(g => g.Last())
+                    .ToList();
 
-                _context.Cards.Add(newCard);
+                var heText = normalizedTranslations
+                    .FirstOrDefault(t => string.Equals(t.LanguageCode?.Trim(), "he", StringComparison.OrdinalIgnoreCase))
+                    ?.CardText?.Trim();
+
+                var card = new Card
+                {
+                    CategoryID = newCard.CategoryID,
+                    LevelID = newCard.LevelID,
+                    ModeID = newCard.ModeID == 0 ? 1 : newCard.ModeID,
+                    IsActive = newCard.IsActive,
+                    CardDescription = !string.IsNullOrWhiteSpace(heText)
+                        ? heText
+                        : (newCard.CardDescription?.Trim() ?? string.Empty),
+                };
+
+                _context.Cards.Add(card);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction(nameof(GetAllCards), new { cardId = newCard.CardID }, newCard);
+                foreach (var translation in normalizedTranslations)
+                {
+                    var lang = translation.LanguageCode!.Trim().ToLowerInvariant();
+                    _context.CardTranslations.Add(new CardTranslation
+                    {
+                        CardID = card.CardID,
+                        LanguageCode = lang,
+                        CardText = translation.CardText?.Trim() ?? string.Empty,
+                        CreatedAt = DateTime.UtcNow
+                    });
+                }
+
+                await _context.SaveChangesAsync();
+
+                return CreatedAtAction(nameof(GetAllCards), new { cardId = card.CardID }, new
+                {
+                    card.CardID,
+                    card.CategoryID,
+                    card.LevelID,
+                    card.ModeID,
+                    card.IsActive,
+                    card.CardDescription
+                });
             }
             catch (Exception ex)
             {
@@ -301,9 +424,8 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // עדכון כרטיס קיים
         [HttpPut("update-card/{cardId}")]
-        public async Task<IActionResult> UpdateCard(int cardId, [FromBody] Card updatedCard)
+        public async Task<IActionResult> UpdateCard(int cardId, [FromBody] AdminCardUpdateRequest updatedCard)
         {
             try
             {
@@ -315,11 +437,47 @@ namespace controlersLoveGame.Controllers
 
                 existingCard.CategoryID = updatedCard.CategoryID;
                 existingCard.LevelID = updatedCard.LevelID;
-                existingCard.CardDescription = updatedCard.CardDescription;
                 existingCard.IsActive = updatedCard.IsActive;
-
-                // ✅ עדכון מצב משחק (עם ברירת מחדל לזוגי אם הגיע 0)
                 existingCard.ModeID = updatedCard.ModeID == 0 ? 1 : updatedCard.ModeID;
+
+                var translations = updatedCard.Translations ?? new List<AdminCardTranslationInput>();
+                var normalizedTranslations = translations
+                    .Where(t => !string.IsNullOrWhiteSpace(t.LanguageCode))
+                    .GroupBy(t => t.LanguageCode!.Trim().ToLowerInvariant())
+                    .Select(g => g.Last())
+                    .ToList();
+
+                foreach (var translation in normalizedTranslations)
+                {
+                    var lang = translation.LanguageCode!.Trim().ToLowerInvariant();
+                    var text = translation.CardText?.Trim() ?? string.Empty;
+
+                    var existingTranslation = await _context.CardTranslations
+                        .FirstOrDefaultAsync(t => t.CardID == cardId && t.LanguageCode.ToLower() == lang);
+
+                    if (existingTranslation == null)
+                    {
+                        _context.CardTranslations.Add(new CardTranslation
+                        {
+                            CardID = cardId,
+                            LanguageCode = lang,
+                            CardText = text,
+                            CreatedAt = DateTime.UtcNow
+                        });
+                    }
+                    else
+                    {
+                        existingTranslation.CardText = text;
+                    }
+                }
+
+                var heText = normalizedTranslations
+                    .FirstOrDefault(t => string.Equals(t.LanguageCode?.Trim(), "he", StringComparison.OrdinalIgnoreCase))
+                    ?.CardText?.Trim();
+
+                existingCard.CardDescription = !string.IsNullOrWhiteSpace(heText)
+                    ? heText
+                    : (updatedCard.CardDescription?.Trim() ?? existingCard.CardDescription);
 
                 await _context.SaveChangesAsync();
 
@@ -331,7 +489,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        // שליפת כרטיס לפי ID
         [HttpGet("get-card/{cardId}")]
         public async Task<ActionResult<Card>> GetCardById(int cardId)
         {
@@ -350,7 +507,46 @@ namespace controlersLoveGame.Controllers
                 return StatusCode(500, $"Error retrieving card: {ex.Message}");
             }
         }
-        
+
+        [HttpGet("card-translations/{cardId}")]
+        public async Task<IActionResult> GetCardTranslations(int cardId)
+        {
+            try
+            {
+                var card = await _context.Cards.FindAsync(cardId);
+                if (card == null)
+                {
+                    return NotFound($"Card with ID {cardId} not found.");
+                }
+
+                var translations = await _context.CardTranslations
+                    .Where(t => t.CardID == cardId)
+                    .Select(t => new
+                    {
+                        t.TranslationID,
+                        t.CardID,
+                        t.LanguageCode,
+                        t.CardText,
+                        t.CreatedAt
+                    })
+                    .ToListAsync();
+
+                return Ok(new
+                {
+                    card.CardID,
+                    card.CategoryID,
+                    card.LevelID,
+                    card.ModeID,
+                    card.IsActive,
+                    card.CardDescription,
+                    translations
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error retrieving card translations: {ex.Message}");
+            }
+        }
 
         [HttpGet("get-all-feedbacks")]
         public async Task<ActionResult<IEnumerable<Feedback>>> GetAllFeedbacks()
@@ -368,8 +564,8 @@ namespace controlersLoveGame.Controllers
                         f.Rating,
                         f.Comment,
                         f.FeedbackDate,
-                        User = f.User != null ? new { f.User.UserID, f.User.Nickname, f.User.Email } : null,
-                        Card = f.Card != null ? new { f.Card.CardID } : null
+                        User = f.User != null ? new { f.User.UserID, f.User.Nickname, f.User.Email, UserName = f.User.Nickname } : null,
+                        Card = f.Card != null ? new { f.Card.CardID, f.Card.CategoryID, f.Card.LevelID, f.Card.ModeID, f.Card.CardDescription } : null
                     })
                     .ToListAsync();
 
@@ -386,5 +582,4 @@ namespace controlersLoveGame.Controllers
             }
         }
     }
-
 }

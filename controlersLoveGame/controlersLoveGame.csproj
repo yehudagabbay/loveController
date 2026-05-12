@@ -18,4 +18,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="appsettings.Secrets.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Condition="Exists('appsettings.Secrets.json')" />
+    <Content Include=".secrets\service-account.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Link=".secrets\service-account.json" Condition="Exists('.secrets\service-account.json')" />
+  </ItemGroup>
+
 </Project>

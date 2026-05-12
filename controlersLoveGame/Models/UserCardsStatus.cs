@@ -20,9 +20,9 @@ namespace controlersLoveGame.Models
         public int LikeStatus { get; set; } = 0;
 
         [JsonIgnore] // מונע הצגה של המשתמש ב-Swagger
-        public User User { get; set; }
+        public User? User { get; set; }
 
         [JsonIgnore] // מונע הצגה של הכרטיס ב-Swagger
-        public Card Card { get; set; }
+        public Card? Card { get; set; }
     }
 }

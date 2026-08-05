@@ -1,0 +1,12 @@
+loveController/
+LibaAdminControl/
+db/
+firebase/
+image/
+**/.vs/
+**/*.vsidx
+**/node_modules/
+**/.expo/
+**/.gradle/
+**/.cxx/
+**/build/

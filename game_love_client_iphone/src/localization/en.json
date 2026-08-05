@@ -1,0 +1,938 @@
+{
+  "common": {
+    "categories": {
+      "relations": "Relations",
+      "fun": "Fun",
+      "love": "Love"
+    },
+    "levels": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "general": {
+      "sending": "Sending…",
+      "loading": "Loading..."
+    }
+  },
+  "alerts": {
+    "successTitle": "Success",
+    "errorTitle": "Error",
+    "networkErrorTitle": "Network error",
+    "infoTitle": "Info",
+    "waitTitle": "Wait a second",
+    "oopsTitle": "Oops"
+  },
+  "registration": {
+    "title": "Register",
+    "fields": {
+      "nickname": "Nickname",
+      "genderLabel": "Gender:",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm password",
+      "age": "Age"
+    },
+    "gender": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "buttons": {
+      "register": "Register",
+      "registerWithGoogle": "Register with Google",
+      "registerWithFacebook": "Register with Facebook"
+    },
+    "links": {
+      "haveAccount": "Already have an account? Login here"
+    },
+    "alerts": {
+      "registerSuccess": "Registered successfully!",
+      "verifyEmailNotice": "Registration successful! Please check your email to verify your account before logging in.",
+      "registerHttpError": "Registration error (HTTP {{status}})",
+      "emailAlreadyExists": "Email address already exists"
+    },
+    "socialRegister": {
+      "cancelled": {
+        "title": "Cancelled",
+        "message": "Google sign-in was cancelled."
+      },
+      "success": {
+        "message": "You signed in with Google successfully!",
+        "confirm": "OK"
+      },
+      "loading": {
+        "title": "Signing you in securely",
+        "subtitle": "We are verifying your Google account and preparing your game.",
+        "steps": {
+          "google": "Confirming Google access",
+          "account": "Syncing your account",
+          "ready": "Opening your game"
+        }
+      },
+      "errors": {
+        "googleOpenFailed": "Could not open Google sign-in.",
+        "googleAuthError": "Google auth error: {{code}}",
+        "missingIdToken": "No id_token was received. Check OAuth and Scheme/Redirect settings.",
+        "firebaseFailed": "Firebase sign-in failed."
+      }
+    },
+    "errors": {
+      "nicknameRequired": "Please enter a nickname",
+      "genderRequired": "Please select a gender",
+      "emailRequired": "Please enter an email",
+      "emailInvalid": "Invalid email format",
+      "passwordRequired": "Please enter a password",
+      "passwordWeak": "Password must be at least 6 characters and include a letter and a number",
+      "passwordsNotMatch": "Passwords do not match",
+      "ageInvalid": "Please enter a valid age",
+      "ageMustBe18": "Registration is allowed only for users aged 18 and above"
+    }
+  },
+  "login": {
+    "title": "Welcome back ❤️",
+    "subtitle": "Log in to continue the game",
+    "or": "or",
+    "fields": {
+      "email": "Email",
+      "password": "Password"
+    },
+    "buttons": {
+      "login": "Login",
+      "loginWithGoogle": "Continue with Google"
+    },
+    "transition": {
+      "title": "Signing you in securely",
+      "subtitle": "We are checking your details and preparing your game.",
+      "steps": {
+        "credentials": "Checking your details",
+        "session": "Securing your session",
+        "ready": "Opening your game"
+      }
+    },
+    "links": {
+      "forgotPassword": "Forgot password?",
+      "noAccount": "Don't have an account?",
+      "registerNow": "Register now"
+    },
+    "verifyEmail": {
+      "successTitle": "Email verified",
+      "successMessage": "Your email was verified successfully. You can now log in.",
+      "errorTitle": "Verification failed",
+      "errorMessage": "We could not verify your email. Please try again from the link in your email.",
+      "notVerifiedTitle": "Email not verified",
+      "newEmailSent": "A new verification email has been sent. Please check your inbox and verify your account."
+    },
+    "alerts": {
+      "missingEmailPassword": "Please enter email and password.",
+      "missingEmail": "Email is required.",
+      "missingUserId": "User ID was not returned from the server.",
+      "loginSuccessTitle": "Logged in successfully!",
+      "loginSuccessMessage": "Moving to game style selection...",
+      "loginHttpError": "Login error (HTTP {{status}})",
+      "resetEmailSent": "If the email exists, a reset link was sent.",
+      "resetFailed": "Reset request failed.",
+      "missingUserIdMessage": "User ID was not returned from the server."
+    }
+  },
+  "newPasswordScreen": {
+    "title": "Reset Password",
+    "subtitle": "Account: {{email}}",
+    "helperText": "Enter a new password with at least one uppercase letter, one lowercase letter, and at least 4 numbers.",
+    "fields": {
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password"
+    },
+    "buttons": {
+      "save": "Save New Password",
+      "backToLogin": "Back to Login"
+    },
+    "errors": {
+      "missingEmailOrToken": "Missing email or token.",
+      "emptyFields": "Please enter and confirm your new password.",
+      "passwordMismatch": "Passwords do not match.",
+      "passwordRules": "Password must include at least one uppercase letter, one lowercase letter, and at least 4 numbers.",
+      "resetFailed": "Password reset failed.",
+      "network": "Something went wrong."
+    },
+    "success": {
+      "passwordChanged": "Your password has been changed successfully. You will now be redirected to the login page."
+    }
+  },
+  "resetPasswordModal": {
+    "title": "Reset Password",
+    "subtitle": "Enter your email address and we will send you a reset link.",
+    "fields": {
+      "email": "Email"
+    },
+    "buttons": {
+      "cancel": "Cancel",
+      "sendLink": "Send Link"
+    },
+    "errors": {
+      "emailRequired": "Please enter your email address.",
+      "requestFailed": "Failed to send the reset request.",
+      "network": "A network error occurred."
+    },
+    "success": {
+      "title": "Check Your Email",
+      "message": "A password reset link has been sent to your email address. Please open your email, click the link, and follow the instructions to set a new password."
+    }
+  },
+  "ageGate": {
+    "title": "Adults only (18+)",
+    "message": "This mode contains content intended for adults. Are you 18 or older?",
+    "rememberMe": "Remember my choice",
+    "confirm": "I am 18+",
+    "deny": "Cancel"
+  },
+  "gameModeSelect": {
+    "slogan": {
+      "line1": "Play.",
+      "line2": "Discover.",
+      "line3": "Fall in love again."
+    },
+    "header": {
+      "title": "Choose a game style",
+      "subtitle": "Match the experience to this moment"
+    },
+    "modes": {
+      "couple": {
+        "title": "Romantic Couple",
+        "subtitle": "Time for love and closeness"
+      },
+      "family": {
+        "title": "Whole Family",
+        "subtitle": "Bonding and shared laughs"
+      },
+      "work": {
+        "title": "Team & Work",
+        "subtitle": "Break the ice"
+      },
+      "friendsFun": {
+        "title": "Friends & Drinks",
+        "subtitle": "Silly fun, laughs, and action"
+      }
+    },
+    "alerts": {
+      "soonTitle": "Coming soon",
+      "soonMessage": "This game mode will be available in the next update!",
+      "contactTitle": "Contact",
+      "contactMessage": "You can add a contact screen/link here.",
+      "feedbackTitle": "Feedback",
+      "feedbackMessage": "We'll add a feedback screen here.",
+      "helpTitle": "Help",
+      "helpMessage": "Game instructions will appear here."
+    }
+  },
+  "gameHome": {
+    "header": {
+      "title": "Build Your Game",
+      "subtitle": "Choose tonight's vibe"
+    },
+    "players": {
+      "label1": "Player 1",
+      "label2": "Player 2",
+      "placeholder": "Name...",
+      "default1": "Player 1",
+      "default2": "Player 2"
+    },
+    "categories": {
+      "intro": {
+        "title": "Connection & Discovery",
+        "desc": "Deep questions for a real conversation"
+      },
+      "fun": {
+        "title": "Light & Fun",
+        "desc": "Funny tasks and a good vibe"
+      },
+      "passion": {
+        "title": "Passion & Intimacy",
+        "desc": "Turn up the heat..."
+      }
+    },
+    "buttons": {
+      "start": "Start Playing"
+    },
+    "stars": {
+      "clear": "Clear",
+      "selectAll": "Select all",
+      "title": "Choose card level"
+    },
+    "menu": {
+      "feedbackSoon": "Feedback - Coming soon",
+      "helpSoon": "Help - Coming soon"
+    },
+    "alerts": {
+      "infoTitle": "Info",
+      "errorTitle": "Error",
+      "waitTitle": "Wait a second",
+      "oopsTitle": "Oops",
+      "missingUserId": "Missing user ID. Please log in again and try once more.",
+      "selectAtLeastOne": "Choose at least one card type before starting.",
+      "noCardsFound": "No matching cards were found. Try a different mix of levels and categories.",
+      "serverError": "There was a server connection problem. Please try again in a moment."
+    },
+    "specialDraw": {
+      "title": "Special draw",
+      "subtitle": "Choose which personal cards to show",
+      "favoriteTitle": "Loved the most",
+      "favoriteSubtitle": "Include cards you marked as loved the most",
+      "feedbackLabel": "With feedback",
+      "sharedLabel": "Shared",
+      "hint": "When active, the system will draw from your special cards",
+      "empty": {
+        "favorite": "You have not marked any cards as loved the most yet.",
+        "feedback": "You have not left feedback on cards yet.",
+        "shared": "You have not shared any cards yet.",
+        "combined": "No special cards were found for the filters you selected."
+      }
+    },
+    "instructions": {
+      "title": "Liba: How does it work?",
+      "intro": "Before we dive in, here?s what makes the magic happen:",
+      "sections": {
+        "eyesUp": {
+          "title": "Eyes up, Screens down",
+          "body": "The app is just the excuse. The words on the screen are the key, but the real story happens between you! Look into each other's eyes, listen to the voice ? the most interesting answer is the one that isn't written here."
+        },
+        "noMasks": {
+          "title": "No Masks",
+          "body": "In Liba, there are no right or wrong answers. Don?t try to sound smart or \"okay.\" The closer you get to your raw truth, the deeper the connection will be. Answer from your heart, not your head."
+        },
+        "curiosity": {
+          "title": "Curiosity over Criticism",
+          "body": "When listening, don't prepare your response in your head. Try to understand, not necessarily to agree. Instead of asking \"Why did you say that?\", try: \"Interesting, tell me more about that.\""
+        },
+        "privacy": {
+          "title": "What?s in the heart, stays in the heart",
+          "body": "Privacy is the foundation of trust. Whatever comes up here stays between you. This is your safe space to reveal, dream, and share."
+        },
+        "pass": {
+          "title": "The Emotional Safety Valve: It?s okay to \"Pass\"",
+          "body": "Opening up isn't always easy, and that?s perfectly fine. If a question feels too vulnerable right now ? just skip it. In Liba, choosing not to answer is sometimes just as important an answer. You can always come back to it later."
+        }
+      },
+      "openingMission": {
+        "title": "Opening Mission:",
+        "body": "Before you tap the first card, look each other in the eye, give a high-five or a handshake, and confirm that you?re here for one another."
+      },
+      "atYourOwnPace": {
+        "title": "At Your Own Pace:",
+        "body": "Don?t rush. Build the connection in stages, from the light to the deep. Love, like a fine wine, needs time to breathe and open up."
+      },
+      "ready": "Ready?",
+      "dontShowAgain": "Don't show instructions again",
+      "cta": "Let?s begin"
+    }
+  },
+  "coupleCardsGame": {
+    "header": {
+      "title": "Couple Game",
+      "subtitle": "Quality couple time with questions & challenges ♥️"
+    },
+    "buttons": {
+      "drawCard": "Draw a card",
+      "selectCards": "Select cards",
+      "settings": "Settings",
+      "done": "Done ✔",
+      "skip": "Skip ▶︎",
+      "feedback": "Feedback 📝",
+      "cancel": "Cancel",
+      "sendFeedback": "Send feedback"
+    },
+    "status": {
+      "title": "Game status",
+      "completed": "Completed cards: {{done}} / {{total}}",
+      "turnNow": "Now it's:",
+      "lastCardTitle": "Last card you played",
+      "hint": "Tap “Draw a card” or swipe the top card to start…",
+      "deckEmptyTitle": "Deck is empty!",
+      "deckEmptyMessage": "Go back to selection to start a new game."
+    },
+    "alerts": {
+      "noMoreCardsTitle": "No more cards",
+      "noMoreCardsMessage": "You played all the cards. Go back to card selection to start a new Couple game.",
+      "thanksTitle": "Thanks!",
+      "feedbackSent": "Feedback sent successfully.",
+      "feedbackErrorTitle": "Error",
+      "feedbackErrorMessage": "Could not send feedback right now."
+    },
+    "feedbackModal": {
+      "title": "Feedback about the card",
+      "subtitle": "Tell us what you thought about this card",
+      "helperText": "Your feedback helps us improve the game and add tasks that fit couples like you.",
+      "placeholder": "Write your feedback here…",
+      "sending": "Sending…"
+    },
+    "turn": {
+      "badge": "Turn: {{name}}"
+    }
+  },
+  "familyCardsSelect": {
+    "header": {
+      "title": "Choose game – Family",
+      "subtitle": "Pick card types for a family game and enter participant names"
+    },
+    "instructions": {
+      "title": "Liba Family: How does it work?",
+      "intro": "Before we begin, here is what will help the family magic happen:",
+      "sections": {
+        "screensDown": {
+          "title": "We are all here, not in our screens",
+          "body": "The app is just an excuse. The words on the screen are the key, but the real story is you! Look into each other's eyes - the most interesting answer is the one that isn't written here."
+        },
+        "beYourself": {
+          "title": "Just be yourself",
+          "body": "In Liba, there are no \"right\" answers and no grades. Don't try to sound the way you \"should\" or try to impress anyone. The more honest and simple you are, the more interesting it will be for everyone."
+        },
+        "trueListening": {
+          "title": "True listening",
+          "body": "When someone is speaking, we just listen. No interrupting and no judging. Our goal is to get to know each other a little deeper. Instead of asking \"Why did you say that?\", try: \"That's interesting, tell us more.\""
+        },
+        "familySafeSpace": {
+          "title": "What happens in the family...",
+          "body": "This game is our safe space. Whatever comes up here stays within the family. This is our time to share with confidence, knowing we are being heard."
+        },
+        "pass": {
+          "title": "It's okay to say \"Pass\"",
+          "body": "We don't always feel like sharing everything, and that is perfectly fine. If a question feels less right in the moment, just skip it. In Liba, respecting each other's privacy is part of the game."
+        }
+      },
+      "atYourOwnPace": {
+        "title": "Start at your own pace:",
+        "body": "Don't rush. Give everyone their own time to speak. Family connection is built in those small moments when we truly stop to listen."
+      },
+      "ready": "Ready?",
+      "dontShowAgain": "Don't show instructions again",
+      "cta": "Let's begin"
+    },
+    "players": {
+      "title": "Who is playing?",
+      "dynamicLabel": "Player {{num}}",
+      "addButton": "Add player",
+      "labels": {
+        "p1": "Player 1",
+        "p2": "Player 2",
+        "p3": "Player 3",
+        "p4": "Player 4",
+        "p5": "Player 5",
+        "p6": "Player 6"
+      },
+      "placeholder": "Name..."
+    },
+    "categories": {
+      "intro": {
+        "title": "Family Intro",
+        "description": "Ice-breaker questions that connect everyone at home",
+        "icon": "👨‍👩‍👧‍👦"
+      },
+      "fun": {
+        "title": "Fun & Laughs",
+        "description": "Light challenges that will make kids and adults laugh",
+        "icon": "😄"
+      },
+      "team": {
+        "title": "Family Bonding",
+        "description": "Cards that strengthen teamwork and togetherness",
+        "icon": "🏠"
+      }
+    },
+    "levels": {
+      "clear": "Clear",
+      "selectAll": "Select all",
+      "title": "Choose card level"
+    },
+    "buttons": {
+      "start": "Start playing"
+    },
+    "alerts": {
+      "selectAtLeastOneMessage": "Please select at least one card type (choose stars).",
+      "needTwoPlayersMessage": "For a family game you must enter at least two player names.",
+      "notFoundMessage": "No matching cards were found for this selection.\nTry changing category or difficulty.",
+      "missingUserTitle": "User not found",
+      "missingUserMessage": "Missing user ID. Please sign in again and try again.",
+      "selectAtLeastOneTitle": "Choose card types",
+      "needTwoPlayersTitle": "Not enough players",
+      "notFoundTitle": "No cards found",
+      "noCardsTitle": "No cards found",
+      "noCardsMessage": "No matching cards were found for your selection.",
+      "errorTitle": "Error",
+      "errorMessage": "A connection error occurred. Please try again in a moment."
+    },
+    "specialDraw": {
+      "title": "Special draw",
+      "subtitle": "Choose which personal cards to show",
+      "favoriteTitle": "Loved the most",
+      "favoriteSubtitle": "Include cards you marked as loved the most",
+      "feedbackLabel": "With feedback",
+      "sharedLabel": "Shared",
+      "hint": "When active, the system will draw from your special cards",
+      "empty": {
+        "favorite": "You have not marked any cards as loved the most yet.",
+        "feedback": "You have not left feedback on cards yet.",
+        "shared": "You have not shared any cards yet.",
+        "combined": "No special cards were found for the filters you selected."
+      }
+    }
+  },
+  "familyCardsGame": {
+    "header": {
+      "title": "Family Game",
+      "subtitle": "Quality time with cards and questions"
+    },
+    "emptyPlayers": {
+      "message": "No players were set for the game.",
+      "backButton": "Back to player selection"
+    },
+    "buttons": {
+      "drawCard": "Draw a card",
+      "selectCards": "Select cards",
+      "done": "Done",
+      "skip": "Skip",
+      "feedback": "Feedback",
+      "cancel": "Cancel",
+      "sendFeedback": "Send feedback"
+    },
+    "status": {
+      "title": "Game Status",
+      "completed": "Completed cards: {{done}} / {{total}}",
+      "turnNow": "Now it's:",
+      "lastCardTitle": "Last card you played",
+      "hint": "Tap \"Draw a card\" or swipe the top card to start...",
+      "deckEmptyTitle": "Deck is empty!",
+      "deckEmptyMessage": "Go back to card selection to start a new game."
+    },
+    "inlineAlerts": {
+      "noMoreCards": "There are no more cards in the deck. You can choose new cards in \"Select cards\".",
+      "missingUserForFeedback": "No logged-in user was found for sending feedback.",
+      "missingUser": "No logged-in user was found.",
+      "feedbackMissing": "Please write a few words before sending.",
+      "feedbackSent": "Thanks! Your feedback was sent successfully.",
+      "feedbackError": "Feedback cannot be sent right now."
+    },
+    "feedbackModal": {
+      "title": "Feedback on the card",
+      "subtitle": "Tell us what you thought about this card",
+      "helperText": "Your feedback helps us improve the game and add prompts that fit families like yours.",
+      "placeholder": "Write your feedback here...",
+      "sending": "Sending..."
+    },
+    "category": {
+      "name": {
+        "1": "Family Intro",
+        "2": "Fun & Laughs",
+        "3": "Family Bonding"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "Easy",
+        "2": "Medium",
+        "3": "Hard"
+      }
+    },
+    "turn": {
+      "badge": "Turn: {{name}}"
+    }
+  },
+  "friendsCardsSelect": {
+    "header": {
+      "title": "Choose Game - Friends / Work",
+      "subtitle": "Pick card types and enter participant names"
+    },
+    "instructions": {
+      "title": "Liba Friends & Work: How does it work?",
+      "intro": "Before we get started, here is what will help the magic happen:",
+      "sections": {
+        "fullPresence": {
+          "title": "Full Presence",
+          "body": "The app is just an excuse. The words on the screen are the key, but the real story happens between you! Put the notifications aside and look each other in the eye. The most interesting answer is the one that isn't written here."
+        },
+        "noWorkAnswers": {
+          "title": "No \"Work\" Answers",
+          "body": "In Liba, there are no right or wrong answers. Don't try to sound professional or politically correct. The more you are simply yourself, the more authentic and meaningful the connection will be. Answer from your gut, not your head."
+        },
+        "curiosityOverCriticism": {
+          "title": "Curiosity over Criticism",
+          "body": "When someone shares, we listen to understand, not to react or judge. Instead of asking \"Why did you say that?\", try: \"That's interesting, tell me more about that.\""
+        },
+        "trustAgreement": {
+          "title": "Our Trust Agreement",
+          "body": "To open up, we must feel safe. Whatever comes up here stays only between you. Confidentiality is the foundation for creating a real bond within a group or team."
+        },
+        "rightToSkip": {
+          "title": "The Right to Skip",
+          "body": "This is a game, not an interrogation. If a question feels too personal or just doesn't feel right in the moment, it is perfectly fine to say \"Pass\" and skip it. Mutual respect for everyone's pace is above all else."
+        }
+      },
+      "atYourOwnPace": {
+        "title": "Start at your own pace:",
+        "body": "Don't rush. Let the words sink in. Real connection in a team or among friends is built in those moments when we truly stop to get to know the person sitting across from us."
+      },
+      "ready": "Ready?",
+      "dontShowAgain": "Don't show instructions again",
+      "cta": "Let's begin"
+    },
+    "players": {
+      "title": "Who is playing?",
+      "playerLabel": "Player {{num}}",
+      "addButton": "Add player",
+      "placeholder": "Name..."
+    },
+    "categories": {
+      "intro": {
+        "title": "Intro & Warm-up",
+        "description": "Icebreakers and friendly getting-to-know questions"
+      },
+      "fun": {
+        "title": "Funny Challenges",
+        "description": "Light tasks that will make everyone smile"
+      },
+      "team": {
+        "title": "Team Bonding",
+        "description": "Cards that build cooperation and togetherness"
+      }
+    },
+    "stars": {
+      "clear": "Clear",
+      "selectAll": "Select all",
+      "title": "Choose card level"
+    },
+    "buttons": {
+      "start": "Start playing"
+    },
+    "alerts": {
+      "errorTitle": "Error",
+      "infoTitle": "Info",
+      "waitTitle": "Hold on",
+      "oopsTitle": "Oops",
+      "missingUserId": "Missing user ID. Please sign in again and try again.",
+      "chooseAtLeastOneCategory": "Please select at least one card type (choose stars).",
+      "enterAtLeastOnePlayer": "Please enter at least two player names.",
+      "noCardsForSelection": "No cards were found for this selection. Try changing categories or levels.",
+      "noCardsFound": "No matching cards were found for your selection.",
+      "connectionError": "A connection error occurred. Please try again in a moment."
+    },
+    "menu": {
+      "feedbackSoon": "Feedback - coming soon",
+      "helpSoon": "Help - coming soon"
+    },
+    "specialDraw": {
+      "title": "Special draw",
+      "subtitle": "Choose which personal cards to show",
+      "favoriteTitle": "Loved the most",
+      "favoriteSubtitle": "Include cards you marked as loved the most",
+      "feedbackLabel": "With feedback",
+      "sharedLabel": "Shared",
+      "hint": "When active, the system will draw from your special cards",
+      "empty": {
+        "favorite": "You have not marked any cards as loved the most yet.",
+        "feedback": "You have not left feedback on cards yet.",
+        "shared": "You have not shared any cards yet.",
+        "combined": "No special cards were found for the filters you selected."
+      }
+    }
+  },
+  "friendsCardsGame": {
+    "header": {
+      "title": "Friends / Work Game",
+      "subtitle": "Get to know each other in a fun way"
+    },
+    "categories": {
+      "intro": "Intro & Warm-up",
+      "fun": "Funny Challenges",
+      "team": "Team Bonding"
+    },
+    "levels": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard"
+    },
+    "empty": {
+      "noPlayers": "No players were set for the game.",
+      "backToSelect": "Back to player selection"
+    },
+    "deck": {
+      "emptyTitle": "Deck is empty!",
+      "emptySubtitle": "Choose new cards to start another game."
+    },
+    "buttons": {
+      "draw": "Draw a card",
+      "selectCards": "Select cards"
+    },
+    "status": {
+      "title": "Game Status",
+      "done": "Cards completed: {{revealedCount}} / {{totalCount}}",
+      "nowTurn": "Now it's:",
+      "lastCardTitle": "Last card you played",
+      "hint": "Tap \"Draw a card\" or swipe the top card to start playing..."
+    },
+    "alerts": {
+      "deckEmptyTitle": "No more cards",
+      "deckEmptyMessage": "You have played all the cards. Go back to card selection to start a new game.",
+      "toSelectCards": "To card selection",
+      "close": "Close",
+      "errorTitle": "Error",
+      "noUserForFeedback": "No logged-in user was found for sending feedback.",
+      "noUserLogged": "No logged-in user was found.",
+      "feedbackMissingTitle": "Hold on...",
+      "feedbackMissingMessage": "Please write your feedback before sending.",
+      "thanksTitle": "Thank you!",
+      "feedbackSent": "Your feedback was sent successfully.",
+      "feedbackFailed": "Feedback cannot be sent right now."
+    },
+    "card": {
+      "turnOf": "Turn of: {{name}}",
+      "actions": {
+        "done": "Done",
+        "skip": "Skip",
+        "feedback": "Feedback"
+      }
+    },
+    "feedback": {
+      "title": "Feedback on the card",
+      "subtitle": "Tell us what you thought about the card",
+      "info": "Your feedback helps us improve the game and add better cards for friends and work groups.",
+      "placeholder": "Write your feedback here...",
+      "cancel": "Cancel",
+      "send": "Send feedback",
+      "sending": "Sending..."
+    }
+  },
+  "feedbackScreen": {
+    "title": "App Feedback",
+    "subtitle": "Tell us what you liked, what you didn’t, and any ideas to improve the game 🙂",
+    "placeholder": "Write your feedback here...",
+    "buttons": {
+      "send": "Send feedback",
+      "cancel": "Cancel"
+    },
+    "email": {
+      "label": "Prefer email? Contact us at:",
+      "subject": "App feedback"
+    },
+    "alerts": {
+      "missingUserTitle": "User not found",
+      "missingUserMessage": "We could not identify the current user. Please log in again.",
+      "emptyFeedbackTitle": "Empty feedback",
+      "emptyFeedbackMessage": "Please write some feedback before sending.",
+      "thanksTitle": "Thank you! 💙",
+      "thanksMessage": "Your feedback was sent successfully.",
+      "backButton": "Back",
+      "sendErrorTitle": "Send failed",
+      "sendErrorMessage": "Something went wrong while sending feedback. Please try again later."
+    }
+  },
+  "helpScreen": {
+    "title": "Help Center",
+    "subtitle": "Everything you need to start playing and enjoy",
+    "sections": {
+      "what": {
+        "title": "What does the app do?",
+        "body": "Liba is a card-based app that strengthens connections — for couples, families, and friends."
+      },
+      "howToStart": {
+        "title": "How do I start playing?",
+        "body": "1. Choose game mode. 2. Select categories and difficulty. 3. Start playing!"
+      },
+      "turn": {
+        "title": "How does a turn work?",
+        "body": "Draw a card, read it aloud, complete the task or answer the question, then move to the next player."
+      },
+      "feedback": {
+        "title": "Why send feedback?",
+        "body": "Your feedback helps us improve the cards, fix weak prompts, and build better game experiences."
+      }
+    },
+    "buttons": {
+      "back": "Back",
+      "toGame": "To Game Modes"
+    }
+  },
+  "infoScreen": {
+    "title": "The Engine of Liba",
+    "subtitle": "Because your conversation deserves more than just questions. It deserves depth.",
+    "sections": {
+      "engine": {
+        "title": "The Engine of Liba",
+        "body": "At Liba, we don't just create questions. We build bridges.\n\nImagine an infinite library of human wisdom, deep psychology, and insights gathered over generations. Now imagine a sensitive technological heart that dives into these libraries at any given moment. This is Liba's engine."
+      },
+      "research": {
+        "title": "Research that never stops",
+        "body": "While you are reading these lines, our system continues to investigate. It scans controlled databases, professional literature, and evidence-based studies to refine the most precise words for you. We are not satisfied with generic content or random questions created at the push of an empty button. Every card that appears in the application is the product of in-depth research, careful filtering, and a genuine desire to give you value."
+      },
+      "aiSoul": {
+        "title": "Artificial intelligence with a soul",
+        "body": "In a world flooded with fast and superficial content, it is very easy to produce \"gibberish\" that can lead to unpleasantness or unnecessary fights. At Liba, we chose a different path. Our AI is not the source, it is the researcher. It learns you, your preferences, and the dynamics between you in order to present you with content that builds, connects, and grows."
+      },
+      "transparency": {
+        "title": "Our transparency is your security",
+        "body": "We protect you. Each question undergoes strict quality control to make sure that it opens the heart and does not wound it. When you open a Liba card, you can be calm: deep thought was invested in it, even right now, so that your moment together will be unforgettable."
+      }
+    },
+    "footer": "Because your conversation deserves more than just questions. It deserves depth."
+  },
+  "gameTimer": {
+    "tabs": {
+      "timer": "Timer",
+      "stopwatch": "Stopwatch"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "buttons": {
+      "logout": "Logout",
+      "cancel": "Cancel"
+    },
+    "logout": {
+      "title": "Logout",
+      "message": "Are you sure you want to log out?"
+    }
+  },
+  "updateDetails": {
+    "title": "Complete Your Profile",
+    "subtitle": "Please add your name, gender, and age before continuing.",
+    "buttons": {
+      "save": "Save Details"
+    },
+    "success": {
+      "message": "Details updated successfully."
+    },
+    "errors": {
+      "missingUserId": "Missing user ID.",
+      "updateFailed": "Could not update your details."
+    }
+  },
+  "welcomeScreen": {
+    "title": "Liba Game",
+    "subtitle": "Play, connect, and have fun together",
+    "chooseText": "Welcome, how shall we start?",
+    "loginSubtitle": "I already have an account",
+    "registerSubtitle": "New user",
+    "buttons": {
+      "login": "Login",
+      "register": "Register"
+    }
+  },
+  "menu": {
+    "title": "Menu",
+    "gameMode": "Choose game mode",
+    "couplesCards": "Cards for couples",
+    "familyCards": "Cards for family",
+    "friendsCards": "Cards for friends",
+    "updateDetails": "Update Details",
+    "feedback": "Feedback",
+    "help": "Help",
+    "about": "About",
+    "policyPrivacy": "Policy & Privacy",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "language": "Language",
+    "chooseLanguage": "Choose language",
+    "languages": {
+      "en": "English",
+      "he": "עברית",
+      "es": "Español",
+      "ru": "Русский",
+      "ar": "العربية",
+      "zh": "中文",
+      "fr": "French"
+    },
+    "logout": "Logout",
+    "logoutError": "Logout failed, please try again.",
+    "linkOpenError": "Could not open the link.",
+    "resetInstructions": "Reset instructions",
+    "resetInstructionsSuccess": "Instructions visibility has been reset.",
+    "resetInstructionsError": "Could not reset the instructions right now."
+  },
+  "indexGame": {
+    "title": "Liba - The Game",
+    "subtitle": "Deep connections, one card at a time",
+    "empty": {
+      "title": "No more cards!",
+      "subtitle": "You've finished the deck. Ready for another round?"
+    },
+    "buttons": {
+      "draw": "Draw Card",
+      "settings": "Game Settings"
+    },
+    "status": {
+      "title": "Game Status",
+      "doneCards": "Cards played: {{revealedCount}} / {{totalCount}}",
+      "turnNow": "Current Turn:",
+      "lastCardTitle": "Last card played:",
+      "hint": "Draw a card to start the magic ✨"
+    },
+    "card": {
+      "turnOf": "Turn of: {{player}}",
+      "reactions": {
+        "like": "Liked",
+        "love": "Loved"
+      },
+      "actions": {
+        "done": "We did it 👌",
+        "skip": "Skip it 👈",
+        "feedback": "Rate the moment 👍",
+        "share": "Share the moment 💌"
+      }
+    },
+    "category": {
+      "name": {
+        "1": "Connection",
+        "2": "Fun",
+        "3": "Passion"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "Easy",
+        "2": "Medium",
+        "3": "Hard"
+      }
+    },
+    "alerts": {
+      "noCardsTitle": "Deck Empty",
+      "noCardsMessage": "All cards have been revealed. Returning to menu.",
+      "noUserTitle": "Guest Mode",
+      "noUserMessage": "Please log in to submit feedback on cards.",
+      "feedbackMissingTitle": "Wait...",
+      "feedbackMissingMessage": "Please enter your feedback before sending.",
+      "thanksTitle": "Thank You!",
+      "thanksMessage": "Your feedback helps us make Liba better.",
+      "feedbackErrorTitle": "Error",
+      "feedbackErrorMessage": "Could not send feedback. Please try again later."
+    },
+    "feedback": {
+      "title": "Card Feedback",
+      "subtitle": "What did you think of this prompt?",
+      "note": "Your feedback is anonymous and helps improve the game.",
+      "placeholder": "Write your thoughts here...",
+      "cancel": "Cancel",
+      "send": "Send Feedback"
+    }
+  },
+  "general": {
+    "sending": "Sending..."
+  },
+  "about_title": "About the App",
+  "about_description": "This app is designed to create meaningful and fun experiences between people through interactive cards, questions, and challenges. It helps improve communication, connection, and shared moments.",
+  "about_features_title": "What You’ll Find Here",
+  "about_feature_1": "Couples game mode",
+  "about_feature_2": "Friends and family game modes",
+  "about_feature_3": "Multiple categories and difficulty levels",
+  "about_feature_4": "Multi-language support",
+  "about_goal_title": "Our Goal",
+  "about_goal_text": "Our goal is to help people connect, communicate, and enjoy quality time together in a simple and engaging way.",
+  "about_version_title": "Version",
+  "about_privacy_button": "Open Privacy Policy",
+  "shareCard": {
+    "gameTypes": {
+      "couples": "Couples",
+      "friends": "Friends",
+      "family": "Family"
+    },
+    "footer": {
+      "tagline": "Get closer with LIBA"
+    }
+  }
+}

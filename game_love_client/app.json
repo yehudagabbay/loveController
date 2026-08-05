@@ -1,0 +1,78 @@
+{
+  "expo": {
+    "name": "LIBA",
+    "slug": "liba-game",
+    "owner": "libsa-team",
+    "scheme": [
+      "loveclient",
+      "com.googleusercontent.apps.726714686390-pv5i7cm3k5rhtdbl1aea0hpn3ar9mqpp",
+      "com.googleusercontent.apps.726714686390-lll4a3abu4chgi2ha79t8ca769h2bvrr"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Logo3.jpeg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.liba.game",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "buildNumber": "3"
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "usesCleartextTraffic": false,
+      "package": "com.liba.game",
+      "versionCode": 51,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/Logo3.jpeg",
+        "backgroundColor": "#000000"
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "data": [
+            {
+              "scheme": "loveclient"
+            },
+            {
+              "scheme": "com.googleusercontent.apps.726714686390-pv5i7cm3k5rhtdbl1aea0hpn3ar9mqpp"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-secure-store",
+      "expo-localization",
+      "expo-font",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.726714686390-lll4a3abu4chgi2ha79t8ca769h2bvrr"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "501162f9-a7ce-4845-8f50-015433e543c6"
+      }
+    }
+  }
+}

@@ -22,6 +22,24 @@ namespace controlersLoveGame.Models
         [Required]
         public int ModeID { get; set; } = 1;
 
+        public int? CardType { get; set; }
+
+        public int? AllowedLocation { get; set; }
+
+        public bool IsWorkAndMoney { get; set; }
+
+        public bool IsFutureTalk { get; set; }
+
+        public bool IsHeavyPast { get; set; }
+
+        public bool IsPhysical { get; set; }
+
+        [NotMapped]
+        public int? BookID { get; set; }
+
+        [NotMapped]
+        public int? SubCategoryID { get; set; }
+
         [NotMapped]
         public int LikeStatus { get; set; } = 0;
 

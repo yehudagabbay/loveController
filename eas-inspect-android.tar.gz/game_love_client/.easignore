@@ -1,0 +1,11 @@
+node_modules/
+.expo/
+.gradle/
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+**/.cxx/
+**/build/
+expo-devclient.log
+expo-devclient.err.log

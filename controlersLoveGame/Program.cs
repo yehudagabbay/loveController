@@ -19,6 +19,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<EmailService>();
 builder.Services.AddScoped<SubscriptionService>();
+builder.Services.AddScoped<ISubscriptionService, SubscriptionService>();
+builder.Services.AddScoped<GooglePlayService>();
 builder.Services.AddScoped<AdminAuthEmailService>();
 builder.Services.AddSingleton<AdminSessionTokenService>();
 builder.Services.AddSingleton<AdminPasswordResetStore>();
@@ -88,6 +90,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 app.Use(async (context, next) =>
 {
     var path = context.Request.Path.Value ?? string.Empty;

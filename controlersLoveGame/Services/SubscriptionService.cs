@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace controlersLoveGame.Services
 {
-    public class SubscriptionService
+    public class SubscriptionService : ISubscriptionService
     {
         private readonly LoveGameDbContext _context;
         // מצב זמני להשקה:
@@ -38,6 +38,26 @@ namespace controlersLoveGame.Services
                 s.UserID == userId &&
                 s.IsActive &&
                 s.EndDate > DateTime.UtcNow);
+        }
+
+        public async Task<SubscriptionPlan?> GetUserPlanAsync(int userId)
+        {
+            var activeSubscription = await _context.Subscriptions
+                .Include(s => s.SubscriptionPlan)
+                .Where(s =>
+                    s.UserID == userId &&
+                    s.IsActive &&
+                    s.EndDate > DateTime.UtcNow)
+                .OrderByDescending(s => s.EndDate)
+                .FirstOrDefaultAsync();
+
+            if (activeSubscription?.SubscriptionPlan != null)
+            {
+                return activeSubscription.SubscriptionPlan;
+            }
+
+            return await _context.SubscriptionPlans
+                .FirstOrDefaultAsync(p => p.PlanCode == "FREE" && p.IsActive);
         }
 
         public async Task<(bool Success, string Message, Subscription? Subscription)> SavePurchaseAsync(PurchaseSubscriptionRequest request)

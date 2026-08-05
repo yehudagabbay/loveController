@@ -23,4 +23,9 @@
     <Content Include=".secrets\service-account.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" Link=".secrets\service-account.json" Condition="Exists('.secrets\service-account.json')" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="publish\**" />
+    <None Remove="publish\**" />
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,70 @@
+{
+  "project_info": {
+    "project_number": "726714686390",
+    "project_id": "liba-game",
+    "storage_bucket": "liba-game.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726714686390:android:4a0260ecc5f0b50107ff17",
+        "android_client_info": {
+          "package_name": "com.liba.game"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726714686390-7c84bhkubn9ho8vphdq7ao1egs122e74.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liba.game",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "726714686390-pv5i7cm3k5rhtdbl1aea0hpn3ar9mqpp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liba.game",
+            "certificate_hash": "35fe05861db0c38f6d3a6b8778b779095f8fc258"
+          }
+        },
+        {
+          "client_id": "726714686390-ugbihot8brnesctt4p990r6l3o0agfe7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.liba.game",
+            "certificate_hash": "8eec472fbd55ccb071b76eee5ba8e3c7c6647254"
+          }
+        },
+        {
+          "client_id": "726714686390-s7qsqqu51hhh3mq1srqj74s91907ls2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx9yxoqEP04sqfucQj3EEU3UiJvdeGuA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726714686390-df2iqb16cka5pccs3qspk1ermi6occ75.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "726714686390-lll4a3abu4chgi2ha79t8ca769h2bvrr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.liba.game"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

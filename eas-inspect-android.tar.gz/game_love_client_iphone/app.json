@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "LIBA iPhone",
+    "slug": "liba-game-iphone",
+    "owner": "libsa-team",
+    "scheme": [
+      "loveclient",
+      "com.googleusercontent.apps.726714686390-lll4a3abu4chgi2ha79t8ca769h2bvrr"
+    ],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/Logo3.jpeg",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.liba.game",
+      "buildNumber": "1",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleAllowMixedLocalizations": true
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-web-browser",
+      "expo-secure-store",
+      "expo-localization",
+      "expo-font",
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.726714686390-lll4a3abu4chgi2ha79t8ca769h2bvrr"
+        }
+      ]
+    ],
+    "extra": {}
+  }
+}

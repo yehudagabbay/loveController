@@ -1,0 +1,169 @@
+.welcome-page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding:
+    var(--screen-top-space)
+    var(--screen-edge)
+    var(--screen-bottom-space);
+  background:
+    linear-gradient(135deg, rgba(9, 24, 35, 0.94), rgba(41, 24, 46, 0.9)),
+    radial-gradient(circle at 18% 20%, rgba(45, 212, 191, 0.22), transparent 28rem),
+    radial-gradient(circle at 80% 70%, rgba(244, 114, 182, 0.2), transparent 28rem),
+    #091823;
+  color: #f8fafc;
+}
+
+.welcome-page:has(.couple-select-page),
+.welcome-page:has(.couple-game-page),
+.welcome-page:has(.social-select-page),
+.welcome-page:has(.research-page),
+.welcome-page:has(.couple-research-page),
+.welcome-page:has(.profile-plan-page) {
+  place-items: stretch;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 196, 142, 0.28), transparent 26rem),
+    radial-gradient(circle at 88% 18%, rgba(244, 114, 182, 0.24), transparent 31rem),
+    radial-gradient(circle at 54% 105%, rgba(45, 212, 191, 0.2), transparent 34rem),
+    linear-gradient(132deg, #1d0f19 0%, #321522 44%, #122835 100%);
+}
+
+.welcome-shell {
+  width: min(100%, var(--screen-content-max));
+  min-height: calc(100svh - var(--screen-top-space) - var(--screen-bottom-space));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(24px, 3.6vw, 72px);
+  align-items: stretch;
+}
+
+.welcome-flower-quadrant {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  min-width: 0;
+  min-height: 0;
+  padding-top: clamp(10px, 1.6vh, 28px);
+}
+
+.welcome-main-flower {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.welcome-content-quadrant {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  justify-self: center;
+  width: min(100%, 780px);
+  display: grid;
+  justify-items: start;
+  align-items: center;
+  text-align: start;
+}
+
+.welcome-brand {
+  width: max-content;
+  max-width: 100%;
+  margin-bottom: clamp(26px, 4vw, 54px);
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+.welcome-created {
+  margin: 0 0 10px;
+  color: #99f6e4;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 800;
+}
+
+.welcome-shell h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(56px, 12vw, 148px);
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.welcome-message {
+  max-width: 48rem;
+  margin: 24px 0 0;
+  color: #dbeafe;
+  font-size: clamp(20px, 2.8vw, 34px);
+  line-height: 1.45;
+}
+
+.welcome-games-button {
+  width: min(100%, 430px);
+  min-height: clamp(66px, 7vh, 88px);
+  margin-top: clamp(28px, 4vh, 54px);
+  border: 0;
+  border-radius: 8px;
+  padding: 14px 24px;
+  color: #08151f;
+  background: linear-gradient(135deg, #ffd7b0, #f9a8d4 48%, #5eead4);
+  font: inherit;
+  font-size: clamp(18px, 1.45vw, 26px);
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow:
+    0 24px 60px rgba(249, 168, 212, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+  transition: transform 170ms ease, box-shadow 170ms ease;
+}
+
+.welcome-games-button:hover,
+.welcome-games-button:focus-visible {
+  outline: none;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 34px 78px rgba(249, 168, 212, 0.34),
+    0 0 0 4px rgba(94, 234, 212, 0.24),
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset;
+}
+
+html[dir='rtl'] .welcome-content-quadrant {
+  text-align: right;
+}
+
+html[dir='ltr'] .welcome-content-quadrant {
+  text-align: left;
+}
+
+@media (max-width: 980px) {
+  .welcome-shell {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .welcome-flower-quadrant,
+  .welcome-content-quadrant {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: center;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .welcome-content-quadrant,
+  html[dir='rtl'] .welcome-content-quadrant,
+  html[dir='ltr'] .welcome-content-quadrant {
+    text-align: center;
+  }
+
+  .welcome-message {
+    margin-inline: auto;
+  }
+
+  .welcome-games-button {
+    margin-inline: auto;
+  }
+}

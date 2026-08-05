@@ -1,0 +1,539 @@
+.social-select-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100svh - var(--screen-top-space) - var(--screen-bottom-space));
+  display: grid;
+  gap: clamp(22px, 3vh, 42px);
+  padding: clamp(24px, 3vh, 46px) 0;
+  color: #f8fafc;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.social-select-atmosphere {
+  position: absolute;
+  inset: 0 calc(var(--screen-edge) * -1);
+  z-index: -2;
+  overflow: hidden;
+}
+
+.friends-select-page .social-select-atmosphere {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(96, 165, 250, 0.34), transparent 28rem),
+    radial-gradient(circle at 88% 14%, rgba(251, 191, 36, 0.22), transparent 30rem),
+    radial-gradient(circle at 54% 104%, rgba(45, 212, 191, 0.22), transparent 32rem),
+    linear-gradient(135deg, #071622 0%, #112c3f 46%, #19172d 100%);
+}
+
+.family-select-page .social-select-atmosphere {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(252, 211, 77, 0.3), transparent 26rem),
+    radial-gradient(circle at 86% 16%, rgba(74, 222, 128, 0.24), transparent 31rem),
+    radial-gradient(circle at 52% 105%, rgba(244, 114, 182, 0.16), transparent 34rem),
+    linear-gradient(135deg, #172414 0%, #2f2a16 46%, #17313a 100%);
+}
+
+.social-select-atmosphere span {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  opacity: 0.82;
+}
+
+.social-select-atmosphere span:nth-child(1) {
+  width: min(44vw, 640px);
+  aspect-ratio: 1;
+  top: -18%;
+  inset-inline-start: -8%;
+}
+
+.social-select-atmosphere span:nth-child(2) {
+  width: min(28vw, 420px);
+  aspect-ratio: 1;
+  bottom: 7%;
+  inset-inline-end: 8%;
+}
+
+.social-select-atmosphere span:nth-child(3) {
+  width: min(18vw, 260px);
+  aspect-ratio: 1;
+  top: 22%;
+  inset-inline-end: 28%;
+}
+
+.social-select-hero,
+.social-select-grid {
+  width: min(100%, 1480px);
+  margin-inline: auto;
+}
+
+.social-select-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(24px, 5vw, 84px);
+  align-items: center;
+}
+
+.social-select-kicker {
+  width: max-content;
+  max-width: 100%;
+  margin: 0 0 12px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fef3c7;
+  font-size: clamp(12px, 0.78vw, 14px);
+  font-weight: 950;
+}
+
+.friends-select-page .social-select-kicker {
+  color: #bfdbfe;
+}
+
+.social-select-hero h1 {
+  max-width: 1000px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(46px, 5.2vw, 90px);
+  line-height: 0.98;
+}
+
+.social-select-hero p,
+.social-section-heading p,
+.social-draw-panel p,
+.social-card-top p {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: clamp(16px, 1.05vw, 20px);
+  line-height: 1.62;
+}
+
+.social-select-hero p {
+  max-width: 760px;
+  font-size: clamp(18px, 1.35vw, 24px);
+}
+
+.social-select-flower {
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 68%);
+}
+
+.social-select-grid,
+.social-start-zone {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(16px, 2vh, 26px);
+  align-items: start;
+}
+
+.social-section-heading {
+  max-width: 780px;
+  margin-bottom: 18px;
+}
+
+.social-section-heading h2,
+.social-draw-panel h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 3vw, 48px);
+  line-height: 1.08;
+}
+
+.social-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.5vw, 22px);
+}
+
+.social-category-card,
+.social-draw-panel {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
+}
+
+.social-category-card {
+  min-height: clamp(405px, 44vh, 520px);
+  display: grid;
+  grid-template-rows: minmax(132px, auto) minmax(178px, 1fr) 50px;
+  gap: 14px;
+  padding: clamp(18px, 1.7vw, 26px);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  animation: socialCardEnter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(var(--card-index) * 80ms);
+}
+
+.friends-select-page .social-category-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045)),
+    rgba(10, 21, 36, 0.62);
+}
+
+.family-select-page .social-category-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.05)),
+    rgba(37, 32, 18, 0.64);
+}
+
+.social-card-top span {
+  display: inline-flex;
+  margin-bottom: 14px;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fef3c7;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.friends-select-page .social-card-top span {
+  color: #bfdbfe;
+}
+
+.social-card-top h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(24px, 1.8vw, 34px);
+  line-height: 1.12;
+  min-height: 2.24em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.social-select-page[dir='ltr'] .social-card-top h2 {
+  justify-content: flex-start;
+}
+
+.social-card-top p {
+  min-height: 3.2em;
+}
+
+.social-level-buttons {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(50px, 1fr));
+  align-content: stretch;
+  gap: 10px;
+}
+
+.social-level-buttons button,
+.social-select-all,
+.social-filter-options button,
+.social-start-button {
+  min-height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #ffffff;
+  background: rgba(4, 10, 18, 0.35);
+  font: inherit;
+  font-weight: 950;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.social-level-buttons button {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  text-align: right;
+  min-height: 0;
+}
+
+.social-select-page[dir='ltr'] .social-level-buttons button {
+  justify-items: start;
+  text-align: left;
+}
+
+.social-level-buttons button:hover,
+.social-select-all:hover,
+.social-filter-options button:hover,
+.social-start-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.social-level-buttons button.selected,
+.social-select-all.selected,
+.social-filter-options button.selected {
+  color: #071622;
+}
+
+.friends-select-page .social-level-buttons button.selected,
+.friends-select-page .social-select-all.selected,
+.friends-select-page .social-filter-options button.selected {
+  background: linear-gradient(135deg, #bfdbfe, #5eead4);
+}
+
+.family-select-page .social-level-buttons button.selected,
+.family-select-page .social-select-all.selected,
+.family-select-page .social-filter-options button.selected {
+  background: linear-gradient(135deg, #fde68a, #86efac);
+}
+
+.social-level-buttons small {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.social-status-filter-card,
+.social-play-style-card {
+  display: grid;
+  align-items: center;
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: 10px;
+  padding: clamp(14px, 1.4vw, 20px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.social-status-filter-card {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.social-play-style-card {
+  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1fr);
+  align-items: stretch;
+  padding: clamp(16px, 1.6vw, 24px);
+  background:
+    radial-gradient(circle at 80% 20%, rgba(94, 234, 212, 0.13), transparent 24rem),
+    rgba(255, 255, 255, 0.07);
+}
+
+.family-select-page .social-play-style-card {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(252, 211, 77, 0.16), transparent 24rem),
+    rgba(255, 255, 255, 0.07);
+}
+
+.social-status-filter-card h2,
+.social-play-style-card h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(22px, 2vw, 34px);
+  line-height: 1.08;
+}
+
+.social-status-filter-card p,
+.social-play-style-card p {
+  margin: 8px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(14px, 0.88vw, 17px);
+  line-height: 1.48;
+}
+
+.social-draw-panel {
+  min-height: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(130px, 0.18fr) auto;
+  align-items: center;
+  gap: clamp(10px, 1vw, 16px);
+  padding: clamp(9px, 0.9vw, 14px) clamp(12px, 1.1vw, 18px);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.045)),
+    rgba(3, 8, 14, 0.56);
+}
+
+.family-select-page .social-draw-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05)),
+    rgba(31, 26, 14, 0.62);
+}
+
+.social-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.social-select-page[dir='rtl'] .social-filter-options {
+  justify-content: flex-start;
+}
+
+.social-play-style-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.social-play-style-options button {
+  min-height: 102px;
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #ffffff;
+  background: rgba(4, 10, 18, 0.35);
+  font: inherit;
+  cursor: pointer;
+  text-align: start;
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.social-play-style-options button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.social-play-style-options button.selected {
+  color: #071622;
+}
+
+.friends-select-page .social-play-style-options button.selected {
+  background: linear-gradient(135deg, #bfdbfe, #5eead4);
+}
+
+.family-select-page .social-play-style-options button.selected {
+  background: linear-gradient(135deg, #fde68a, #86efac);
+}
+
+.social-play-style-options button span {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1.35;
+  opacity: 0.78;
+}
+
+.social-start-button {
+  width: min(100%, 520px);
+  min-height: 62px;
+  border: 0;
+  color: #071622;
+  font-size: clamp(18px, 1.25vw, 24px);
+}
+
+.social-start-zone {
+  width: min(100%, 1480px);
+  margin: clamp(4px, 0.8vh, 10px) auto 0;
+  place-items: center;
+  padding: clamp(12px, 1.4vw, 20px);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.13), transparent 34rem),
+    rgba(255, 255, 255, 0.045);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.friends-select-page .social-start-button {
+  background: linear-gradient(135deg, #bfdbfe, #5eead4);
+}
+
+.family-select-page .social-start-button {
+  background: linear-gradient(135deg, #fde68a, #86efac);
+}
+
+.social-start-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.44;
+}
+
+.social-summary-meter {
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-summary-meter span {
+  display: block;
+  width: var(--summary-fill);
+  height: 100%;
+  border-radius: inherit;
+  transition: width 220ms ease;
+}
+
+.friends-select-page .social-summary-meter span {
+  background: linear-gradient(90deg, #bfdbfe, #5eead4, #fef3c7);
+}
+
+.family-select-page .social-summary-meter span {
+  background: linear-gradient(90deg, #fde68a, #86efac, #f9a8d4);
+}
+
+.social-draw-error {
+  margin: 0;
+  color: #fecdd3;
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1.45;
+}
+
+@keyframes socialCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 1180px) {
+  .social-select-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .social-select-flower {
+    justify-self: center;
+  }
+
+  .social-draw-panel {
+    grid-template-columns: minmax(0, 1fr) minmax(180px, 0.28fr);
+  }
+
+  .social-summary-meter {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 980px) {
+  .social-select-page {
+    padding: 26px 16px 42px;
+  }
+
+  .social-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social-status-filter-card,
+  .social-play-style-card,
+  .social-draw-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .social-play-style-options {
+    grid-template-columns: 1fr;
+  }
+
+  .social-category-card {
+    min-height: auto;
+  }
+
+  .social-filter-options {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-category-card {
+    animation: none;
+  }
+}

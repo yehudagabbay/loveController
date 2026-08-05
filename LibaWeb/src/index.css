@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --screen-edge: clamp(18px, 2.2vw, 42px);
+  --screen-top-space: clamp(96px, 10vh, 132px);
+  --screen-bottom-space: clamp(24px, 5vh, 72px);
+  --screen-content-max: 1920px;
+  --panel-radius: 8px;
+  font-family: system-ui, 'Segoe UI', Arial, sans-serif;
+  color: #f8fafc;
+  background: #0f172a;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  letter-spacing: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.route-transition-frame {
+  min-height: 100vh;
+  animation: routeSoftEnter 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  will-change: opacity, transform, filter;
+}
+
+@keyframes routeSoftEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.996);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-transition-frame {
+    animation: none;
+  }
+}

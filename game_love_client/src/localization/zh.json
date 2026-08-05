@@ -1,0 +1,1315 @@
+{
+  "common": {
+    "cardSelection": {
+      "chooseTypes": "选择卡片类型",
+      "chooseDepth": "选择游戏的轻松或深入程度",
+      "whatPlaying": "玩什么？",
+      "whoPlaying": "谁来玩？",
+      "tapToChooseGame": "点击选择卡片类型",
+      "participantsCount": "{{count}} 位玩家",
+      "playersHint": "可以填写名字，也可以留空直接开始。",
+      "optional": "选填",
+      "removePlayer": "移除玩家",
+      "levelPrompt": "你们想聊到什么程度？",
+      "levels": {
+        "light": "轻松",
+        "personal": "个人",
+        "deep": "深入"
+      }
+    },
+    "playerRoulette": {
+      "toggleTitle": "玩家转盘",
+      "toggleSubtitle": "每张卡片前先转一下，让运气决定轮到谁。",
+      "title": "谁来抽卡？",
+      "idle": "用手指转动转盘，或点按钮。",
+      "spinning": "转盘正在选择...",
+      "selected": "轮到",
+      "spinButton": "转动",
+      "revealButton": "翻开卡片",
+      "continueButton": "去看卡片",
+      "disableButton": "不使用转盘",
+      "enableButton": "使用转盘",
+      "addPlayerButton": "添加玩家",
+      "maxPlayersReached": "最多 {{count}} 位玩家",
+      "playerPlaceholder": "玩家",
+      "cancel": "取消"
+    },
+    "categories": {
+      "relations": "关系",
+      "fun": "趣味",
+      "love": "爱"
+    },
+    "levels": {
+      "easy": "简单",
+      "medium": "中等",
+      "hard": "困难"
+    },
+    "general": {
+      "sending": "正在发送...",
+      "loading": "加载中..."
+    }
+  },
+  "alerts": {
+    "successTitle": "成功",
+    "errorTitle": "错误",
+    "networkErrorTitle": "网络错误",
+    "infoTitle": "提示",
+    "waitTitle": "稍等片刻",
+    "oopsTitle": "哎呀"
+  },
+  "registration": {
+    "title": "注册",
+    "fields": {
+      "nickname": "昵称",
+      "genderLabel": "性别：",
+      "email": "邮箱",
+      "password": "密码",
+      "confirmPassword": "确认密码",
+      "age": "年龄"
+    },
+    "gender": {
+      "male": "男",
+      "female": "女"
+    },
+    "buttons": {
+      "register": "注册",
+      "registerWithGoogle": "使用 Google 注册",
+      "registerWithFacebook": "使用 Facebook 注册"
+    },
+    "links": {
+      "haveAccount": "已有账号？在此登录"
+    },
+    "alerts": {
+      "registerSuccess": "注册成功！",
+      "verifyEmailNotice": "注册成功！请在登录前检查您的邮箱并验证账户。",
+      "registerHttpError": "注册错误 (HTTP {{status}})",
+      "emailAlreadyExists": "Email address already exists"
+    },
+    "socialRegister": {
+      "cancelled": {
+        "title": "已取消",
+        "message": "Google 登录已取消。"
+      },
+      "success": {
+        "message": "您已成功使用 Google 登录！",
+        "confirm": "确定"
+      },
+      "errors": {
+        "googleOpenFailed": "无法打开 Google 登录。",
+        "googleAuthError": "Google 认证错误：{{code}}",
+        "missingIdToken": "未收到 id_token。请检查 OAuth 和重定向设置。",
+        "firebaseFailed": "Firebase 登录失败。"
+      }
+    },
+    "errors": {
+      "nicknameRequired": "请输入昵称",
+      "genderRequired": "请选择性别",
+      "emailRequired": "请输入邮箱",
+      "emailInvalid": "邮箱格式无效",
+      "passwordRequired": "请输入密码",
+      "passwordWeak": "密码必须至少包含 6 个字符，且包括字母和数字",
+      "passwordsNotMatch": "密码不匹配",
+      "ageInvalid": "请输入有效的年龄",
+      "ageMustBe18": "Registration is allowed only for users aged 18 and above"
+    }
+  },
+  "login": {
+    "title": "欢迎回来 ❤️",
+    "subtitle": "登录以继续游戏",
+    "fields": {
+      "email": "邮箱",
+      "password": "密码"
+    },
+    "buttons": {
+      "login": "登录"
+    },
+    "links": {
+      "forgotPassword": "忘记密码？",
+      "noAccount": "还没有账号？",
+      "registerNow": "立即注册"
+    },
+    "verifyEmail": {
+      "successTitle": "邮箱已验证",
+      "successMessage": "您的邮箱已成功验证。您现在可以登录了。",
+      "errorTitle": "验证失败",
+      "errorMessage": "我们无法验证您的邮箱。请再次尝试邮件中的链接。",
+      "notVerifiedTitle": "Email not verified",
+      "newEmailSent": "新的验证邮件已发送。请检查您的收件箱并验证您的账户。"
+    },
+    "alerts": {
+      "missingEmailPassword": "请输入邮箱和密码。",
+      "missingEmail": "邮箱是必填项。",
+      "missingUserId": "服务器未返回用户 ID。",
+      "loginSuccessTitle": "登录成功！",
+      "loginSuccessMessage": "正在进入游戏风格选择...",
+      "loginHttpError": "登录错误 (HTTP {{status}})",
+      "resetEmailSent": "如果该邮箱存在，重置链接已发送。",
+      "resetFailed": "重置请求失败。",
+      "missingUserIdMessage": "服务器未返回用户 ID。"
+    }
+  },
+  "newPasswordScreen": {
+    "title": "重置密码",
+    "subtitle": "账户：{{email}}",
+    "helperText": "输入新密码，至少包含一个大写字母、一个小写字母和至少 4 个数字。",
+    "fields": {
+      "newPassword": "新密码",
+      "confirmPassword": "确认密码"
+    },
+    "buttons": {
+      "save": "保存新密码",
+      "backToLogin": "返回登录"
+    },
+    "errors": {
+      "missingEmailOrToken": "缺少邮箱或令牌。",
+      "emptyFields": "请输入并确认您的新密码。",
+      "passwordMismatch": "密码不匹配。",
+      "passwordRules": "密码必须包含至少一个大写字母、一个小写字母和至少 4 个数字。",
+      "resetFailed": "密码重置失败。",
+      "network": "出错了。"
+    },
+    "success": {
+      "passwordChanged": "您的密码已成功更改。您现在将被重定向到登录页面。"
+    }
+  },
+  "resetPasswordModal": {
+    "title": "重置密码",
+    "subtitle": "输入您的邮箱地址，我们将向您发送重置链接。",
+    "fields": {
+      "email": "邮箱"
+    },
+    "buttons": {
+      "cancel": "取消",
+      "sendLink": "发送链接"
+    },
+    "errors": {
+      "emailRequired": "请输入您的邮箱地址。",
+      "requestFailed": "发送重置请求失败。",
+      "network": "发生网络错误。"
+    },
+    "success": {
+      "title": "检查您的邮箱",
+      "message": "密码重置链接已发送到您的邮箱。请打开邮件，点击链接并按照说明设置新密码。"
+    }
+  },
+  "ageGate": {
+    "title": "仅限成人 (18+)",
+    "message": "此模式包含成人内容。您年满 18 岁吗？",
+    "rememberMe": "记住我的选择",
+    "confirm": "我已年满 18 岁",
+    "deny": "取消"
+  },
+  "gameModeSelect": {
+    "slogan": {
+      "line1": "玩乐。",
+      "line2": "发现。",
+      "line3": "再次坠入爱河。"
+    },
+    "header": {
+      "title": "选择游戏风格",
+      "subtitle": "让体验契合当下的瞬间"
+    },
+    "modes": {
+      "couple": {
+        "title": "浪漫情侣",
+        "subtitle": "爱与亲密的时光"
+      },
+      "family": {
+        "title": "全家老少",
+        "subtitle": "凝聚与共享欢笑"
+      },
+      "work": {
+        "title": "团队与职场",
+        "subtitle": "打破冰层"
+      },
+      "friendsFun": {
+        "title": "好友与派对",
+        "subtitle": "尽情胡闹、大笑与行动"
+      },
+      "perfectDate": {
+        "title": "完美约会",
+        "subtitle": "为 Premium 准备的浪漫体验"
+      }
+    },
+    "alerts": {
+      "soonTitle": "即将推出",
+      "soonMessage": "此游戏模式将在下次更新中推出！",
+      "contactTitle": "联系我们",
+      "contactMessage": "您可以在此添加联系页面/链接。",
+      "feedbackTitle": "反馈",
+      "feedbackMessage": "我们将在此添加反馈页面。",
+      "helpTitle": "帮助",
+      "helpMessage": "游戏说明将显示在这里。",
+      "premiumSoonTitle": "Premium 即将开放",
+      "perfectDateSoonMessage": "完美约会很快会作为 Premium 的特别体验上线。"
+    }
+  },
+  "gameHome": {
+    "header": {
+      "title": "创建您的游戏",
+      "subtitle": "选择今晚的氛围"
+    },
+    "players": {
+      "label1": "玩家 1",
+      "label2": "玩家 2",
+      "placeholder": "姓名...",
+      "default1": "玩家 1",
+      "default2": "玩家 2"
+    },
+    "categories": {
+      "intro": {
+        "title": "连接与发现",
+        "desc": "深入交流的问题"
+      },
+      "fun": {
+        "title": "轻松有趣",
+        "desc": "有趣的任务和良好氛围"
+      },
+      "passion": {
+        "title": "激情与亲密",
+        "desc": "升温感情..."
+      }
+    },
+    "buttons": {
+      "start": "开始游戏"
+    },
+    "stars": {
+      "clear": "清除",
+      "selectAll": "全选",
+      "title": "选择卡片等级"
+    },
+    "menu": {
+      "feedbackSoon": "反馈：即将推出",
+      "helpSoon": "帮助：即将推出"
+    },
+    "alerts": {
+      "infoTitle": "提示",
+      "errorTitle": "错误",
+      "waitTitle": "稍等片刻",
+      "oopsTitle": "哎呀",
+      "missingUserId": "缺少用户 ID。请重新登录并重试。",
+      "selectAtLeastOne": "开始前请至少选择一种卡片类型。",
+      "noCardsFound": "未找到匹配的卡片。请尝试不同的等级和分类组合。",
+      "serverError": "服务器连接出现问题。请稍后再试。"
+    },
+    "specialDraw": {
+      "subtitle": "选择要显示的个人卡片",
+      "hint": "启用后，系统会从你的特别卡片中抽取",
+      "sharedLabel": "已分享",
+      "title": "特别抽取",
+      "feedbackLabel": "带评论",
+      "favoriteSubtitle": "包含你标记为特别喜欢的卡片",
+      "empty": {
+        "shared": "你还没有分享任何卡片。",
+        "favorite": "你还没有标记任何卡片为特别喜欢。",
+        "combined": "未找到符合所选筛选条件的特别卡片。",
+        "feedback": "你还没有在卡片上留下评论。"
+      },
+      "favoriteTitle": "特别喜欢"
+    },
+    "instructions": {
+      "title": "Liba：它是如何互动的？",
+      "intro": "在开启这段旅程之前，以下是让共鸣发生的“秘诀”：",
+      "sections": {
+        "eyesUp": {
+          "title": "注视彼此，而非屏幕",
+          "body": "这款应用只是一个载体。屏幕上的文字是钥匙，但真正的故事发生在你们之间！注视对方的眼睛，聆听对方的声音，最有趣的答案往往不在屏幕上。"
+        },
+        "noMasks": {
+          "title": "卸下伪装",
+          "body": "在 Liba，没有所谓的“标准答案”。不必试着让自己听起来很聪明或“表现得体”。你越坦诚，你们的连接就越深。听从内心的声音，而不是大脑的逻辑。"
+        },
+        "curiosity": {
+          "title": "用好奇取代评判",
+          "body": "倾听时，不要在脑中预演你的回应。试着去理解，而不是去争论对错。与其问“你为什么这么说？”，不如试着说：“很有意思，再多跟我分享一点吧。”"
+        },
+        "privacy": {
+          "title": "心声，只留给彼此",
+          "body": "私密性是信任的基石。在这里分享的一切，仅属于你们两人。这是你们揭开内心、共同构筑梦想与分享的避风港。"
+        },
+        "pass": {
+          "title": "情感安全阀：随时可以说“过”",
+          "body": "敞开心扉并不总是那么容易，这完全没关系。如果某个问题让你觉得目前太过于私密，直接跳过即可。在 Liba，选择不回答有时本身就是一个重要的答案。以后有缘再聊也不迟。"
+        }
+      },
+      "openingMission": {
+        "title": "开启任务：",
+        "body": "在点击第一张卡片之前，请注视彼此的眼睛，击个掌或握个手，确认此时此刻，你们都在全心全意地陪伴对方。"
+      },
+      "atYourOwnPace": {
+        "title": "节奏由你们掌控：",
+        "body": "不要急。循序渐进地建立连接，由浅入深。爱如醇酒，需要时间去呼吸、去沉淀。"
+      },
+      "ready": "准备好了吗？",
+      "dontShowAgain": "不要再次显示这些说明",
+      "cta": "开始吧"
+    }
+  },
+  "coupleCardsGame": {
+    "header": {
+      "title": "情侣游戏",
+      "subtitle": "伴随问题与挑战的优质情侣时光 ♥️"
+    },
+    "buttons": {
+      "drawCard": "抽牌",
+      "selectCards": "选择卡片",
+      "settings": "设置",
+      "done": "完成 ✔",
+      "skip": "跳过 ▶︎",
+      "feedback": "反馈 📝",
+      "cancel": "取消",
+      "sendFeedback": "发送反馈"
+    },
+    "status": {
+      "title": "游戏状态",
+      "completed": "已完成卡片：{{done}} / {{total}}",
+      "turnNow": "现在轮到：",
+      "lastCardTitle": "您上一张出的牌",
+      "hint": "点击“抽牌”或滑动顶部卡片以开始...",
+      "deckEmptyTitle": "牌堆空了！",
+      "deckEmptyMessage": "返回选择以开始新游戏。"
+    },
+    "alerts": {
+      "noMoreCardsTitle": "没有更多卡片",
+      "noMoreCardsMessage": "您已经玩完了所有卡片。返回卡片选择以开始新的情侣游戏。",
+      "thanksTitle": "谢谢！",
+      "feedbackSent": "反馈已成功发送。",
+      "feedbackErrorTitle": "错误",
+      "feedbackErrorMessage": "目前无法发送反馈。"
+    },
+    "feedbackModal": {
+      "title": "关于卡片的反馈",
+      "subtitle": "告诉我们您对这张卡片的看法",
+      "helperText": "您的反馈能帮助我们改进游戏，并增加适合像您这样情侣的任务。",
+      "placeholder": "在此写下您的反馈...",
+      "sending": "发送中..."
+    },
+    "turn": {
+      "badge": "轮到：{{name}}"
+    }
+  },
+  "familyCardsSelect": {
+    "header": {
+      "title": "选择游戏：家庭",
+      "subtitle": "为家庭游戏挑选卡片类型并输入参与者姓名"
+    },
+    "instructions": {
+      "title": "Liba Family：怎么玩？",
+      "intro": "开始之前，这些小提醒会让家庭里的温度更自然地发生：",
+      "sections": {
+        "screensDown": {
+          "title": "人到场，心也到场，别留在屏幕里",
+          "body": "这个应用只是一个由头。屏幕上的文字只是钥匙，真正的故事是你们自己。看着彼此的眼睛吧，最有意思的答案，往往不是写在这里的那一句。"
+        },
+        "beYourself": {
+          "title": "做你自己就够了",
+          "body": "在 Liba 里，没有所谓的“标准答案”，也没有评分。不需要说得多漂亮，也不用刻意表现什么。越真诚、越自然，大家就越能真正靠近。"
+        },
+        "trueListening": {
+          "title": "认真倾听",
+          "body": "当一个人在说话时，我们就先认真听。不打断，也不评判。我们的目标，是更深入地认识彼此。与其问“你为什么这么说？”，不如试试：“这很有意思，再多说一点吧。”"
+        },
+        "familySafeSpace": {
+          "title": "家里的话，留在家里",
+          "body": "这个游戏是属于家人的安全空间。这里出现的一切，都留在家庭里。这是我们可以安心分享、放心表达的时刻，因为我们知道彼此会认真听见。"
+        },
+        "pass": {
+          "title": "说“跳过”也没关系",
+          "body": "不是每一次，我们都想把所有心里话说出来，这完全没问题。如果某个问题在当下让人不太舒服，就先跳过吧。在 Liba 里，尊重彼此的边界，也是游戏的一部分。"
+        }
+      },
+      "atYourOwnPace": {
+        "title": "按你们自己的节奏开始：",
+        "body": "别着急。给每个人一点属于自己的发言时间。家庭之间的连接，往往就建立在那些我们真正停下来、认真倾听的小瞬间里。"
+      },
+      "ready": "准备好了吗？",
+      "dontShowAgain": "不再显示这些说明",
+      "cta": "开始吧"
+    },
+    "players": {
+      "title": "谁在玩？",
+      "labels": {
+        "p1": "玩家 1",
+        "p2": "玩家 2",
+        "p3": "玩家 3",
+        "p4": "玩家 4",
+        "p5": "玩家 5",
+        "p6": "玩家 6"
+      },
+      "placeholder": "姓名...",
+      "dynamicLabel": "Player {{num}}",
+      "addButton": "Add player"
+    },
+    "categories": {
+      "intro": {
+        "title": "家庭开场",
+        "description": "连接家中每个人的破冰问题",
+        "icon": "👨‍👩‍👧‍👦"
+      },
+      "fun": {
+        "title": "欢乐与笑声",
+        "description": "能让孩子和成人都开怀大笑的轻松挑战",
+        "icon": "😄"
+      },
+      "team": {
+        "title": "家庭纽带",
+        "description": "增强团队协作与凝聚力的卡片",
+        "icon": "🏠"
+      }
+    },
+    "levels": {
+      "clear": "清除",
+      "selectAll": "全选",
+      "title": "选择卡片等级"
+    },
+    "buttons": {
+      "start": "开始游戏"
+    },
+    "alerts": {
+      "selectAtLeastOneMessage": "请至少选择一种卡片类型（选择星级）。",
+      "needTwoPlayersMessage": "家庭游戏必须输入至少两个玩家的名字。",
+      "notFoundMessage": "未找到匹配此选择的卡片。\n请尝试更改分类或难度。",
+      "missingUserTitle": "未找到用户",
+      "missingUserMessage": "缺少用户 ID。请重新登录后再试一次。",
+      "selectAtLeastOneTitle": "请选择卡片类型",
+      "needTwoPlayersTitle": "玩家人数不足",
+      "notFoundTitle": "未找到卡片",
+      "noCardsTitle": "未找到卡片",
+      "noCardsMessage": "未找到符合您选择的卡片。",
+      "errorTitle": "错误",
+      "errorMessage": "发生连接错误。请稍后再试。"
+    },
+    "specialDraw": {
+      "subtitle": "选择要显示的个人卡片",
+      "hint": "启用后，系统会从你的特别卡片中抽取",
+      "sharedLabel": "已分享",
+      "title": "特别抽取",
+      "feedbackLabel": "带评论",
+      "favoriteSubtitle": "包含你标记为特别喜欢的卡片",
+      "empty": {
+        "shared": "你还没有分享任何卡片。",
+        "favorite": "你还没有标记任何卡片为特别喜欢。",
+        "combined": "未找到符合所选筛选条件的特别卡片。",
+        "feedback": "你还没有在卡片上留下评论。"
+      },
+      "favoriteTitle": "特别喜欢"
+    }
+  },
+  "familyCardsGame": {
+    "header": {
+      "title": "家庭游戏",
+      "subtitle": "伴随卡片与问题的优质时光"
+    },
+    "emptyPlayers": {
+      "message": "未设置游戏玩家。",
+      "backButton": "返回玩家选择"
+    },
+    "buttons": {
+      "drawCard": "抽牌",
+      "selectCards": "选择卡片",
+      "done": "完成",
+      "skip": "跳过",
+      "feedback": "反馈",
+      "cancel": "取消",
+      "sendFeedback": "发送反馈"
+    },
+    "status": {
+      "title": "游戏状态",
+      "completed": "已完成卡片：{{done}} / {{total}}",
+      "turnNow": "现在轮到：",
+      "lastCardTitle": "您上一张出的牌",
+      "hint": "点击“抽牌”或滑动顶部卡片以开始...",
+      "deckEmptyTitle": "牌堆空了！",
+      "deckEmptyMessage": "返回卡片选择以开始新游戏。"
+    },
+    "inlineAlerts": {
+      "noMoreCards": "牌堆已空。您可以在“选择卡片”中选择新卡片。",
+      "missingUserForFeedback": "找不到已登录用户以发送反馈。",
+      "missingUser": "未发现已登录用户。",
+      "feedbackMissing": "发送前请写下几句话。",
+      "feedbackSent": "谢谢！您的反馈已成功发送。",
+      "feedbackError": "目前无法发送反馈。"
+    },
+    "feedbackModal": {
+      "title": "关于卡片的反馈",
+      "subtitle": "告诉我们您对这张卡片的看法",
+      "helperText": "您的反馈能帮助我们改进游戏，并增加适合像您这样家庭的问题。",
+      "placeholder": "在此写下您的反馈...",
+      "sending": "发送中..."
+    },
+    "category": {
+      "name": {
+        "1": "家庭开场",
+        "2": "欢乐与笑声",
+        "3": "家庭纽带"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "简单",
+        "2": "中等",
+        "3": "困难"
+      }
+    },
+    "turn": {
+      "badge": "轮到：{{name}}"
+    }
+  },
+  "friendsCardsSelect": {
+    "header": {
+      "title": "选择游戏：好友 / 职场",
+      "subtitle": "挑选卡片类型并输入参与者姓名"
+    },
+    "instructions": {
+      "title": "Liba 朋友与职场：它是如何互动的？",
+      "intro": "在开启这段旅程之前，以下是让共鸣发生的秘诀：",
+      "sections": {
+        "fullPresence": {
+          "title": "全身心投入",
+          "body": "这款应用只是一个载体。屏幕上的文字是钥匙，但真正的故事发生在你们之间！请放下手机，注视对方的眼睛。最有趣的答案往往不在屏幕上。"
+        },
+        "noWorkAnswers": {
+          "title": "拒绝职场官话",
+          "body": "在 Liba 没有所谓的标准答案。不必试着表现得专业或政治正确。你越坦诚，你们的连接就越真实、越深刻。请听从直觉，而不是大脑的逻辑。"
+        },
+        "curiosityOverCriticism": {
+          "title": "用好奇取代评判",
+          "body": "当他人分享时，请试着去理解，而不是急于回应或争辩。与其问“你为什么这么说？”，不如试着说：“很有意思，多跟我分享一点吧。”"
+        },
+        "trustAgreement": {
+          "title": "我们的信任契约",
+          "body": "为了能敞开心扉，我们需要安全感。在这里分享的一切仅属于你们。私密性是团队或朋友之间建立真实纽带的基石。"
+        },
+        "rightToSkip": {
+          "title": "跳过的权利",
+          "body": "这是一款游戏，而不是一场审问。如果某个问题让你觉得太私密或目前不太合适，完全可以说“过”并直接跳过。尊重彼此的节奏高于一切。"
+        }
+      },
+      "atYourOwnPace": {
+        "title": "节奏由你们掌控：",
+        "body": "不要急。让文字带来的感触沉淀下来。团队或朋友之间的真实连接，往往建立在那些我们停下来去真正了解对方的时刻。"
+      },
+      "ready": "准备好了吗？",
+      "dontShowAgain": "不再显示这些说明",
+      "cta": "开始吧"
+    },
+    "players": {
+      "title": "谁在玩？",
+      "playerLabel": "玩家 {{num}}",
+      "placeholder": "姓名...",
+      "addButton": "Add player"
+    },
+    "categories": {
+      "intro": {
+        "title": "开场与热身",
+        "description": "破冰及友好的相互了解问题"
+      },
+      "fun": {
+        "title": "趣味挑战",
+        "description": "能让每个人微笑的轻松任务"
+      },
+      "team": {
+        "title": "团队凝聚",
+        "description": "建立协作与凝聚力的卡片"
+      }
+    },
+    "buttons": {
+      "start": "开始游戏"
+    },
+    "alerts": {
+      "chooseAtLeastOneCategory": "请至少选择一种卡片类型（选择星级）。",
+      "enterAtLeastOnePlayer": "请至少输入一位玩家的名字。",
+      "errorTitle": "错误",
+      "infoTitle": "提示",
+      "waitTitle": "请稍候",
+      "oopsTitle": "哎呀",
+      "missingUserId": "缺少用户 ID。请重新登录后再试一次。",
+      "noCardsForSelection": "未找到适合此选择的卡片。请尝试更改分类或等级。",
+      "noCardsFound": "未找到符合您选择的卡片。",
+      "connectionError": "发生连接错误。请稍后再试。"
+    },
+    "stars": {
+      "clear": "Clear",
+      "selectAll": "Select all",
+      "title": "选择卡片等级"
+    },
+    "menu": {
+      "feedbackSoon": "反馈：即将推出",
+      "helpSoon": "帮助：即将推出"
+    },
+    "specialDraw": {
+      "subtitle": "选择要显示的个人卡片",
+      "hint": "启用后，系统会从你的特别卡片中抽取",
+      "sharedLabel": "已分享",
+      "title": "特别抽取",
+      "feedbackLabel": "带评论",
+      "favoriteSubtitle": "包含你标记为特别喜欢的卡片",
+      "empty": {
+        "shared": "你还没有分享任何卡片。",
+        "favorite": "你还没有标记任何卡片为特别喜欢。",
+        "combined": "未找到符合所选筛选条件的特别卡片。",
+        "feedback": "你还没有在卡片上留下评论。"
+      },
+      "favoriteTitle": "特别喜欢"
+    }
+  },
+  "friendsCardsGame": {
+    "header": {
+      "title": "好友 / 职场游戏",
+      "subtitle": "以有趣的方式互相了解 🎉"
+    },
+    "status": {
+      "done": "已完成卡片：{{revealedCount}} / {{totalCount}}",
+      "nowTurn": "现在轮到：",
+      "hint": "点击“抽牌”或滑动顶部卡片以开始游戏...",
+      "title": "游戏进度",
+      "lastCardTitle": "你们刚刚玩的上一张卡"
+    },
+    "card": {
+      "turnOf": "轮到：{{name}}",
+      "actions": {
+        "done": "完成 ✔",
+        "skip": "跳过 ▶︎",
+        "feedback": "反馈 📝"
+      }
+    },
+    "feedback": {
+      "title": "关于卡片的反馈",
+      "subtitle": "告诉我们您对这张卡片的看法",
+      "placeholder": "在此写下您的反馈...",
+      "send": "发送反馈",
+      "info": "你的反馈会帮助我们把游戏打磨得更好，也让好友和职场场景里的卡片更有趣、更贴切。",
+      "cancel": "取消",
+      "sending": "发送中..."
+    },
+    "categories": {
+      "intro": "破冰热身",
+      "fun": "欢乐挑战",
+      "team": "团队默契"
+    },
+    "levels": {
+      "easy": "简单",
+      "medium": "中等",
+      "hard": "挑战"
+    },
+    "empty": {
+      "noPlayers": "还没有为这局游戏设置玩家。",
+      "backToSelect": "返回玩家选择"
+    },
+    "deck": {
+      "emptyTitle": "牌堆已经空了！",
+      "emptySubtitle": "重新选一组卡片，再开启下一轮吧。"
+    },
+    "buttons": {
+      "draw": "抽一张卡",
+      "selectCards": "选择卡片"
+    },
+    "alerts": {
+      "deckEmptyTitle": "没有更多卡片了",
+      "deckEmptyMessage": "这组卡片已经玩完了。回到选卡页面，就能开始新的一局。",
+      "toSelectCards": "去选卡",
+      "close": "关闭",
+      "errorTitle": "出错了",
+      "noUserForFeedback": "当前没有已登录用户，暂时无法发送反馈。",
+      "noUserLogged": "当前没有已登录用户。",
+      "feedbackMissingTitle": "先等等",
+      "feedbackMissingMessage": "先写点反馈内容，再发送给我们吧。",
+      "thanksTitle": "谢谢你的反馈！",
+      "feedbackSent": "反馈已成功发送。",
+      "feedbackFailed": "现在暂时无法发送反馈，请稍后再试。"
+    }
+  },
+  "feedbackScreen": {
+    "title": "App 反馈",
+    "subtitle": "告诉我们您喜欢什么，不喜欢什么，以及改进游戏的任何想法 🙂",
+    "placeholder": "在此写下您的反馈...",
+    "rating": {
+      "label": "星级评分",
+      "optional": "可选，但能帮助我们了解体验",
+      "clear": "清除评分",
+      "starAccessibility": "{{count}} 星"
+    },
+    "buttons": {
+      "send": "发送反馈",
+      "cancel": "取消"
+    },
+    "email": {
+      "label": "更喜欢邮件？请联系我们：",
+      "subject": "App 反馈"
+    },
+    "alerts": {
+      "missingUserTitle": "用户缺失",
+      "missingUserMessage": "我们无法识别当前用户。请重新登录。",
+      "emptyFeedbackTitle": "内容为空",
+      "emptyFeedbackMessage": "发送前请写下一些反馈。",
+      "thanksTitle": "谢谢您！ 💙",
+      "thanksMessage": "您的反馈已成功发送。",
+      "backButton": "返回",
+      "sendErrorTitle": "发送失败",
+      "sendErrorMessage": "发送反馈时出错。请稍后再试。"
+    }
+  },
+  "helpScreen": {
+    "title": "帮助中心",
+    "subtitle": "开始游戏并享受乐趣所需的一切",
+    "sections": {
+      "what": {
+        "title": "这个 App 是做什么的？",
+        "body": "Liba 是一款基于卡片的 App，旨在加强情侣、家庭和朋友之间的联系。"
+      },
+      "howToStart": {
+        "title": "我该如何开始玩？",
+        "body": "1. 选择游戏模式。2. 选择分类和难度。3. 开始玩耍！"
+      },
+      "turn": {
+        "title": "一轮是怎么玩的？",
+        "body": "抽一张卡，大声读出来，完成任务或回答问题，然后轮到下一位玩家。"
+      },
+      "feedback": {
+        "title": "为什么要发送反馈？",
+        "body": "你的反馈能帮助我们优化卡片内容、修正不够好的题目，让整个游戏体验变得更好。"
+      }
+    },
+    "buttons": {
+      "back": "返回",
+      "toGame": "前往游戏模式"
+    }
+  },
+  "infoScreen": {
+    "title": "Liba 的引擎",
+    "subtitle": "因为你们的对话值得的不只是问题，更值得深度。",
+    "sections": {
+      "engine": {
+        "title": "Liba 的引擎",
+        "body": "在 Liba，我们不只是创造问题，我们在搭建桥梁。\n\n想象一个汇集了人类智慧、深层心理学以及代代相传洞见的无限图书馆。现在，再想象一颗敏锐的科技之心，随时潜入这些图书馆之中。这就是 Liba 的引擎。"
+      },
+      "research": {
+        "title": "永不停歇的研究",
+        "body": "当你读到这些文字时，我们的系统仍在持续研究。它会扫描受控数据库、专业文献以及循证研究，只为替你打磨出最精准的表达。我们并不满足于通用内容，也不接受按下一个空洞按钮就生成的随机问题。应用中出现的每一张卡片，都是深度研究、谨慎筛选以及真诚希望为你带来价值的结果。"
+      },
+      "aiSoul": {
+        "title": "有灵魂的人工智能",
+        "body": "在一个充斥着快速而肤浅内容的世界里，制造可能引发尴尬或无谓争吵的“废话”非常容易。而在 Liba，我们选择了另一条路。我们的 AI 不是来源，它是研究者。它会了解你、你的偏好以及你们之间的互动方式，从而呈现能够建立连接、促进成长的内容。"
+      },
+      "transparency": {
+        "title": "我们的透明，就是你们的安全感",
+        "body": "我们会保护你。每一个问题都会经过严格的质量把控，确保它能打开心扉，而不是造成伤害。当你打开一张 Liba 卡片时，你可以安心，因为其中投入了深思熟虑，甚至就在此刻，都是为了让你们共度的时光难以忘怀。"
+      }
+    },
+    "footer": "因为你们的对话值得的不只是问题，更值得深度。"
+  },
+  "gameTimer": {
+    "tabs": {
+      "timer": "计时器",
+      "stopwatch": "秒表"
+    }
+  },
+  "settings": {
+    "title": "设置",
+    "buttons": {
+      "logout": "退出登录",
+      "cancel": "取消"
+    },
+    "logout": {
+      "title": "退出登录",
+      "message": "您确定要退出登录吗？"
+    }
+  },
+  "welcomeScreen": {
+    "title": "Liba Game",
+    "subtitle": "一起玩耍、连接、享受快乐",
+    "chooseText": "欢迎，我们该如何开始？",
+    "loginSubtitle": "我已有账号",
+    "registerSubtitle": "新用户",
+    "buttons": {
+      "login": "登录",
+      "register": "注册"
+    }
+  },
+  "menu": {
+    "title": "菜单",
+    "gameMode": "选择游戏模式",
+    "couplesCards": "情侣卡片",
+    "familyCards": "家庭卡片",
+    "friendsCards": "好友卡片",
+    "updateDetails": "更新资料",
+    "feedback": "反馈",
+    "help": "帮助",
+    "language": "语言",
+    "chooseLanguage": "选择语言",
+    "languages": {
+      "en": "English",
+      "he": "עברית",
+      "es": "Español",
+      "ru": "Русский",
+      "ar": "العربية",
+      "zh": "中文",
+      "fr": "Français",
+      "de": "Deutsch"
+    },
+    "logout": "退出登录",
+    "logoutError": "退出失败，请重试。",
+    "about": "关于",
+    "policyPrivacy": "政策与隐私",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "隐私政策",
+    "linkOpenError": "无法打开该链接。",
+    "resetInstructions": "重置说明",
+    "resetInstructionsSuccess": "说明显示设置已重置。",
+    "resetInstructionsError": "当前无法重置说明。"
+  },
+  "indexGame": {
+    "title": "Liba：游戏",
+    "subtitle": "深度连接，一次一张卡片",
+    "empty": {
+      "title": "牌堆空了！",
+      "subtitle": "您已完成牌堆。准备好开始新一轮了吗？"
+    },
+    "buttons": {
+      "draw": "抽牌",
+      "settings": "游戏设置"
+    },
+    "status": {
+      "title": "游戏状态",
+      "doneCards": "已玩卡片：{{revealedCount}} / {{totalCount}}",
+      "turnNow": "当前轮到：",
+      "lastCardTitle": "上一张出的牌：",
+      "hint": "抽一张卡片，开始奇迹 ✨"
+    },
+    "card": {
+      "turnOf": "轮到：{{player}}",
+      "actions": {
+        "done": "搞定了 👌",
+        "skip": "跳过 👈",
+        "feedback": "评分 👍",
+        "share": "分享 💌"
+      },
+      "reactions": {
+        "like": "喜欢",
+        "love": "特别喜欢"
+      }
+    },
+    "category": {
+      "name": {
+        "1": "连接",
+        "2": "趣味",
+        "3": "激情"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "简单",
+        "2": "中等",
+        "3": "困难"
+      }
+    },
+    "alerts": {
+      "noCardsTitle": "牌堆空了",
+      "noCardsMessage": "所有卡片已展示。正在返回菜单。",
+      "noUserTitle": "游客模式",
+      "noUserMessage": "请登录以提交对卡片的反馈。",
+      "feedbackMissingTitle": "稍等...",
+      "feedbackMissingMessage": "发送前请输入您的反馈。",
+      "thanksTitle": "谢谢！",
+      "thanksMessage": "您的反馈能帮助我们完善 Liba。",
+      "feedbackErrorTitle": "错误",
+      "feedbackErrorMessage": "无法发送反馈。请稍后再试。"
+    },
+    "feedback": {
+      "title": "卡片反馈",
+      "subtitle": "您对这个提示有什么看法？",
+      "note": "您的反馈是匿名的，有助于改进游戏。",
+      "placeholder": "在此写下您的想法...",
+      "cancel": "取消",
+      "send": "发送反馈"
+    }
+  },
+  "general": {
+    "sending": "正在发送..."
+  },
+  "about_title": "关于应用",
+  "about_description": "这款应用通过互动卡片、问题与挑战，为人与人之间创造有意义且有趣的体验，帮助提升沟通、连接与共同相处的时刻。",
+  "about_features_title": "你会在这里看到",
+  "about_feature_1": "情侣游戏模式",
+  "about_feature_2": "朋友与家庭游戏模式",
+  "about_feature_3": "多种分类与难度等级",
+  "about_feature_4": "多语言支持",
+  "about_goal_title": "我们的目标",
+  "about_goal_text": "我们的目标是帮助人们以简单而有吸引力的方式建立连接、加强沟通并共享高质量时光。",
+  "about_version_title": "版本",
+  "about_privacy_button": "打开隐私政策",
+  "shareCard": {
+    "gameTypes": {
+      "couples": "情侣",
+      "friends": "朋友",
+      "family": "家人"
+    },
+    "footer": {
+      "tagline": "和 LIBA 一起更靠近彼此"
+    }
+  },
+  "perfectDate": {
+    "title": "完美约会",
+    "vibes": {
+      "light": "轻松、自然、带一点笑意",
+      "deep": "更深入、更温柔、更亲近",
+      "release": "放下压力，一起喘口气"
+    },
+    "goals": {
+      "appreciation": "感受到被看见，也多给一点赞美",
+      "fun": "放松下来，享受当下，忘掉压力",
+      "intimacy": "拉近距离，增加温柔和一点暧昧",
+      "future": "聊聊愿望和接下来的方向"
+    },
+    "boundaries": {
+      "noWorkMoneyTasks": "不聊工作、金钱或家务",
+      "noActiveTasks": "不要太需要行动的任务",
+      "noPastConflicts": "不翻旧争执",
+      "noWorkMoney": "不聊工作和钱",
+      "noFutureTalk": "不聊太大的未来计划",
+      "noHeavyPast": "今晚不碰沉重的过去",
+      "noPhysical": "不要身体任务或触碰"
+    },
+    "language": {
+      "title": "约会语言",
+      "he": "עברית",
+      "en": "English",
+      "zh": "中文"
+    },
+    "gender": {
+      "male": "男性",
+      "female": "女性"
+    },
+    "questions": {
+      "header": "约会 {{number}}",
+      "progress": "第 {{current}} 步，共 {{total}} 步",
+      "selectedValue": "已选择：{{value}}",
+      "selectToContinue": "请选择一个选项继续",
+      "noSpecialBoundaries": "没有特别界限",
+      "swipeBack": "向右滑动返回",
+      "swipeNext": "向左滑动继续",
+      "swipeSave": "向左滑动保存",
+      "swipeBackShort": "返回",
+      "swipeNextShort": "继续",
+      "swipeSaveShort": "保存",
+      "swipeHint": "滑动，或点击一侧",
+      "location": {
+        "title": "约会在哪里进行？",
+        "subtitle": "这是你们两个人需要一致的唯一共同信息。"
+      },
+      "role": {
+        "title": "谁在使用这台设备？",
+        "subtitle": "这样应用就知道该把秘密任务或配对任务给谁。"
+      },
+      "gender": {
+        "title": "要怎样为你匹配卡片？",
+        "subtitle": "选择男性或女性，让这次约会更贴合你。"
+      },
+      "vibe": {
+        "title": "今晚适合什么氛围？",
+        "subtitle": "选一个就好，不用想太久。"
+      },
+      "goal": {
+        "title": "你的一个小小秘密目标是什么？",
+        "subtitle": "它只属于你，也会影响你收到的卡片。"
+      },
+      "boundaries": {
+        "title": "今晚什么不太适合？",
+        "subtitle": "可以选择多个界限。我们会尊重这些选择。"
+      }
+    },
+    "location": {
+      "home": "在家",
+      "out": "在外面",
+      "exactLabel": "具体地点",
+      "exactPlaceholder": "例如：客厅、安静的餐厅"
+    },
+    "roles": {
+      "user1": "用户 1",
+      "user2": "用户 2"
+    },
+    "lobby": {
+      "header": "轻松开始",
+      "heroTitle": "完美约会",
+      "heroText": "创建一个房间，分享代码，然后选择今晚的感觉。",
+      "codeLabel": "有代码吗？",
+      "codePlaceholder": "",
+      "createButton": "创建约会",
+      "joinButton": "加入",
+      "loading": "稍等一下...",
+      "createError": "现在无法创建新的约会。",
+      "missingCode": "请输入约会代码。",
+      "joinError": "无法加入这个约会。"
+    },
+    "invite": {
+      "codeLabel": "你的约会代码",
+      "text": "分享邀请，然后进入简短设置。",
+      "shareButton": "分享",
+      "continueButton": "继续",
+      "shareMessage": "我邀请你来一场完美约会。\n约会代码：{{code}}\n加入链接：{{link}}"
+    },
+    "saved": {
+      "header": "这次约会的卡组已经准备好了",
+      "title": "约会已保存",
+      "text": "你们还可以回来修改细节。两个人都准备好后，一起进入开始页面。",
+      "launchButton": "进入开始",
+      "editButton": "修改细节"
+    },
+    "launch": {
+      "header": "下一张卡 {{progress}}",
+      "title": "一起按住",
+      "text": "两个人同时按住按钮几秒，就能揭开下一个问题或任务。",
+      "holdButton": "按住",
+      "waitingPartner": "你这边准备好了。正在等对方...",
+      "partnerReady": "对方已准备好。按住按钮一起打开。"
+    },
+    "card": {
+      "header": "卡片 {{progress}}",
+      "defaultTitle": "卡片",
+      "defaultCoupleCard": "情侣卡片",
+      "nextEyebrow": "下一张卡",
+      "tapToReveal": "点击揭开",
+      "secretPill": "秘密，请自己默读",
+      "secretFallback": "你的伴侣收到了一项秘密任务。顺着这个时刻走下去...",
+      "sharedMoment": "两个人的时刻",
+      "revealButton": "揭开卡片"
+    },
+    "reactions": {
+      "like": "喜欢",
+      "love": "特别喜欢"
+    },
+    "actions": {
+      "back": "返回",
+      "next": "继续",
+      "saveQuestionnaire": "保存回答",
+      "saving": "正在保存...",
+      "loadingDeck": "正在准备卡组...",
+      "done": "完成",
+      "share": "分享",
+      "syncing": "正在同步...",
+      "waitingPartner": "等待对方"
+    },
+    "errors": {
+      "genderRequired": "请选择男性或女性继续。",
+      "missingDateNumber": "请先创建或加入一个约会，再保存。",
+      "saveFailed": "现在无法保存约会细节。",
+      "deckFailed": "现在无法准备卡组。",
+      "syncFailed": "现在无法同步约会。"
+    },
+    "sync": {
+      "waitingText": "已记录。对方也完成后，下一张卡才会打开。",
+      "partnerWaiting": "对方已经在这张卡上等你了。"
+    },
+    "done": {
+      "header": "约会完成了",
+      "title": "你们完成了这组小卡片",
+      "text": "下一步会把这个页面连接到根据回答生成的真实卡组。",
+      "backHome": "回到主页面"
+    },
+    "share": {
+      "message": "完美约会：{{label}}\n\n{{text}}"
+    },
+    "demoTasks": {
+      "1": {
+        "label": "轻松开场",
+        "user1BackLabel": "共同任务",
+        "user2BackLabel": "共同任务",
+        "user1Text": "小游戏：轮流模仿对方在家里因为一点小事不开心的样子。谁先笑出来谁就输了。",
+        "user2Text": "小游戏：轮流模仿对方在家里因为一点小事不开心的样子。谁先笑出来谁就输了。"
+      },
+      "2": {
+        "user1BackLabel": "秘密任务",
+        "user2BackLabel": "配对问题",
+        "user1Label": "秘密任务",
+        "user1Text": "当她回答下一个问题时，不要打断。轻轻靠近，放上一只手，给她一个小小的温柔动作，不用解释这是任务。",
+        "user2Label": "给你的时刻",
+        "user2Text": "告诉他这周发生的一件小事，最好是别人还不知道的。他在这里听你说。"
+      },
+      "3": {
+        "user1BackLabel": "配对任务",
+        "user2BackLabel": "秘密任务",
+        "user1Label": "你的时刻",
+        "user1Text": "想一件她最近为你或为家里做的事，也许你之前觉得理所当然。看着她的眼睛，清楚地说谢谢。",
+        "user2Label": "秘密任务",
+        "user2Text": "在接下来的时刻好好听他说。等他说完，抱抱他，说谢谢，不用分析。"
+      }
+    }
+  },
+  "updateDetails": {
+    "title": "完善你的资料",
+    "subtitle": "继续之前，请先填写姓名、性别和年龄。",
+    "buttons": {
+      "save": "保存资料"
+    },
+    "success": {
+      "message": "资料已成功更新。"
+    },
+    "errors": {
+      "missingUserId": "缺少用户 ID。",
+      "updateFailed": "无法更新你的资料。"
+    }
+  },
+  "researchCardsSelect": {
+    "title": "研究",
+    "subtitle": "选几个简单选项，我们会从服务器取来卡牌。",
+    "bookTapHint": "点一本书即可选择。再点一次即可取消。",
+    "stepMeta": "第 {{current}} 步，共 {{total}} 步",
+    "premiumBadge": "高级版",
+    "steps": {
+      "gameType": "游戏类型",
+      "book": "选择书籍",
+      "style": "游戏风格",
+      "levels": "选择等级",
+      "summary": "确认并开始"
+    },
+    "books": {
+      "sevenPrinciples": {
+        "description": "情侣对话，信任和亲近感。"
+      },
+      "supercommunicators": {
+        "description": "倾听，连接和深入交流。"
+      },
+      "artOfGathering": {
+        "description": "让相聚更有意义。"
+      },
+      "marsVenus": {
+        "description": "沟通，需求和期待。"
+      },
+      "comeAsYouAre": {
+        "description": "亲密，安全感和渴望。"
+      },
+      "loveLanguages": {
+        "description": "我们如何感受并表达爱。"
+      }
+    },
+    "gameTypes": {
+      "couple": {
+        "title": "情侣",
+        "description": "关于关系，对话，亲近和心动的卡牌。"
+      },
+      "family": {
+        "title": "家庭",
+        "description": "适合家庭，笑声和共同回忆的卡牌。"
+      },
+      "friends": {
+        "title": "朋友",
+        "description": "适合朋友，工作，信任和挑战的卡牌。"
+      }
+    },
+    "players": {
+      "player1": "玩家 1",
+      "player2": "玩家 2",
+      "participant1": "参与者 1",
+      "participant2": "参与者 2"
+    },
+    "styles": {
+      "couple": {
+        "fun": {
+          "title": "好玩",
+          "description": "轻松的问题和任务，让彼此打开话题并一起笑。"
+        },
+        "intro": {
+          "title": "更加了解",
+          "description": "个人对话，回忆和价值观。"
+        },
+        "passion": {
+          "title": "心动",
+          "description": "用舒服的方式靠近，表达渴望和亲密。"
+        }
+      },
+      "family": {
+        "stories": {
+          "title": "家庭故事",
+          "description": "回忆，传统和会留下来的时刻。"
+        },
+        "fun": {
+          "title": "笑声和游戏",
+          "description": "适合每个人的轻松卡牌。"
+        },
+        "closeness": {
+          "title": "亲近和倾听",
+          "description": "欣赏，分享和安心的对话。"
+        }
+      },
+      "friends": {
+        "intro": {
+          "title": "开场",
+          "description": "打开话题，让小组更有连接。"
+        },
+        "fun": {
+          "title": "好玩和挑战",
+          "description": "笑声，任务和意想不到的情境。"
+        },
+        "trust": {
+          "title": "信任和深度",
+          "description": "支持，倾听和真诚交流。"
+        }
+      }
+    },
+    "levelOptions": {
+      "1": "温柔",
+      "2": "轻松",
+      "3": "平衡",
+      "4": "深入",
+      "5": "直接"
+    },
+    "stepContent": {
+      "gameType": {
+        "title": "选择游戏类型",
+        "text": "卡牌会根据你选择的游戏世界来抽取。"
+      },
+      "book": {
+        "title": "选择一本书",
+        "text": "选择你想从哪本书里获得研究卡牌。"
+      },
+      "style": {
+        "title": "选择游戏风格",
+        "text": "可以选择一种风格，也可以选择多种风格。"
+      },
+      "levels": {
+        "title": "为每种风格选择等级",
+        "text": "决定每段体验要更温柔还是更深入。"
+      },
+      "summary": {
+        "title": "确认并开始",
+        "text": "点击后，我们会取来研究卡牌并进入游戏画面。"
+      }
+    },
+    "summary": {
+      "title": "你的选择",
+      "notSelected": "还没有选择",
+      "styleNotSelected": "{{style}} 还没有选择",
+      "gameType": "游戏类型",
+      "book": "书籍",
+      "bookValue": "书籍：{{title}}",
+      "styles": "风格",
+      "stylesCount": "风格：{{count}}",
+      "levels": "等级",
+      "levelsComplete": "等级：已完成",
+      "levelsCount": "等级：{{completed}}/{{total}}",
+      "gameTypeLine": "游戏类型：{{value}}",
+      "bookLine": "书籍：{{value}}",
+      "stylesLine": "风格：{{value}}",
+      "levelsLine": "等级：{{value}}",
+      "styleLevel": "{{style}}：等级 {{level}}"
+    },
+    "chooseLevel": "选择等级",
+    "levelSelected": "等级 {{level}}",
+    "actions": {
+      "back": "返回",
+      "continue": "继续",
+      "backToEdit": "修改",
+      "startGame": "开始"
+    },
+    "alerts": {
+      "missingUserTitle": "缺少用户",
+      "missingUserMessage": "我们无法识别当前登录用户。请重新登录。",
+      "waitTitle": "等一下",
+      "completeSelection": "开始前请完成所有选择步骤。",
+      "premiumOnly": "此选项仅适用于高级版用户。",
+      "noCards": "没有找到符合这些选择的研究卡牌。",
+      "fetchFailed": "无法获取研究卡牌。",
+      "timeout": "服务器请求等待太久。"
+    }
+  }
+}

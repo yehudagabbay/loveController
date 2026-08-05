@@ -5,6 +5,7 @@ using FirebaseAdmin.Auth;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 
 
 namespace controlersLoveGame.Controllers
@@ -23,6 +24,9 @@ namespace controlersLoveGame.Controllers
 
         private readonly IConfiguration _config;
         private const string PublicUsersApiBase = "https://libagame.somee.com/api/Users";
+        private const string PerfectDateDefaultLocation = "pending";
+        private const string PerfectDateAppDeepLinkPrefix = "loveclient://perfect-date";
+        private const string PerfectDateWebInvitePrefix = "https://libagame.somee.com/perfect-date";
 
         public UsersController(LoveGameDbContext context, EmailService emailService, IConfiguration config, SubscriptionService subscriptionService)
         {
@@ -1059,61 +1063,6 @@ namespace controlersLoveGame.Controllers
             }
         }
 
-        [HttpPost("purchase-subscription")]
-        public async Task<IActionResult> PurchaseSubscription([FromBody] PurchaseSubscriptionRequest request)
-        {
-            try
-            {
-                // זה ה-endpoint שהלקוח קורא לו אחרי שהאפליקציה קיבלה אישור על רכישה.
-                // התפקיד של הבקר כאן הוא רק:
-                // 1. לוודא שהבקשה בסיסית תקינה
-                // 2. להעביר את הטיפול לשירות
-                // 3. להחזיר תשובה נוחה ללקוח
-                if (request == null)
-                {
-                    return BadRequest("Request body is required.");
-                }
-
-                // בלי מזהה משתמש ובלי מזהה תוכנית מנוי אין לנו אפשרות לשמור את הרכישה.
-                if (request.UserID <= 0 || request.PlanID <= 0)
-                {
-                    return BadRequest("UserID and PlanID are required.");
-                }
-
-                // כאן עוברים לשירות שבו נמצאת כל הלוגיקה העסקית:
-                // בדיקת משתמש, בדיקת תוכנית, חישוב תאריכים, מניעת כפילויות ושמירה למסד.
-                var result = await _subscriptionService.SavePurchaseAsync(request);
-
-                if (!result.Success)
-                {
-                    return BadRequest(result.Message);
-                }
-
-                var subscription = result.Subscription!;
-
-                // מחזירים ללקוח רק את הנתונים החשובים של המנוי שנשמר,
-                // כדי שהאפליקציה תוכל לדעת שהשמירה הצליחה ולעדכן את ה-UI.
-                return Ok(new
-                {
-                    message = result.Message,
-                    subscription.SubscriptionID,
-                    subscription.UserID,
-                    subscription.PlanID,
-                    subscription.Store,
-                    subscription.ProductId,
-                    subscription.StartDate,
-                    subscription.EndDate,
-                    subscription.IsActive,
-                    subscription.AutoRenewing
-                });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Error saving subscription purchase: {ex.Message}");
-            }
-        }
-
-
         [HttpPost("update-card-status")]
         public async Task<IActionResult> UpdateCardStatus([FromBody] MarkCardCompletedRequest request)
         {
@@ -1467,6 +1416,107 @@ namespace controlersLoveGame.Controllers
             }
 
             return pool;
+        }
+
+        [HttpPost("perfect-date/create")]
+        public async Task<ActionResult<PerfectDateInviteResponse>> CreatePerfectDateFromUsers(
+            [FromBody] CreatePerfectDateRequest? request)
+        {
+            request ??= new CreatePerfectDateRequest();
+
+            if (request.ScheduledAt.HasValue && request.ScheduledAt.Value.ToUniversalTime() > DateTime.UtcNow.AddHours(24))
+            {
+                return BadRequest("Perfect date can be created up to 24 hours before the scheduled time.");
+            }
+
+            var dateNumber = await GeneratePerfectDateNumber();
+            var perfectDate = new PerfectDate
+            {
+                DateNumber = dateNumber,
+                Location = PerfectDateDefaultLocation,
+                Status = "Created",
+                User1ID = request.UserID,
+                ScheduledAt = request.ScheduledAt?.ToUniversalTime(),
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+            };
+
+            _context.PerfectDates.Add(perfectDate);
+            await _context.SaveChangesAsync();
+
+            return Ok(ToPerfectDateInviteResponse(perfectDate));
+        }
+
+        [HttpGet("perfect-date/ping")]
+        public IActionResult PerfectDatePing()
+        {
+            return Ok(new
+            {
+                message = "Perfect Date endpoint is deployed.",
+                build = "perfect-date-users-fallback-2026-06-10-1105"
+            });
+        }
+
+        [HttpPost("perfect-date/join")]
+        public async Task<ActionResult<PerfectDateInviteResponse>> JoinPerfectDateFromUsers(
+            [FromBody] JoinPerfectDateRequest request)
+        {
+            var normalizedDateNumber = request.DateNumber.Trim();
+
+            var perfectDate = await _context.PerfectDates
+                .FirstOrDefaultAsync(date => date.DateNumber == normalizedDateNumber);
+
+            if (perfectDate == null)
+            {
+                return NotFound("Perfect date was not found.");
+            }
+
+            if (request.UserID.HasValue &&
+                perfectDate.User2ID == null &&
+                perfectDate.User1ID != request.UserID)
+            {
+                perfectDate.User2ID = request.UserID;
+                perfectDate.UpdatedAt = DateTime.UtcNow;
+                await _context.SaveChangesAsync();
+            }
+
+            return Ok(ToPerfectDateInviteResponse(perfectDate));
+        }
+
+        private async Task<string> GeneratePerfectDateNumber()
+        {
+            // קוד קצר לשיתוף בין בני הזוג. אם יש התנגשות, מנסים שוב.
+            for (var attempt = 0; attempt < 25; attempt++)
+            {
+                var code = RandomNumberGenerator.GetInt32(1000, 10000).ToString();
+                var exists = await _context.PerfectDates.AnyAsync(date => date.DateNumber == code);
+
+                if (!exists)
+                {
+                    return code;
+                }
+            }
+
+            throw new InvalidOperationException("Could not generate a unique perfect date code.");
+        }
+
+        private static PerfectDateInviteResponse ToPerfectDateInviteResponse(PerfectDate perfectDate)
+        {
+            var deepLink = $"{PerfectDateAppDeepLinkPrefix}/{perfectDate.DateNumber}";
+            var webInviteLink = $"{PerfectDateWebInvitePrefix}/{perfectDate.DateNumber}";
+
+            return new PerfectDateInviteResponse
+            {
+                PerfectDateID = perfectDate.PerfectDateID,
+                DateNumber = perfectDate.DateNumber,
+                Status = perfectDate.Status,
+                DeepLink = deepLink,
+                WebInviteLink = webInviteLink,
+                ShareMessage =
+                    $"הזמנתי אותך לדייט המושלם.\n" +
+                    $"קוד הדייט: {perfectDate.DateNumber}\n" +
+                    $"לחיצה להצטרפות: {webInviteLink}",
+            };
         }
 
         private sealed class CardSelectionBucket

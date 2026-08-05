@@ -1,0 +1,881 @@
+.couple-roulette-page {
+  position: relative;
+  width: 100%;
+  min-height: calc(100svh - var(--screen-top-space) - var(--screen-bottom-space));
+  display: grid;
+  align-content: center;
+  gap: clamp(14px, 2vh, 26px);
+  padding: clamp(18px, 2.4vh, 34px) 0;
+  color: #fff8f3;
+  overflow: hidden;
+  overflow-anchor: none;
+  isolation: isolate;
+}
+
+.roulette-atmosphere {
+  position: absolute;
+  inset: 0 calc(var(--screen-edge) * -1);
+  z-index: -2;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(251, 113, 133, 0.34), transparent 31rem),
+    radial-gradient(circle at 77% 26%, rgba(94, 234, 212, 0.22), transparent 35rem),
+    radial-gradient(circle at 52% 95%, rgba(255, 215, 176, 0.18), transparent 34rem),
+    linear-gradient(132deg, #150914 0%, #351326 45%, #102733 100%);
+}
+
+.roulette-atmosphere::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(circle at 50% 45%, #000, transparent 76%);
+}
+
+.roulette-atmosphere span {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.56;
+}
+
+.roulette-atmosphere span:nth-child(1) {
+  width: 22vw;
+  aspect-ratio: 1;
+  top: 8%;
+  inset-inline-start: 8%;
+  background: rgba(249, 168, 212, 0.18);
+}
+
+.roulette-atmosphere span:nth-child(2) {
+  width: 26vw;
+  aspect-ratio: 1;
+  bottom: -5%;
+  inset-inline-end: 10%;
+  background: rgba(94, 234, 212, 0.14);
+}
+
+.roulette-atmosphere span:nth-child(3) {
+  width: 16vw;
+  aspect-ratio: 1;
+  top: 12%;
+  inset-inline-end: 28%;
+  background: rgba(255, 215, 176, 0.13);
+}
+
+.friends-roulette-theme .roulette-atmosphere {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(96, 165, 250, 0.34), transparent 31rem),
+    radial-gradient(circle at 77% 26%, rgba(251, 191, 36, 0.18), transparent 35rem),
+    radial-gradient(circle at 52% 95%, rgba(94, 234, 212, 0.2), transparent 34rem),
+    linear-gradient(132deg, #071622 0%, #112c3f 46%, #19172d 100%);
+}
+
+.family-roulette-theme .roulette-atmosphere {
+  background:
+    radial-gradient(circle at 18% 18%, rgba(252, 211, 77, 0.3), transparent 31rem),
+    radial-gradient(circle at 77% 26%, rgba(74, 222, 128, 0.2), transparent 35rem),
+    radial-gradient(circle at 52% 95%, rgba(244, 114, 182, 0.16), transparent 34rem),
+    linear-gradient(132deg, #172414 0%, #2f2a16 46%, #17313a 100%);
+}
+
+.roulette-layout {
+  width: min(100%, 1480px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-areas: 'wheel card';
+  grid-template-columns: minmax(520px, 1fr) minmax(520px, 1fr);
+  gap: clamp(22px, 3vw, 54px);
+  align-items: stretch;
+}
+
+.roulette-stage {
+  grid-area: wheel;
+}
+
+.roulette-card-panel {
+  grid-area: card;
+}
+
+.roulette-stage,
+.roulette-card-panel,
+.roulette-footer,
+.roulette-empty {
+  border: 1px solid rgba(255, 219, 184, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.045)),
+    rgba(25, 13, 24, 0.74);
+  box-shadow:
+    0 28px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.roulette-stage {
+  position: relative;
+  min-height: clamp(640px, 72vh, 820px);
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) 34px clamp(70px, 6.5vh, 84px) auto;
+  place-items: center;
+  gap: clamp(10px, 1.3vh, 18px);
+  padding: clamp(22px, 2vw, 34px);
+  overflow: hidden;
+}
+
+.roulette-stage::before,
+.roulette-card-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 8%, rgba(255, 215, 176, 0.1), transparent 34rem);
+}
+
+.roulette-wheel-wrap {
+  position: relative;
+  width: min(100%, clamp(360px, 31vw, 520px));
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.roulette-pointer {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  z-index: 8;
+  width: 0;
+  height: 0;
+  border-inline: 18px solid transparent;
+  border-top: 38px solid #fff8f3;
+  border-bottom: 0;
+  filter:
+    drop-shadow(0 10px 14px rgba(0, 0, 0, 0.48))
+    drop-shadow(0 0 16px rgba(255, 215, 176, 0.46));
+  transform: translateX(-50%);
+  animation: roulettePointerPulse 1600ms ease-in-out infinite;
+}
+
+.roulette-pointer::after {
+  content: '';
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  width: 4px;
+  height: clamp(28px, 4vh, 48px);
+  border-radius: 999px;
+  background: linear-gradient(180deg, transparent, rgba(255, 248, 243, 0.9));
+  transform: translateX(-50%);
+}
+
+.roulette-speed-ring {
+  position: absolute;
+  inset: -8%;
+  z-index: 1;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  background:
+    conic-gradient(from 0deg, transparent 0 18deg, rgba(255, 248, 243, 0.7) 28deg, transparent 46deg 118deg, rgba(94, 234, 212, 0.48) 138deg, transparent 160deg 244deg, rgba(249, 168, 212, 0.52) 266deg, transparent 292deg 360deg);
+  filter: blur(6px);
+  transition: opacity 180ms ease;
+}
+
+.roulette-wheel-wrap.is-spinning .roulette-speed-ring {
+  opacity: 0.88;
+  animation: rouletteSpeedRing 540ms linear infinite;
+}
+
+.roulette-wheel-wrap.spin-step-2 .roulette-speed-ring {
+  animation-duration: 920ms;
+  opacity: 0.62;
+}
+
+.roulette-wheel {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--roulette-bg);
+  box-shadow:
+    0 50px 120px rgba(0, 0, 0, 0.46),
+    0 0 0 18px rgba(255, 255, 255, 0.045),
+    0 0 0 1px rgba(255, 255, 255, 0.24) inset,
+    inset 0 0 70px rgba(255, 255, 255, 0.08);
+  transform: rotate(var(--roulette-rotation));
+  transition:
+    transform 3600ms cubic-bezier(0.08, 0.78, 0.05, 1),
+    filter 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.roulette-wheel::before {
+  content: '';
+  position: absolute;
+  inset: 5.5%;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 31%, rgba(255,255,255,0.12) 31.2% 31.8%, transparent 32%),
+    radial-gradient(circle at 50% 50%, transparent 0 72%, rgba(255,255,255,0.18) 72.3% 73%, transparent 73.2%);
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.22);
+}
+
+.roulette-wheel::after {
+  content: '';
+  position: absolute;
+  inset: -3.5%;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 215, 176, 0.18);
+  box-shadow: 0 0 34px rgba(249, 168, 212, 0.18);
+}
+
+.roulette-wheel.is-spinning {
+  filter: saturate(1.38) brightness(1.08);
+  box-shadow:
+    0 58px 140px rgba(0, 0, 0, 0.5),
+    0 0 0 18px rgba(255, 255, 255, 0.06),
+    0 0 48px rgba(94, 234, 212, 0.26),
+    0 0 76px rgba(249, 168, 212, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset,
+    inset 0 0 82px rgba(255, 255, 255, 0.12);
+}
+
+.roulette-wheel-wrap.spin-step-2 .roulette-pointer {
+  animation: roulettePointerAlert 260ms ease-in-out infinite;
+}
+
+.roulette-wheel.is-spinning::before {
+  animation: rouletteInnerPulse 520ms ease-in-out infinite alternate;
+}
+
+.roulette-wheel.is-spinning::after {
+  animation: rouletteOuterGlow 650ms ease-in-out infinite alternate;
+}
+
+.roulette-wheel-labels {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.roulette-wheel-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  min-width: 82px;
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  color: #24111b;
+  background: rgba(255, 248, 243, 0.86);
+  box-shadow:
+    0 12px 26px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--label-angle))
+    translateY(clamp(-250px, -16vw, -180px))
+    rotate(calc(var(--label-angle) * -1))
+    rotate(calc(var(--roulette-rotation) * -1));
+}
+
+.roulette-wheel-label strong {
+  font-size: clamp(16px, 1vw, 20px);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.roulette-wheel-label small {
+  font-size: clamp(10px, 0.64vw, 12px);
+  font-weight: 950;
+  line-height: 1;
+  opacity: 0.78;
+}
+
+.label-connection {
+  border-color: rgba(96, 165, 250, 0.38);
+}
+
+.label-fun {
+  border-color: rgba(94, 234, 212, 0.4);
+}
+
+.label-passion {
+  border-color: rgba(251, 113, 133, 0.42);
+}
+
+.roulette-wheel-core {
+  position: relative;
+  z-index: 3;
+  width: 34%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 36%, rgba(255, 255, 255, 0.22), transparent 56%),
+    rgba(18, 11, 21, 0.92);
+  box-shadow:
+    0 20px 48px rgba(0, 0, 0, 0.38),
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset;
+  transform: rotate(calc(var(--roulette-rotation) * -1));
+}
+
+.roulette-wheel-core img {
+  width: 42%;
+  filter: drop-shadow(0 0 20px rgba(255, 215, 176, 0.24));
+}
+
+.roulette-wheel.is-spinning .roulette-wheel-core img {
+  animation: rouletteFlowerPulse 620ms ease-in-out infinite alternate;
+}
+
+.roulette-suspense {
+  position: relative;
+  z-index: 6;
+  min-height: 26px;
+  margin: 0;
+  color: rgba(255, 248, 243, 0.74);
+  font-size: clamp(14px, 0.9vw, 17px);
+  font-weight: 950;
+  letter-spacing: 0;
+  text-align: center;
+  transition: color 180ms ease, transform 180ms ease, text-shadow 180ms ease;
+}
+
+.roulette-suspense.is-active {
+  color: #fff8f3;
+  text-shadow:
+    0 0 18px rgba(255, 215, 176, 0.35),
+    0 0 28px rgba(249, 168, 212, 0.24);
+  animation: rouletteSuspenseText 680ms ease-in-out infinite alternate;
+}
+
+.roulette-spin-button,
+.roulette-actions button,
+.roulette-footer button,
+.roulette-empty button {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 16px;
+  color: #351420;
+  background: linear-gradient(135deg, #ffd7b0, #f9a8d4);
+  font: inherit;
+  font-weight: 950;
+  cursor: pointer;
+  transition: transform 160ms ease, opacity 160ms ease, box-shadow 160ms ease;
+}
+
+.roulette-spin-button:hover:not(:disabled),
+.roulette-actions button:hover:not(:disabled),
+.roulette-footer button:hover,
+.roulette-empty button:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.roulette-spin-button:disabled,
+.roulette-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.roulette-spin-button {
+  position: relative;
+  z-index: 6;
+  min-width: min(100%, 340px);
+  min-height: 66px;
+  padding-inline: 28px;
+  color: #351420;
+  font-size: clamp(17px, 1.2vw, 23px);
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.28),
+    0 0 36px rgba(249, 168, 212, 0.2);
+}
+
+.roulette-spin-button img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.24));
+}
+
+.roulette-card-panel {
+  position: relative;
+  min-height: clamp(640px, 72vh, 820px);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) 42px;
+  gap: clamp(14px, 1.8vh, 24px);
+  padding: clamp(24px, 2.6vw, 42px);
+  overflow: hidden;
+  overflow-anchor: none;
+}
+
+.roulette-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: start;
+  gap: 14px;
+}
+
+.roulette-kicker {
+  width: max-content;
+  margin: 0;
+  padding: 8px 13px;
+  border: 1px solid rgba(255, 219, 184, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: #ffd7b0;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.roulette-copy h1 {
+  max-width: 720px;
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(44px, 4.6vw, 82px);
+  line-height: 0.98;
+}
+
+.roulette-copy p,
+.roulette-waiting-card p {
+  max-width: 640px;
+  margin: 0;
+  color: #f5d8cb;
+  font-size: clamp(16px, 1.05vw, 21px);
+  line-height: 1.58;
+}
+
+.roulette-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.roulette-stats span,
+.roulette-result p {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  padding: 7px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.075);
+  color: #f8dccf;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.roulette-result {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 219, 184, 0.13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  height: clamp(70px, 6.5vh, 84px);
+  min-height: 0;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.roulette-result.is-empty {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.roulette-result h2,
+.roulette-waiting-card h2 {
+  margin: 0;
+  color: #fffaf5;
+  font-size: clamp(24px, 2vw, 36px);
+  line-height: 1.12;
+}
+
+.roulette-result h2 {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.roulette-card-zone {
+  position: relative;
+  z-index: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(320px, 1fr) auto;
+  gap: clamp(14px, 1.4vw, 22px);
+  align-items: stretch;
+}
+
+.roulette-card-frame {
+  position: relative;
+  min-height: clamp(320px, 42vh, 500px);
+  display: grid;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.roulette-card-shell {
+  position: absolute;
+  inset: 0;
+  perspective: 1600px;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.roulette-card-inner {
+  position: relative;
+  min-height: inherit;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 680ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.roulette-card-shell.is-revealed .roulette-card-inner {
+  transform: rotateY(180deg);
+}
+
+.roulette-card {
+  position: absolute;
+  inset: 0;
+  min-height: inherit;
+  display: grid;
+  place-items: center;
+  padding: clamp(22px, 2.8vw, 44px);
+  border: 1px solid rgba(255, 219, 184, 0.18);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 20% 12%, rgba(255, 215, 176, 0.17), transparent 18rem),
+    linear-gradient(145deg, rgba(58, 24, 38, 0.96), rgba(18, 40, 53, 0.94));
+  backface-visibility: hidden;
+}
+
+.roulette-card-front {
+  transform: rotateY(180deg);
+}
+
+.roulette-card-front p {
+  margin: 0;
+  color: #fffaf5;
+  font-size: clamp(28px, 3vw, 56px);
+  font-weight: 950;
+  line-height: 1.16;
+  text-align: center;
+}
+
+.roulette-card-back {
+  gap: 20px;
+  text-align: center;
+}
+
+.roulette-card-back img,
+.roulette-waiting-card img {
+  width: clamp(140px, 16vw, 260px);
+  filter: drop-shadow(0 22px 42px rgba(0, 0, 0, 0.4));
+}
+
+.roulette-card-back span {
+  color: #fffaf5;
+  font-size: clamp(21px, 1.8vw, 32px);
+  font-weight: 950;
+}
+
+.roulette-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  align-content: stretch;
+  min-height: 64px;
+  opacity: 0.68;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.roulette-actions.is-ready {
+  opacity: 1;
+}
+
+.roulette-actions button {
+  min-height: 58px;
+  color: #fff8f3;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(9, 15, 24, 0.48);
+}
+
+.roulette-actions button.active {
+  color: #06251f;
+  background: linear-gradient(135deg, #5eead4, #fef3c7);
+}
+
+.roulette-actions button.favorite.active {
+  color: #351420;
+  background: linear-gradient(135deg, #ffd7b0, #f9a8d4);
+}
+
+.roulette-actions button.done {
+  color: #351420;
+  background: linear-gradient(135deg, #ffd7b0, #f9a8d4);
+}
+
+.roulette-waiting-card {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 18px;
+  padding: clamp(24px, 3vw, 48px);
+  border: 1px solid rgba(255, 219, 184, 0.15);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(255, 215, 176, 0.15), transparent 20rem),
+    rgba(255, 255, 255, 0.055);
+  text-align: center;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+
+.roulette-card-frame.has-card .roulette-waiting-card {
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+}
+
+.roulette-icon {
+  width: 1.16em;
+  height: 1.16em;
+}
+
+.roulette-action-message,
+.roulette-action-error {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: clamp(14px, 0.9vw, 17px);
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.roulette-action-status {
+  position: relative;
+  z-index: 1;
+  height: 42px;
+  min-height: 0;
+  display: grid;
+  align-items: start;
+  overflow: hidden;
+}
+
+.roulette-action-message {
+  color: #99f6e4;
+  border: 1px solid rgba(153, 246, 228, 0.18);
+}
+
+.roulette-action-error {
+  color: #fecdd3;
+  border: 1px solid rgba(254, 205, 211, 0.18);
+}
+
+.roulette-footer {
+  width: min(100%, 1480px);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+}
+
+.roulette-footer .roulette-secondary,
+.roulette-empty button {
+  color: #fff8f3;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.roulette-empty {
+  width: min(100%, 900px);
+  margin: auto;
+  display: grid;
+  gap: 16px;
+  padding: clamp(28px, 4vw, 56px);
+}
+
+.roulette-empty h1,
+.roulette-empty p {
+  margin: 0;
+}
+
+html[dir='rtl'] .roulette-copy,
+html[dir='rtl'] .roulette-result,
+html[dir='rtl'] .roulette-empty {
+  justify-items: end;
+  text-align: right;
+}
+
+html[dir='ltr'] .roulette-copy,
+html[dir='ltr'] .roulette-result,
+html[dir='ltr'] .roulette-empty {
+  justify-items: start;
+  text-align: left;
+}
+
+@keyframes roulettePointerPulse {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+    filter:
+      drop-shadow(0 14px 18px rgba(0, 0, 0, 0.42))
+      drop-shadow(0 0 14px rgba(255, 215, 176, 0.34));
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(5px);
+    filter:
+      drop-shadow(0 18px 20px rgba(0, 0, 0, 0.48))
+      drop-shadow(0 0 24px rgba(255, 215, 176, 0.56));
+  }
+}
+
+@keyframes roulettePointerAlert {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px) scale(1.08);
+  }
+}
+
+@keyframes rouletteSpeedRing {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rouletteSuspenseText {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes rouletteInnerPulse {
+  from {
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.22);
+  }
+
+  to {
+    box-shadow:
+      inset 0 0 94px rgba(255, 255, 255, 0.16),
+      inset 0 0 46px rgba(94, 234, 212, 0.14);
+  }
+}
+
+@keyframes rouletteOuterGlow {
+  from {
+    box-shadow: 0 0 34px rgba(249, 168, 212, 0.18);
+  }
+
+  to {
+    box-shadow:
+      0 0 54px rgba(249, 168, 212, 0.36),
+      0 0 82px rgba(94, 234, 212, 0.22);
+  }
+}
+
+@keyframes rouletteFlowerPulse {
+  from {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(255, 215, 176, 0.24));
+  }
+
+  to {
+    transform: scale(1.13);
+    filter:
+      drop-shadow(0 0 24px rgba(255, 215, 176, 0.46))
+      drop-shadow(0 0 18px rgba(94, 234, 212, 0.26));
+  }
+}
+
+@media (max-width: 1240px) {
+  .roulette-layout {
+    grid-template-areas:
+      'wheel'
+      'card';
+  }
+
+  .roulette-layout,
+  .roulette-card-zone {
+    grid-template-columns: 1fr;
+  }
+
+  .roulette-stage,
+  .roulette-card-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .couple-roulette-page {
+    padding: 26px 16px 42px;
+  }
+
+  .roulette-footer {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roulette-wheel,
+  .roulette-card-inner,
+  .roulette-pointer,
+  .roulette-speed-ring,
+  .roulette-suspense,
+  .roulette-wheel.is-spinning::before,
+  .roulette-wheel.is-spinning::after,
+  .roulette-wheel.is-spinning .roulette-wheel-core img {
+    transition: none;
+    animation: none;
+  }
+}

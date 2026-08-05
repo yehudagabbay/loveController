@@ -1,0 +1,1318 @@
+{
+  "common": {
+    "cardSelection": {
+      "whatPlaying": "Was spielen wir?",
+      "whoPlaying": "Wer spielt?",
+      "chooseTypes": "Kartentypen wählen",
+      "tapToChooseGame": "Tippen, um Kartentypen zu wählen",
+      "participantsCount": "{{count}} Spieler",
+      "optional": "Optional",
+      "levels": {
+        "light": "Leicht",
+        "personal": "Persönlich",
+        "deep": "Tief"
+      },
+      "levelPrompt": "Welche Tiefe fühlt sich richtig an?",
+      "chooseDepth": "Wählt, wie leicht oder tief sich das Spiel anfühlen soll",
+      "removePlayer": "Spieler entfernen",
+      "playersHint": "Namen eintragen oder leer lassen und direkt starten."
+    },
+    "playerRoulette": {
+      "toggleTitle": "Spieler Roulette",
+      "toggleSubtitle": "Dreht vor jeder Karte und lasst den Zufall entscheiden.",
+      "title": "Wer zieht die Karte?",
+      "idle": "Dreh das Rad mit dem Finger oder tippe auf den Button.",
+      "spinning": "Das Rad wählt...",
+      "selected": "Der Zug geht an",
+      "spinButton": "Drehen",
+      "revealButton": "Karte aufdecken",
+      "continueButton": "Zur Karte",
+      "disableButton": "Ohne Roulette spielen",
+      "enableButton": "Mit Roulette spielen",
+      "addPlayerButton": "Spieler hinzufügen",
+      "maxPlayersReached": "Maximal {{count}} Spieler",
+      "playerPlaceholder": "Spieler",
+      "cancel": "Abbrechen"
+    },
+    "categories": {
+      "relations": "Beziehungen",
+      "fun": "Spaß",
+      "love": "Liebe"
+    },
+    "levels": {
+      "easy": "Einfach",
+      "hard": "Hart",
+      "medium": "Medium"
+    },
+    "general": {
+      "sending": "Senden…",
+      "loading": "Laden..."
+    }
+  },
+  "alerts": {
+    "successTitle": "Erfolg",
+    "networkErrorTitle": "Netzwerkfehler",
+    "errorTitle": "Fehler",
+    "waitTitle": "Warte eine Sekunde",
+    "infoTitle": "Info",
+    "oopsTitle": "Hoppla"
+  },
+  "registration": {
+    "fields": {
+      "nickname": "Spitzname",
+      "email": "E Mail",
+      "confirmPassword": "Passwort bestätigen",
+      "genderLabel": "Geschlecht:",
+      "age": "Alter",
+      "password": "Passwort"
+    },
+    "title": "Registrieren",
+    "gender": {
+      "male": "Männlich",
+      "female": "Weiblich"
+    },
+    "alerts": {
+      "verifyEmailNotice": "Die Registrierung war erfolgreich. Bitte prüfe deine E Mails und bestätige dein Konto, bevor du dich anmeldest.",
+      "registerHttpError": "Registrierungsfehler (HTTP {{status}})",
+      "registerSuccess": "Erfolgreich registriert!",
+      "emailAlreadyExists": "E Mail Adresse existiert bereits"
+    },
+    "buttons": {
+      "register": "Registrieren",
+      "registerWithGoogle": "Mit Google registrieren",
+      "registerWithFacebook": "Mit Facebook registrieren"
+    },
+    "socialRegister": {
+      "cancelled": {
+        "title": "Abgesagt",
+        "message": "Die Google Anmeldung wurde abgebrochen."
+      },
+      "success": {
+        "confirm": "OK",
+        "message": "Du hast dich erfolgreich mit Google angemeldet!"
+      },
+      "loading": {
+        "steps": {
+          "google": "Google Zugriff prüfen",
+          "account": "Konto synchronisieren",
+          "ready": "Spiel öffnen"
+        },
+        "subtitle": "Wir prüfen dein Google Konto und bereiten dein Spiel vor.",
+        "title": "Sichere Anmeldung läuft"
+      },
+      "errors": {
+        "googleOpenFailed": "Die Google Anmeldung konnte nicht geöffnet werden.",
+        "missingIdToken": "Es wurde kein id_token empfangen. Prüfe OAuth und die Weiterleitungs Einstellungen.",
+        "googleAuthError": "Google Authentifizierungsfehler: {{code}}",
+        "firebaseFailed": "Firebase Anmeldung fehlgeschlagen."
+      }
+    },
+    "links": {
+      "haveAccount": "Du hast schon ein Konto? Hier anmelden"
+    },
+    "errors": {
+      "emailInvalid": "Ungültiges E Mail Format",
+      "passwordRequired": "Bitte gib ein Passwort ein",
+      "nicknameRequired": "Bitte gib einen Spitznamen ein",
+      "genderRequired": "Bitte wähle ein Geschlecht",
+      "passwordsNotMatch": "Passwörter stimmen nicht überein",
+      "ageMustBe18": "Die Registrierung ist erst ab 18 Jahren erlaubt",
+      "emailRequired": "Bitte gib eine E Mail Adresse ein",
+      "ageInvalid": "Bitte gib ein gültiges Alter ein",
+      "passwordWeak": "Das Passwort muss mindestens 6 Zeichen lang sein und einen Buchstaben und eine Zahl enthalten"
+    }
+  },
+  "login": {
+    "title": "Willkommen zurück",
+    "or": "oder",
+    "fields": {
+      "email": "E Mail",
+      "password": "Passwort"
+    },
+    "buttons": {
+      "login": "Anmelden",
+      "loginWithGoogle": "Weiter mit Google"
+    },
+    "transition": {
+      "title": "Sichere Anmeldung läuft",
+      "steps": {
+        "ready": "Spiel öffnen",
+        "credentials": "Angaben prüfen",
+        "session": "Sitzung sichern"
+      },
+      "subtitle": "Wir prüfen deine Angaben und bereiten dein Spiel vor."
+    },
+    "subtitle": "Melde dich an, um weiterzuspielen",
+    "links": {
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Noch kein Konto?",
+      "registerNow": "Jetzt registrieren"
+    },
+    "verifyEmail": {
+      "notVerifiedTitle": "E Mail nicht bestätigt",
+      "newEmailSent": "Eine neue Bestätigungsmail wurde gesendet. Bitte prüfe dein Postfach und bestätige dein Konto.",
+      "errorTitle": "Die Überprüfung ist fehlgeschlagen",
+      "successTitle": "E Mail bestätigt",
+      "errorMessage": "Wir konnten deine E Mail nicht bestätigen. Bitte versuche es erneut über den Link in deiner E Mail.",
+      "successMessage": "Deine E Mail wurde erfolgreich bestätigt. Du kannst dich jetzt anmelden."
+    },
+    "alerts": {
+      "missingEmail": "E Mail ist erforderlich.",
+      "missingUserId": "Die Nutzer ID wurde vom Server nicht zurückgegeben.",
+      "missingEmailPassword": "Bitte gib E Mail und Passwort ein.",
+      "missingUserIdMessage": "Die Nutzer ID wurde vom Server nicht zurückgegeben.",
+      "resetFailed": "Die Rücksetzanforderung ist fehlgeschlagen.",
+      "loginSuccessTitle": "Erfolgreich angemeldet!",
+      "loginHttpError": "Anmeldefehler (HTTP {{status}})",
+      "loginSuccessMessage": "Weiter zur Auswahl des Spielstils...",
+      "resetEmailSent": "Wenn die E Mail vorhanden ist, wurde ein Link zum Zurücksetzen gesendet."
+    }
+  },
+  "newPasswordScreen": {
+    "title": "Passwort zurücksetzen",
+    "subtitle": "Konto: {{email}}",
+    "fields": {
+      "newPassword": "Neues Passwort",
+      "confirmPassword": "Passwort bestätigen"
+    },
+    "errors": {
+      "passwordMismatch": "Passwörter stimmen nicht überein.",
+      "passwordRules": "Das Passwort muss mindestens einen Großbuchstaben, einen Kleinbuchstaben und mindestens 4 Zahlen enthalten.",
+      "missingEmailOrToken": "E Mail oder Token fehlen.",
+      "network": "Etwas ist schief gelaufen.",
+      "emptyFields": "Bitte gib dein neues Passwort ein und bestätige es.",
+      "resetFailed": "Das Zurücksetzen des Passworts ist fehlgeschlagen."
+    },
+    "helperText": "Gib ein neues Passwort mit mindestens einem Großbuchstaben, einem Kleinbuchstaben und mindestens 4 Zahlen ein.",
+    "buttons": {
+      "save": "Neues Passwort speichern",
+      "backToLogin": "Zurück zum Anmelden"
+    },
+    "success": {
+      "passwordChanged": "Dein Passwort wurde erfolgreich geändert. Du wirst jetzt zur Anmeldung weitergeleitet."
+    }
+  },
+  "resetPasswordModal": {
+    "fields": {
+      "email": "E Mail"
+    },
+    "title": "Passwort zurücksetzen",
+    "buttons": {
+      "cancel": "Stornieren",
+      "sendLink": "Link senden"
+    },
+    "errors": {
+      "emailRequired": "Bitte gib deine E Mail Adresse ein.",
+      "requestFailed": "Die Rücksetzanforderung konnte nicht gesendet werden.",
+      "network": "Ein Netzwerkfehler ist aufgetreten."
+    },
+    "subtitle": "Gib deine E Mail Adresse ein und wir senden dir einen Link zum Zurücksetzen.",
+    "success": {
+      "message": "Ein Link zum Zurücksetzen des Passworts wurde an deine E Mail Adresse gesendet. Bitte öffne deine E Mail, tippe auf den Link und folge den Schritten, um ein neues Passwort festzulegen.",
+      "title": "Prüfe deine E Mail"
+    }
+  },
+  "ageGate": {
+    "confirm": "Ich bin 18+",
+    "message": "Dieser Modus enthält Inhalte für Erwachsene. Bist du 18 oder älter?",
+    "deny": "Stornieren",
+    "rememberMe": "Erinnere dich an meine Wahl",
+    "title": "Nur Erwachsene (18+)"
+  },
+  "gameModeSelect": {
+    "slogan": {
+      "line1": "Spielen.",
+      "line2": "Entdecken.",
+      "line3": "Neu verlieben."
+    },
+    "header": {
+      "title": "Spielstil wählen",
+      "subtitle": "Passe das Erlebnis an diesen Moment an"
+    },
+    "modes": {
+      "couple": {
+        "title": "Romantisches Paar",
+        "subtitle": "Zeit für Liebe und Nähe"
+      },
+      "family": {
+        "title": "Die ganze Familie",
+        "subtitle": "Verbundenheit und gemeinsames Lachen"
+      },
+      "work": {
+        "title": "Team und Arbeit",
+        "subtitle": "Das Eis brechen"
+      },
+      "friendsFun": {
+        "title": "Freunde und Drinks",
+        "subtitle": "Leichter Spaß, Lachen und Aktion"
+      },
+      "research": {
+        "title": "Recherche",
+        "subtitle": "Karten nach Buch und Forschung"
+      },
+      "perfectDate": {
+        "title": "Perfect Date",
+        "subtitle": "Ein romantisches Premium Erlebnis"
+      }
+    },
+    "alerts": {
+      "soonTitle": "Bald verfügbar",
+      "premiumSoonTitle": "Bald für Premium",
+      "feedbackTitle": "Feedback",
+      "contactTitle": "Kontakt",
+      "helpTitle": "Hilfe",
+      "soonMessage": "Dieser Spielmodus wird im nächsten Update verfügbar sein!",
+      "contactMessage": "Hier kann ein Kontaktbildschirm oder Link ergänzt werden.",
+      "feedbackMessage": "Hier ergänzen wir einen Feedback Bildschirm.",
+      "perfectDateSoonMessage": "Perfect Date wird bald als besonderes Premium Erlebnis verfügbar sein.",
+      "helpMessage": "Die Spielanleitung erscheint hier."
+    }
+  },
+  "gameHome": {
+    "header": {
+      "title": "Spiel vorbereiten",
+      "subtitle": "Wählt die Stimmung für heute"
+    },
+    "players": {
+      "label1": "Spieler 1",
+      "placeholder": "Name...",
+      "label2": "Spieler 2",
+      "default1": "Spieler 1",
+      "default2": "Spieler 2"
+    },
+    "categories": {
+      "passion": {
+        "desc": "Etwas mehr Wärme im Raum",
+        "title": "Leidenschaft und Intimität"
+      },
+      "fun": {
+        "desc": "Lustige Aufgaben und eine gute Stimmung",
+        "title": "Leicht und Spaß"
+      },
+      "intro": {
+        "desc": "Tiefgründige Fragen für ein echtes Gespräch",
+        "title": "Verbindung und Entdeckung"
+      }
+    },
+    "stars": {
+      "selectAll": "Alles auswählen",
+      "clear": "Klar",
+      "title": "Wähle die Kartenstufe"
+    },
+    "menu": {
+      "feedbackSoon": "Feedback kommt bald",
+      "helpSoon": "Hilfe kommt bald"
+    },
+    "buttons": {
+      "start": "Spiel starten"
+    },
+    "alerts": {
+      "waitTitle": "Warte eine Sekunde",
+      "infoTitle": "Info",
+      "errorTitle": "Fehler",
+      "oopsTitle": "Hoppla",
+      "missingUserId": "Nutzer ID fehlt. Bitte melde dich erneut an und versuche es noch einmal.",
+      "selectAtLeastOne": "Wähle vor dem Start mindestens einen Kartentyp aus.",
+      "noCardsFound": "Es wurden keine passenden Karten gefunden. Versuche eine andere Mischung aus Levels und Kategorien aus.",
+      "serverError": "Es gab ein Verbindungsproblem mit dem Server. Bitte versuche es gleich noch einmal."
+    },
+    "specialDraw": {
+      "title": "Sonderziehung",
+      "favoriteSubtitle": "Karten einbeziehen, die du als besonders geliebt markiert hast",
+      "sharedLabel": "Geteilt",
+      "subtitle": "Wähle aus, welche persönlichen Karten angezeigt werden sollen",
+      "favoriteTitle": "Hat mir am meisten gefallen",
+      "feedbackLabel": "Mit Feedback",
+      "empty": {
+        "feedback": "Du hast noch kein Feedback zu Karten hinterlassen.",
+        "shared": "Du hast noch keine Karten geteilt.",
+        "favorite": "Du hast noch keine der Karten als besonders beliebt markiert.",
+        "combined": "Für die von dir ausgewählten Filter wurden keine speziellen Karten gefunden."
+      },
+      "hint": "Wenn es aktiv ist, zieht das System von deinen Spezialkarten"
+    },
+    "instructions": {
+      "sections": {
+        "eyesUp": {
+          "body": "Die App ist nur der Anlass. Die Worte auf dem Bildschirm sind der Schlüssel, aber die eigentliche Geschichte passiert zwischen euch. Schaut euch in die Augen und hört wirklich zu. Die spannendste Antwort steht nicht hier.",
+          "title": "Augen hoch, Bildschirme runter"
+        },
+        "noMasks": {
+          "body": "In Liba gibt es keine richtigen oder falschen Antworten. Versucht nicht, besonders klug oder angepasst zu klingen. Je näher ihr an eurer echten Wahrheit seid, desto tiefer wird die Verbindung. Antwortet aus dem Herzen, nicht aus dem Kopf.",
+          "title": "Keine Masken"
+        },
+        "curiosity": {
+          "body": "Wenn ihr zuhört, bereitet nicht schon die nächste Antwort vor. Versucht zu verstehen, nicht unbedingt zuzustimmen. Statt zu fragen Warum sagst du das? fragt lieber: Interessant, erzähl mir mehr davon.",
+          "title": "Neugier statt Kritik"
+        },
+        "privacy": {
+          "body": "Vertrauen braucht Schutz. Was hier auftaucht, bleibt zwischen euch. Das ist euer sicherer Raum zum Teilen, Träumen und Öffnen.",
+          "title": "Was im Herzen ist, bleibt im Herzen"
+        },
+        "pass": {
+          "body": "Sich zu öffnen ist nicht immer leicht, und das ist völlig in Ordnung. Wenn eine Frage gerade zu verletzlich wirkt, überspringt sie einfach. Manchmal ist nicht zu antworten genauso wichtig. dein könnt später darauf zurückkommen.",
+          "title": "Das emotionale Sicherheitsventil: Es ist in Ordnung, zu „bestehen“"
+        }
+      },
+      "intro": "Bevor wir eintauchen, hier ist, was die Magie möglich macht:",
+      "title": "Liba: Wie funktioniert es?",
+      "ready": "Bereit?",
+      "dontShowAgain": "Anleitungen nicht mehr anzeigen",
+      "openingMission": {
+        "body": "Bevor ihr die erste Karte antippt, schaut euch in die Augen, gebt euch ein High Five oder einen Händedruck und bestätigt, dass ihr füreinander da seid.",
+        "title": "Eröffnungsmission:"
+      },
+      "cta": "Los geht es",
+      "atYourOwnPace": {
+        "body": "Hetzt nicht. Baut die Verbindung Schritt für Schritt auf, vom Leichten zum Tieferen. Liebe braucht Zeit, um aufzugehen.",
+        "title": "In deinem eigenen Tempo:"
+      }
+    }
+  },
+  "coupleCardsGame": {
+    "buttons": {
+      "settings": "Einstellungen",
+      "done": "Fertig ✔",
+      "selectCards": "Karten auswählen",
+      "drawCard": "Ziehe eine Karte",
+      "cancel": "Stornieren",
+      "sendFeedback": "Feedback senden",
+      "skip": "Überspringen ▶︎",
+      "feedback": "Feedback 📝"
+    },
+    "header": {
+      "subtitle": "Hochwertige Paarzeit mit Fragen und Herausforderungen ♥️",
+      "title": "Paarspiel"
+    },
+    "status": {
+      "title": "Spielstatus",
+      "completed": "Abgeschlossene Karten: {{done}} / {{total}}",
+      "lastCardTitle": "Letzte Karte, die ihr gespielt habt",
+      "turnNow": "Jetzt heißt es:",
+      "deckEmptyMessage": "Gehe zurück zur Auswahl, um ein neues Spiel zu starten.",
+      "deckEmptyTitle": "Deck ist leer!",
+      "hint": "Tippe auf Karte ziehen oder wische die obere Karte, um zu starten..."
+    },
+    "alerts": {
+      "noMoreCardsTitle": "Keine Karten mehr",
+      "thanksTitle": "Danke!",
+      "feedbackErrorTitle": "Fehler",
+      "feedbackErrorMessage": "Konnte momentan kein Feedback senden.",
+      "feedbackSent": "Feedback erfolgreich gesendet.",
+      "noMoreCardsMessage": "Du hast alle Karten gespielt. Gehe zurück zur Kartenauswahl, um ein neues Paarspiel zu starten."
+    },
+    "feedbackModal": {
+      "subtitle": "Sag uns, wie diese Karte für dich war",
+      "title": "Feedback zur Karte",
+      "sending": "Senden…",
+      "helperText": "Dein Feedback hilft uns, das Spiel zu verbessern und Aufgaben zu ergänzen, die zu Paaren wie euch passen.",
+      "placeholder": "Schreib hier dein Feedback…"
+    },
+    "turn": {
+      "badge": "Wende: {{name}}"
+    }
+  },
+  "familyCardsSelect": {
+    "header": {
+      "title": "Familienspiel wählen",
+      "subtitle": "Wählt Kartentypen für ein Familienspiel und tragt die Namen ein"
+    },
+    "instructions": {
+      "title": "Liba Familie: Wie funktioniert es?",
+      "sections": {
+        "beYourself": {
+          "title": "Sei einfach du selbst",
+          "body": "Bei Liba gibt es keine richtigen Antworten und keine Noten. Versucht nicht, so zu klingen, wie man es erwartet. Je ehrlicher und einfacher ihr seid, desto interessanter wird es für alle."
+        },
+        "trueListening": {
+          "title": "Wahres Zuhören",
+          "body": "Wenn jemand spricht, hören wir einfach zu. Nicht unterbrechen und nicht urteilen. Unser Ziel ist, einander etwas tiefer kennenzulernen. Statt Warum hast du das gesagt? lieber: Das ist interessant, erzähl uns mehr."
+        },
+        "screensDown": {
+          "title": "Wir sind alle hier, nicht in unseren Bildschirmen",
+          "body": "Die App ist nur der Anlass. Die Worte auf dem Bildschirm sind der Schlüssel, aber die echte Geschichte seid ihr. Schaut euch in die Augen. Die spannendste Antwort steht nicht hier."
+        },
+        "familySafeSpace": {
+          "title": "Was passiert in der Familie...",
+          "body": "Dieses Spiel ist unser sicherer Raum. Was hier hochkommt, bleibt in der Familie. Dies ist unsere Zeit, mit Zuversicht zu teilen, in dem Wissen, dass wir gehört werden."
+        },
+        "pass": {
+          "title": "Es ist in Ordnung, „Pass“ zu sagen",
+          "body": "Wir haben nicht immer Lust, alles zu teilen, und das ist in Ordnung. Wenn eine Frage gerade nicht passt, überspringt sie einfach. Respekt vor Privatsphäre gehört zum Spiel."
+        }
+      },
+      "intro": "Bevor ihr beginnt, hilft euch das dabei, den Familienmoment entstehen zu lassen:",
+      "ready": "Bereit?",
+      "dontShowAgain": "Anleitungen nicht mehr anzeigen",
+      "cta": "Fangen wir an",
+      "atYourOwnPace": {
+        "body": "Hetzt nicht. Gebt jedem Zeit zu sprechen. Familiennähe entsteht in den kleinen Momenten, in denen wir wirklich zuhören.",
+        "title": "Beginnt in eurem Tempo:"
+      }
+    },
+    "players": {
+      "title": "Wer spielt mit?",
+      "labels": {
+        "p1": "Spieler 1",
+        "p2": "Spieler 2",
+        "p3": "Spieler 3",
+        "p4": "Spieler 4",
+        "p5": "Spieler 5",
+        "p6": "Spieler 6"
+      },
+      "placeholder": "Name...",
+      "addButton": "Spieler hinzufügen",
+      "dynamicLabel": "Spieler {{num}}"
+    },
+    "categories": {
+      "intro": {
+        "icon": "👨‍👩‍👧‍👦",
+        "description": "Eisbrecherfragen, die jeden zu Hause verbinden",
+        "title": "Familieneinführung"
+      },
+      "fun": {
+        "icon": "😄",
+        "title": "Spaß und Lachen",
+        "description": "Leichte Herausforderungen, die Kinder und Erwachsene zum Lachen bringen"
+      },
+      "team": {
+        "title": "Familienbindung",
+        "icon": "🏠",
+        "description": "Karten, die Teamarbeit und Zusammengehörigkeit stärken"
+      }
+    },
+    "levels": {
+      "clear": "Klar",
+      "selectAll": "Alles auswählen",
+      "title": "Wähle die Kartenstufe"
+    },
+    "buttons": {
+      "start": "Spiel starten"
+    },
+    "alerts": {
+      "missingUserTitle": "Nutzer nicht gefunden",
+      "selectAtLeastOneMessage": "Bitte wähle mindestens einen Kartentyp.",
+      "needTwoPlayersMessage": "Für ein Familienspiel brauchst du mindestens zwei Spielernamen.",
+      "needTwoPlayersTitle": "Nicht genügend Spieler",
+      "selectAtLeastOneTitle": "Wähle Kartentypen",
+      "notFoundMessage": "Für diese Auswahl wurden keine passenden Karten gefunden. Versuche eine andere Kategorie oder Schwierigkeit.",
+      "errorTitle": "Fehler",
+      "missingUserMessage": "Nutzer ID fehlt. Bitte melde dich erneut an und versuche es noch einmal.",
+      "noCardsMessage": "Zu deiner Auswahl wurden keine passenden Karten gefunden.",
+      "errorMessage": "Es gab ein Verbindungsproblem. Bitte versuche es gleich noch einmal.",
+      "noCardsTitle": "Keine Karten gefunden",
+      "notFoundTitle": "Keine Karten gefunden"
+    },
+    "specialDraw": {
+      "title": "Sonderziehung",
+      "subtitle": "Wähle aus, welche persönlichen Karten angezeigt werden sollen",
+      "favoriteTitle": "Hat mir am meisten gefallen",
+      "favoriteSubtitle": "Karten einbeziehen, die du als besonders geliebt markiert hast",
+      "sharedLabel": "Geteilt",
+      "feedbackLabel": "Mit Feedback",
+      "hint": "Wenn es aktiv ist, zieht das System von deinen Spezialkarten",
+      "empty": {
+        "feedback": "Du hast noch kein Feedback zu den Karten hinterlassen.",
+        "favorite": "Du hast noch keine der Karten als besonders beliebt markiert.",
+        "shared": "Du hast noch keine Karten geteilt.",
+        "combined": "Für die von dir ausgewählten Filter wurden keine speziellen Karten gefunden."
+      }
+    }
+  },
+  "familyCardsGame": {
+    "header": {
+      "title": "Familienspiel",
+      "subtitle": "Gemeinsame Zeit mit Karten und Fragen"
+    },
+    "buttons": {
+      "drawCard": "Karte ziehen",
+      "done": "Erledigt",
+      "selectCards": "Karten wählen",
+      "skip": "Überspringen",
+      "feedback": "Feedback",
+      "cancel": "Stornieren",
+      "sendFeedback": "Feedback senden"
+    },
+    "status": {
+      "turnNow": "Jetzt heißt es:",
+      "completed": "Abgeschlossene Karten: {{done}} / {{total}}",
+      "lastCardTitle": "Letzte Karte, die ihr gespielt habt",
+      "deckEmptyTitle": "Deck ist leer!",
+      "hint": "Tippe auf Karte ziehen oder wische die obere Karte, um zu starten...",
+      "deckEmptyMessage": "Gehe zurück zur Kartenauswahl, um ein neues Spiel zu starten.",
+      "title": "Spielstatus"
+    },
+    "emptyPlayers": {
+      "message": "Für das Spiel waren keine Spieler vorgesehen.",
+      "backButton": "Zurück zur Spielerauswahl"
+    },
+    "inlineAlerts": {
+      "noMoreCards": "Es sind keine Karten mehr im Stapel. Unter Karten wählen kannst du neue Karten auswählen.",
+      "missingUserForFeedback": "Es wurde kein angemeldeter Nutzer zum Senden von Feedback gefunden.",
+      "feedbackError": "Feedback kann derzeit nicht gesendet werden.",
+      "feedbackMissing": "Bitte schreib vor dem Senden ein paar Worte.",
+      "missingUser": "Es wurde kein angemeldeter Nutzer gefunden.",
+      "feedbackSent": "Danke! dein Feedback wurde erfolgreich gesendet."
+    },
+    "feedbackModal": {
+      "subtitle": "Sag uns, wie diese Karte für dich war",
+      "placeholder": "Schreib dein Feedback hier...",
+      "sending": "Senden...",
+      "title": "Feedback zur Karte",
+      "helperText": "Dein Feedback hilft uns, das Spiel zu verbessern und Karten zu ergänzen, die zu Familien wie eurer passen."
+    },
+    "category": {
+      "name": {
+        "1": "Familieneinführung",
+        "2": "Spaß und Lachen",
+        "3": "Familienbindung"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "Einfach",
+        "2": "Medium",
+        "3": "Hart"
+      }
+    },
+    "turn": {
+      "badge": "Wende: {{name}}"
+    }
+  },
+  "friendsCardsSelect": {
+    "instructions": {
+      "intro": "Bevor ihr beginnt, hilft euch das dabei, den Moment entstehen zu lassen:",
+      "title": "Liba Friends & Work: Wie funktioniert es?",
+      "sections": {
+        "curiosityOverCriticism": {
+          "title": "Neugier statt Kritik",
+          "body": "Wenn jemand etwas teilt, hören wir zu, um zu verstehen, und nicht, um zu reagieren oder zu urteilen. Anstatt zu fragen: „Warum hast du das gesagt?“, versuche es mit: „Das ist interessant, erzähl mir mehr darüber.“"
+        },
+        "fullPresence": {
+          "body": "Die App ist nur der Anlass. Die Worte auf dem Bildschirm sind der Schlüssel, aber die echte Geschichte passiert zwischen euch. Legt Benachrichtigungen beiseite und schaut euch in die Augen. Die spannendste Antwort steht nicht hier.",
+          "title": "Volle Präsenz"
+        },
+        "noWorkAnswers": {
+          "body": "Bei Liba gibt es keine richtigen oder falschen Antworten. Versucht nicht, professionell oder politisch korrekt zu klingen. Je echter ihr seid, desto stärker wird die Verbindung. Antwortet aus dem Bauch, nicht aus dem Kopf.",
+          "title": "Keine „Arbeit“ Antworten"
+        },
+        "trustAgreement": {
+          "body": "Um uns zu öffnen, müssen wir uns sicher fühlen. Was auch immer hier hochkommt, bleibt nur zwischen dir. Vertraulichkeit ist die Grundlage für den Aufbau einer echten Bindung innerhalb einer Gruppe oder eines Teams.",
+          "title": "Unser Treuhandvertrag"
+        },
+        "rightToSkip": {
+          "title": "Das Recht zum Überspringen",
+          "body": "Das ist ein Spiel, kein Verhör. Wenn sich eine Frage zu persönlich anfühlt oder sich im Moment einfach nicht richtig anfühlt, ist es völlig in Ordnung, „Bestanden“ zu sagen und sie zu überspringen. Der gegenseitige Respekt vor dem Tempo jedes Einzelnen steht an erster Stelle."
+        }
+      },
+      "atYourOwnPace": {
+        "title": "Beginnt in eurem Tempo:",
+        "body": "Beeilt euch nicht. Lasst die Worte auf sich wirken. Eine echte Verbindung im Team oder unter Freunden entsteht in den Momenten, in denen wir wirklich innehalten, um die Person, die uns gegenübersitzt, kennenzulernen."
+      },
+      "ready": "Bereit?",
+      "dontShowAgain": "Anleitungen nicht mehr anzeigen",
+      "cta": "Fangen wir an"
+    },
+    "header": {
+      "title": "Spiel für Freunde wählen",
+      "subtitle": "Wählt Kartentypen und tragt die Namen ein"
+    },
+    "players": {
+      "title": "Wer spielt mit?",
+      "addButton": "Spieler hinzufügen",
+      "placeholder": "Name...",
+      "playerLabel": "Spieler {{num}}"
+    },
+    "categories": {
+      "fun": {
+        "description": "Leichte Aufgaben, die jeden zum Lächeln bringen",
+        "title": "Lustige Herausforderungen"
+      },
+      "intro": {
+        "title": "Einführung und Aufwärmen",
+        "description": "Eisbrecher und freundliche Kennenlernfragen"
+      },
+      "team": {
+        "title": "Teambindung",
+        "description": "Karten, die Zusammenarbeit und Zusammengehörigkeit fördern"
+      }
+    },
+    "stars": {
+      "clear": "Klar",
+      "title": "Wähle die Kartenstufe",
+      "selectAll": "Alles auswählen"
+    },
+    "alerts": {
+      "errorTitle": "Fehler",
+      "infoTitle": "Info",
+      "waitTitle": "Festhalten",
+      "oopsTitle": "Hoppla",
+      "chooseAtLeastOneCategory": "Bitte wähle mindestens einen Kartentyp aus (wähle Sterne).",
+      "missingUserId": "Nutzer ID fehlt. Bitte melde dich erneut an und versuche es noch einmal.",
+      "connectionError": "Es gab ein Verbindungsproblem. Bitte versuche es gleich noch einmal.",
+      "noCardsFound": "Zu deiner Auswahl wurden keine passenden Karten gefunden.",
+      "noCardsForSelection": "Für diese Auswahl wurden keine Karten gefunden. Versuche, Kategorien oder Ebenen zu ändern.",
+      "enterAtLeastOnePlayer": "Bitte gib mindestens zwei Spielernamen ein."
+    },
+    "buttons": {
+      "start": "Spiel starten"
+    },
+    "specialDraw": {
+      "title": "Sonderziehung",
+      "subtitle": "Wähle aus, welche persönlichen Karten angezeigt werden sollen",
+      "favoriteTitle": "Hat mir am meisten gefallen",
+      "favoriteSubtitle": "Karten einbeziehen, die du als besonders geliebt markiert hast",
+      "feedbackLabel": "Mit Feedback",
+      "sharedLabel": "Geteilt",
+      "hint": "Wenn es aktiv ist, zieht das System von deinen Spezialkarten",
+      "empty": {
+        "favorite": "Du hast noch keine der Karten als besonders beliebt markiert.",
+        "feedback": "Du hast noch kein Feedback zu den Karten hinterlassen.",
+        "combined": "Für die von dir ausgewählten Filter wurden keine speziellen Karten gefunden.",
+        "shared": "Du hast noch keine Karten geteilt."
+      }
+    },
+    "menu": {
+      "helpSoon": "Hilfe bald verfügbar",
+      "feedbackSoon": "Feedback kommt bald"
+    }
+  },
+  "friendsCardsGame": {
+    "categories": {
+      "intro": "Einführung und Aufwärmen",
+      "fun": "Lustige Herausforderungen",
+      "team": "Teambindung"
+    },
+    "levels": {
+      "easy": "Einfach",
+      "medium": "Medium",
+      "hard": "Hart"
+    },
+    "empty": {
+      "noPlayers": "Für das Spiel waren keine Spieler vorgesehen.",
+      "backToSelect": "Zurück zur Spielerauswahl"
+    },
+    "deck": {
+      "emptyTitle": "Deck ist leer!",
+      "emptySubtitle": "Wähle neue Karten, um ein neues Spiel zu beginnen."
+    },
+    "buttons": {
+      "draw": "Ziehe eine Karte",
+      "selectCards": "Karten auswählen"
+    },
+    "status": {
+      "title": "Spielstatus",
+      "nowTurn": "Jetzt heißt es:",
+      "lastCardTitle": "Letzte Karte, die ihr gespielt habt",
+      "hint": "Tippe auf Karte ziehen oder wische die obere Karte, um zu starten...",
+      "done": "Vervollständigte Karten: {{revealedCount}} / {{totalCount}}"
+    },
+    "alerts": {
+      "deckEmptyTitle": "Keine Karten mehr",
+      "close": "Schließen",
+      "errorTitle": "Fehler",
+      "noUserForFeedback": "Es wurde kein angemeldeter Nutzer zum Senden von Feedback gefunden.",
+      "noUserLogged": "Es wurde kein angemeldeter Nutzer gefunden.",
+      "feedbackMissingTitle": "Festhalten...",
+      "thanksTitle": "Danke schön!",
+      "feedbackFailed": "Feedback kann derzeit nicht gesendet werden.",
+      "feedbackSent": "dein Feedback wurde erfolgreich gesendet.",
+      "deckEmptyMessage": "Du hast alle Karten gespielt. Gehe zurück zur Kartenauswahl, um ein neues Spiel zu starten.",
+      "feedbackMissingMessage": "Bitte schreib dein Feedback vor dem Senden.",
+      "toSelectCards": "Zur Kartenauswahl"
+    },
+    "header": {
+      "subtitle": "Ein leichter Weg, euch besser kennenzulernen",
+      "title": "Spiel für Freunde"
+    },
+    "card": {
+      "actions": {
+        "done": "Erledigt",
+        "feedback": "Feedback",
+        "skip": "Überspringen"
+      },
+      "turnOf": "Wendepunkt: {{name}}"
+    },
+    "feedback": {
+      "title": "Feedback zur Karte",
+      "placeholder": "Schreib hier dein Feedback...",
+      "info": "Dein Feedback hilft uns, das Spiel zu verbessern und bessere Karten für Freunde und Teams zu ergänzen.",
+      "cancel": "Stornieren",
+      "send": "Feedback senden",
+      "sending": "Senden...",
+      "subtitle": "Sag uns, wie diese Karte für dich war"
+    }
+  },
+  "feedbackScreen": {
+    "title": "Feedback zur App",
+    "placeholder": "Schreib dein Feedback hier...",
+    "rating": {
+      "label": "Sternebewertung",
+      "optional": "Optional, hilft uns aber, das Erlebnis zu verstehen",
+      "clear": "Bewertung löschen",
+      "starAccessibility": "{{count}} Sterne"
+    },
+    "buttons": {
+      "send": "Feedback senden",
+      "cancel": "Stornieren"
+    },
+    "alerts": {
+      "missingUserTitle": "Nutzer nicht gefunden",
+      "thanksTitle": "Danke schön! 💙",
+      "thanksMessage": "dein Feedback wurde erfolgreich gesendet.",
+      "backButton": "Zurück",
+      "missingUserMessage": "Wir konnten den aktuellen Nutzer nicht identifizieren. Bitte melde dich erneut an.",
+      "emptyFeedbackTitle": "Feedback fehlt",
+      "sendErrorTitle": "Senden fehlgeschlagen",
+      "emptyFeedbackMessage": "Bitte schreib vor dem Senden ein Feedback.",
+      "sendErrorMessage": "Beim Senden des Feedbacks ist ein Fehler aufgetreten. Bitte versuche es später noch einmal."
+    },
+    "subtitle": "Sag uns, was dir gefallen hat, was nicht gepasst hat und welche Ideen du für das Spiel hast.",
+    "email": {
+      "label": "Lieber per E Mail? Schreib uns unter:",
+      "subject": "App Feedback"
+    }
+  },
+  "helpScreen": {
+    "title": "Hilfe",
+    "sections": {
+      "what": {
+        "body": "Liba ist eine Karten App, die Verbindung stärkt. Für Paare, Familien und Freunde.",
+        "title": "Was macht die App?"
+      },
+      "howToStart": {
+        "title": "Wie starte ich?",
+        "body": "1. Spielmodus wählen. 2. Kategorien und Schwierigkeit auswählen. 3. Losspielen."
+      },
+      "turn": {
+        "body": "Ziehe eine Karte, lies sie laut vor, erfülle die Aufgabe oder beantworte die Frage. Danach ist der nächste Spieler dran.",
+        "title": "Wie läuft ein Zug ab?"
+      },
+      "feedback": {
+        "title": "Warum Feedback senden?",
+        "body": "Dein Feedback hilft uns, die Karten zu verbessern und bessere Spielerlebnisse zu bauen."
+      }
+    },
+    "subtitle": "Alles, was du brauchst, um zu starten und gut ins Spiel zu kommen",
+    "buttons": {
+      "back": "Zurück",
+      "toGame": "Zu den Spielmodi"
+    }
+  },
+  "infoScreen": {
+    "title": "Der Motor von Liba",
+    "subtitle": "Euer Gespräch verdient mehr als nur Fragen. Es verdient Tiefe.",
+    "sections": {
+      "engine": {
+        "title": "Der Motor von Liba",
+        "body": "Bei Liba erstellen wir nicht einfach Fragen. Wir bauen Brücken.\n\nStellt euch eine große Bibliothek menschlicher Erfahrung vor, mit Psychologie, Forschung und Erkenntnissen aus vielen Jahren. Dazu kommt ein sensibles technisches Herz, das diese Quellen im richtigen Moment nutzt. Das ist der Motor von Liba."
+      },
+      "research": {
+        "title": "Forschung, die niemals aufhört",
+        "body": "Während ihr diese Zeilen lest, arbeitet unser System weiter. Es prüft Quellen, Fachliteratur und Studien, damit die Karten präzise und nützlich bleiben. Wir wollen keine beliebigen Fragen. Jede Karte entsteht aus Recherche, Auswahl und dem Wunsch, euch echten Wert zu geben."
+      },
+      "aiSoul": {
+        "title": "Künstliche Intelligenz mit Seele",
+        "body": "In einer Welt voller schneller Inhalte ist es leicht, leere Fragen zu produzieren, die nicht wirklich helfen. Liba geht anders vor. Die KI ist nicht die Quelle, sondern der Forscher. Sie hilft dabei, Inhalte zu finden, die verbinden, öffnen und wachsen lassen."
+      },
+      "transparency": {
+        "title": "Unsere Transparenz ist deine Sicherheit",
+        "body": "Wir schützen euren Moment. Jede Frage wird geprüft, damit sie öffnet und nicht verletzt. Wenn ihr eine Liba Karte öffnet, steckt dahinter echte Arbeit und ein klarer Anspruch an Qualität."
+      }
+    },
+    "footer": "Euer Gespräch verdient mehr als nur Fragen. Es verdient Tiefe."
+  },
+  "gameTimer": {
+    "tabs": {
+      "timer": "Timer",
+      "stopwatch": "Stoppuhr"
+    }
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "buttons": {
+      "logout": "Abmelden",
+      "cancel": "Stornieren"
+    },
+    "logout": {
+      "title": "Abmelden",
+      "message": "Möchtest du dich wirklich abmelden?"
+    }
+  },
+  "updateDetails": {
+    "title": "Profil vervollständigen",
+    "errors": {
+      "missingUserId": "Fehlende Nutzer ID.",
+      "updateFailed": "deine Daten konnten nicht aktualisiert werden."
+    },
+    "subtitle": "Bitte gib deinen Namen, dein Geschlecht und dein Alter ein, bevor du fortfährst.",
+    "success": {
+      "message": "Details erfolgreich aktualisiert."
+    },
+    "buttons": {
+      "save": "Details speichern"
+    }
+  },
+  "welcomeScreen": {
+    "loginSubtitle": "Ich habe schon ein Konto",
+    "registerSubtitle": "Neuer Nutzer",
+    "buttons": {
+      "login": "Anmelden",
+      "register": "Registrieren"
+    },
+    "chooseText": "Willkommen, wie möchtet ihr starten?",
+    "subtitle": "Spielen, verbinden und zusammen Spaß haben",
+    "title": "Liba Game"
+  },
+  "menu": {
+    "title": "Menü",
+    "couplesCards": "Karten für Paare",
+    "gameMode": "Spielmodus wählen",
+    "about": "Über die App",
+    "help": "Hilfe",
+    "feedback": "Feedback",
+    "termsOfUse": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutz",
+    "chooseLanguage": "Sprache wählen",
+    "languages": {
+      "en": "English",
+      "he": "עברית",
+      "es": "Español",
+      "ru": "Русский",
+      "ar": "العربية",
+      "zh": "中文",
+      "fr": "Français",
+      "de": "Deutsch"
+    },
+    "language": "Sprache",
+    "updateDetails": "Details aktualisieren",
+    "familyCards": "Karten für Familie",
+    "friendsCards": "Karten für Freunde",
+    "logout": "Abmelden",
+    "logoutError": "Abmelden fehlgeschlagen. Bitte versuche es erneut.",
+    "resetInstructionsSuccess": "Die Anzeige der Anleitungen wurde zurückgesetzt.",
+    "resetInstructionsError": "Die Anleitungen konnten gerade nicht zurückgesetzt werden.",
+    "linkOpenError": "Der Link konnte nicht geöffnet werden.",
+    "policyPrivacy": "Richtlinien und Datenschutz",
+    "resetInstructions": "Anleitungen zurücksetzen"
+  },
+  "indexGame": {
+    "subtitle": "Tiefe Verbindungen, eine Karte nach der anderen",
+    "status": {
+      "title": "Spielstatus",
+      "turnNow": "Aktuelle Runde:",
+      "doneCards": "Gespielte Karten: {{revealedCount}} / {{totalCount}}",
+      "hint": "Ziehe eine Karte, um den Zauber zu starten ✨",
+      "lastCardTitle": "Letzte gespielte Karte:"
+    },
+    "buttons": {
+      "settings": "Spieleinstellungen",
+      "draw": "Karte ziehen"
+    },
+    "empty": {
+      "subtitle": "Du hast das Deck fertiggestellt. Bereit für eine weitere Runde?",
+      "title": "Keine Karten mehr!"
+    },
+    "title": "Liba Das Spiel",
+    "card": {
+      "turnOf": "Wendepunkt: {{player}}",
+      "reactions": {
+        "like": "Gefallen",
+        "love": "Geliebt"
+      },
+      "actions": {
+        "share": "Teile den Moment 💌",
+        "done": "Wir haben es geschafft 👌",
+        "skip": "Überspringen",
+        "feedback": "Moment bewerten"
+      }
+    },
+    "category": {
+      "name": {
+        "1": "Verbindung",
+        "2": "Spaß",
+        "3": "Hingabe"
+      }
+    },
+    "level": {
+      "name": {
+        "1": "Einfach",
+        "2": "Medium",
+        "3": "Hart"
+      }
+    },
+    "alerts": {
+      "noUserTitle": "Gastmodus",
+      "feedbackMissingTitle": "Warten...",
+      "thanksTitle": "Danke schön!",
+      "noUserMessage": "Bitte melde dich an, um Feedback zu Karten abzugeben.",
+      "feedbackErrorTitle": "Fehler",
+      "feedbackErrorMessage": "Feedback konnte nicht gesendet werden. Bitte versuche es später noch einmal.",
+      "noCardsMessage": "Alle Karten wurden aufgedeckt. Rückkehr zum Menü.",
+      "noCardsTitle": "Deck leer",
+      "thanksMessage": "dein Feedback hilft uns, Liba besser zu machen.",
+      "feedbackMissingMessage": "Bitte gib vor dem Absenden dein Feedback ein."
+    },
+    "feedback": {
+      "title": "Karten Feedback",
+      "cancel": "Stornieren",
+      "subtitle": "Wie war dieser Impuls für dich?",
+      "send": "Feedback senden",
+      "placeholder": "Schreib hier deine Gedanken...",
+      "note": "dein Feedback ist anonym und hilft, das Spiel zu verbessern."
+    }
+  },
+  "general": {
+    "sending": "Senden..."
+  },
+  "about_description": "Diese App wurde entwickelt, um durch interaktive Karten, Fragen und Herausforderungen sinnvolle und unterhaltsame Erlebnisse zwischen Menschen zu schaffen. Es hilft, Kommunikation, Verbindung und gemeinsame Momente zu verbessern.",
+  "about_title": "Über die App",
+  "about_feature_4": "Mehrsprachige Unterstützung",
+  "about_feature_3": "Mehrere Kategorien und Schwierigkeitsgrade",
+  "about_feature_2": "Spielmodi für Freunde und Familie",
+  "about_feature_1": "Spielmodus für Paare",
+  "about_features_title": "Was du hier findest",
+  "about_version_title": "Version",
+  "shareCard": {
+    "gameTypes": {
+      "couples": "Paare",
+      "friends": "Freunde",
+      "family": "Familie"
+    },
+    "footer": {
+      "tagline": "Kommt euch mit LIBA näher"
+    }
+  },
+  "about_goal_title": "Unser Ziel",
+  "about_privacy_button": "Datenschutz öffnen",
+  "perfectDate": {
+    "title": "Perfect Date",
+    "vibes": {
+      "light": "Leicht, fließend und lustig",
+      "deep": "Tiefgründig, romantisch und nah",
+      "release": "Spannung lösen und den Kopf freimachen"
+    },
+    "goals": {
+      "future": "Über unsere Pläne und Zukunft sprechen",
+      "intimacy": "Intimität, Nähe und Flirt vertiefen",
+      "fun": "Loslassen, genießen und den Druck vergessen",
+      "appreciation": "Wertschätzung spüren und mehr Lob geben"
+    },
+    "boundaries": {
+      "noFutureTalk": "Keine Zukunftsgespräche",
+      "noWorkMoney": "Keine Arbeit oder Geld",
+      "noActiveTasks": "Keine übermäßig aktiven Aufgaben",
+      "noWorkMoneyTasks": "Keine Arbeit, kein Geld oder keine Hausarbeiten",
+      "noPastConflicts": "Keine Auseinandersetzung mit alten Konflikten",
+      "noPhysical": "Keine körperlichen oder Berührungsaufgaben",
+      "noHeavyPast": "Keine schwere Vergangenheit"
+    },
+    "language": {
+      "he": "עברית",
+      "en": "Englisch",
+      "title": "Datumssprache"
+    },
+    "gender": {
+      "male": "Mann",
+      "female": "Frau"
+    },
+    "questions": {
+      "selectedValue": "Ausgewählt: {{value}}",
+      "header": "Datumsnummer {{number}}",
+      "progress": "Schritt {{current}} von {{total}}",
+      "swipeBackShort": "Zurück",
+      "swipeNextShort": "Nächste",
+      "selectToContinue": "Wähle eine Option, um fortzufahren",
+      "swipeSaveShort": "Speichern",
+      "swipeNext": "Nach links wischen, um fortzufahren",
+      "noSpecialBoundaries": "Keine besonderen Grenzen",
+      "swipeSave": "Zum Speichern nach links wischen",
+      "swipeBack": "Nach rechts wischen, um zurückzugehen",
+      "location": {
+        "title": "Wo findet das Date statt?",
+        "subtitle": "Das ist das eine gemeinsame Detail, das bei euch beiden gleich sein sollte."
+      },
+      "swipeHint": "Wischen oder tippe auf eine Seite",
+      "gender": {
+        "title": "Wie soll das Date zu dir passen?",
+        "subtitle": "Wähle Mann oder Frau, damit das Date persönlich zu dir passt."
+      },
+      "role": {
+        "title": "Wer nutzt dieses Gerät?",
+        "subtitle": "Dadurch weiß die App, wer eine geheime oder passende Aufgabe erhalten soll."
+      },
+      "vibe": {
+        "subtitle": "Eine Wahl genügt. Kein Grund, darüber nachzudenken.",
+        "title": "Welche Stimmung passt heute Abend?"
+      },
+      "boundaries": {
+        "title": "Was passt heute Abend nicht?",
+        "subtitle": "Du kannst mehrere Grenzen wählen. Das System wird sie respektieren."
+      },
+      "goal": {
+        "title": "Was ist dein geheimes Ziel?",
+        "subtitle": "Das bleibt persönlich und beeinflusst die Karten, die du bekommst."
+      }
+    },
+    "location": {
+      "home": "Zu Hause",
+      "out": "Draußen",
+      "exactPlaceholder": "Zum Beispiel: Wohnzimmer, ruhiges Restaurant",
+      "exactLabel": "Genauer Standort"
+    },
+    "lobby": {
+      "header": "Schnellstart",
+      "codePlaceholder": "",
+      "joinButton": "Beitreten",
+      "heroText": "Erstellt einen Raum, teilt einen Code und startet mit ein paar leichten Entscheidungen.",
+      "heroTitle": "Das Perfect Date",
+      "createButton": "Date erstellen",
+      "codeLabel": "Hast du einen Code?"
+    },
+    "roles": {
+      "user1": "Nutzer 1",
+      "user2": "Nutzer 2"
+    },
+    "saved": {
+      "header": "Das Deck ist fertig und wird für den Termin gespeichert",
+      "title": "Datum gespeichert",
+      "launchButton": "Gehe zum Start",
+      "editButton": "Details bearbeiten",
+      "text": "Ihr könnt bis zum Start zurückgehen und Details ändern. Wenn ihr beide bereit seid, geht gemeinsam zum Startbildschirm."
+    },
+    "launch": {
+      "title": "Zusammendrücken",
+      "text": "Haltet den Button ein paar Sekunden gleichzeitig gedrückt, um die nächste Aufgabe oder Frage aufzudecken.",
+      "header": "Nächste Karte: {{progress}}",
+      "holdButton": "Halten"
+    },
+    "card": {
+      "defaultTitle": "Karte",
+      "tapToReveal": "Zum Enthüllen tippen",
+      "nextEyebrow": "Die nächste Karte",
+      "header": "Karte {{progress}}",
+      "secretPill": "Geheim, leise lesen",
+      "defaultCoupleCard": "Paarkarte",
+      "secretFallback": "dein Partner hat eine geheime Mission erhalten. Fließe mit ihm...",
+      "revealButton": "Karte aufdecken",
+      "sharedMoment": "Geteilter Moment"
+    },
+    "reactions": {
+      "like": "Gefallen",
+      "love": "Hat mir am meisten gefallen"
+    },
+    "actions": {
+      "back": "Zurück",
+      "next": "Nächste",
+      "saving": "Sparen...",
+      "done": "Erledigt",
+      "share": "Aktie",
+      "saveQuestionnaire": "Fragebogen speichern",
+      "loadingDeck": "Deck vorbereiten..."
+    },
+    "errors": {
+      "genderRequired": "Wähle Mann oder Frau, um fortzufahren.",
+      "missingDateNumber": "Erstelle ein Date oder tritt einem Date bei, bevor du speicherst.",
+      "saveFailed": "Wir konnten die Datumsdetails derzeit nicht speichern.",
+      "deckFailed": "Wir konnten das Deck momentan nicht vorbereiten."
+    },
+    "done": {
+      "backHome": "Zurück zum Hauptbildschirm",
+      "header": "Das Datum ist abgeschlossen",
+      "text": "Als nächstes verbinden wir diesen Bildschirm mit dem Server Controller und einem echten Deck basierend auf dem Fragebogen.",
+      "title": "Du hast das Demo Deck fertiggestellt"
+    },
+    "demoTasks": {
+      "1": {
+        "label": "Leichte Öffnung",
+        "user2BackLabel": "Geteilte Aufgabe",
+        "user1BackLabel": "Geteilte Aufgabe",
+        "user2Text": "Schnelles Spiel: Macht euch abwechselnd nach, wenn ihr euch über etwas Kleines zu Hause ärgert. Eine Minute lang nicht lachen.",
+        "user1Text": "Schnelles Spiel: Macht euch abwechselnd nach, wenn ihr euch über etwas Kleines zu Hause ärgert. Eine Minute lang nicht lachen."
+      },
+      "2": {
+        "user1Text": "Während sie die nächste Frage beantwortet, unterbrich sie nicht. Komm sanft näher, leg eine Hand hin und schenke ihr einen kleinen Moment Zuneigung, ohne zu erklären, dass es eine Aufgabe ist.",
+        "user1BackLabel": "Geheime Aufgabe",
+        "user2Label": "Ein Moment für dich",
+        "user1Label": "Geheime Aufgabe",
+        "user2Text": "Erzähl ihm von einer kleinen Sache, die dir diese Woche passiert ist und von der sonst niemand weiß. Er ist hier, um zuzuhören.",
+        "user2BackLabel": "Passende Frage"
+      },
+      "3": {
+        "user2BackLabel": "Geheime Aufgabe",
+        "user2Label": "Geheime Aufgabe",
+        "user2Text": "Hör ihm im nächsten Moment zu. Wenn er fertig ist, umarme ihn und sag Danke, ohne es zu analysieren.",
+        "user1Text": "Denk an etwas, das sie kürzlich für dich oder für das Zuhause getan hat und das du als selbstverständlich genommen hast. Schau ihr in die Augen und sag klar Danke.",
+        "user1Label": "Deine Bühne",
+        "user1BackLabel": "Passende Aufgabe"
+      }
+    },
+    "share": {
+      "message": "Perfect Date: {{label}}\n\n{{text}}"
+    }
+  },
+  "about_goal_text": "Unser Ziel ist es, Menschen auf einfache und ansprechende Weise dabei zu helfen, Kontakte zu knüpfen, zu kommunizieren und eine schöne gemeinsame Zeit zu genießen.",
+  "researchCardsSelect": {
+    "title": "Recherche",
+    "subtitle": "Trefft ein paar schnelle Entscheidungen und wir holen Karten vom Server.",
+    "bookTapHint": "Tippe auf ein Buch, um es auszuwählen. Tippe erneut, um die Auswahl zu löschen.",
+    "stepMeta": "Schritt {{current}} von {{total}}",
+    "steps": {
+      "gameType": "Spieltyp",
+      "book": "Buch wählen",
+      "style": "Spielstil",
+      "levels": "Level wählen",
+      "summary": "Zusammenfassung und Start"
+    },
+    "books": {
+      "supercommunicators": {
+        "description": "Zuhören, Verbindung und tiefe Gespräche."
+      },
+      "sevenPrinciples": {
+        "description": "Paargespräch, Vertrauen und Nähe."
+      },
+      "artOfGathering": {
+        "description": "Sinnvollere Zusammenkünfte."
+      },
+      "comeAsYouAre": {
+        "description": "Intimität, Sicherheit und Verlangen."
+      },
+      "loveLanguages": {
+        "description": "Wie wir Liebe fühlen und zeigen."
+      },
+      "marsVenus": {
+        "description": "Kommunikation, Bedürfnisse und Erwartungen."
+      }
+    },
+    "gameTypes": {
+      "couple": {
+        "title": "Paare",
+        "description": "Karten für Beziehungen, Gespräche, Nähe und Leidenschaft."
+      },
+      "family": {
+        "title": "Familie",
+        "description": "Karten für Familie, Lachen und gemeinsame Geschichten."
+      },
+      "friends": {
+        "title": "Freunde",
+        "description": "Karten für Freunde, Arbeit, Vertrauen und Herausforderung."
+      }
+    },
+    "players": {
+      "player1": "Spieler 1",
+      "player2": "Spieler 2",
+      "participant2": "Teilnehmer 2",
+      "participant1": "Teilnehmer 1"
+    },
+    "styles": {
+      "couple": {
+        "fun": {
+          "title": "Spaß",
+          "description": "Leichte Fragen und Aufgaben zum Öffnen und Lachen."
+        },
+        "passion": {
+          "title": "Leidenschaft",
+          "description": "Nähe, Verlangen und Intimität auf angenehme Weise."
+        },
+        "intro": {
+          "title": "Kennenlernen",
+          "description": "Persönliche Gespräche, Erinnerungen und Werte."
+        }
+      },
+      "family": {
+        "stories": {
+          "title": "Familiengeschichten",
+          "description": "Erinnerungen, Traditionen und Momente, die im Gedächtnis bleiben."
+        },
+        "fun": {
+          "title": "Lachen und spielen",
+          "description": "Leichte Karten, die zu jedem passen."
+        },
+        "closeness": {
+          "title": "Nähe und Zuhören",
+          "description": "Wertschätzung, Austausch und sichere Gespräche."
+        }
+      },
+      "friends": {
+        "fun": {
+          "title": "Spaß und Herausforderungen",
+          "description": "Lachen, Aufgaben und überraschende Situationen."
+        },
+        "intro": {
+          "title": "Einstieg und Öffnung",
+          "description": "Gespräch öffnen und die Gruppe verbinden."
+        },
+        "trust": {
+          "title": "Vertrauen und Tiefe",
+          "description": "Ermutigung, Zuhören und ehrliche Gespräche."
+        }
+      }
+    },
+    "levelOptions": {
+      "1": "Sanft",
+      "2": "Leicht",
+      "3": "Ausgewogen",
+      "4": "Tief",
+      "5": "Direkt"
+    },
+    "stepContent": {
+      "gameType": {
+        "text": "Die Karten werden entsprechend der von dir gewählten Spielwelt gezogen.",
+        "title": "Wähle einen Spieltyp"
+      },
+      "style": {
+        "text": "Du kannst einen oder mehrere Stile auswählen.",
+        "title": "Wähle einen Spielstil"
+      },
+      "book": {
+        "text": "Wähle ein Buch, aus dem Recherchekarten gezogen werden sollen.",
+        "title": "Wähle ein Buch"
+      },
+      "levels": {
+        "title": "Wähle für jeden Stil eine Ebene",
+        "text": "Wähle, wie sanft oder tief jedes Erlebnis sein soll."
+      },
+      "summary": {
+        "title": "Zusammenfassung und Start",
+        "text": "Nach dem Antippen ziehen wir die Forschungskarten und wechseln zum regulären Spielbildschirm."
+      }
+    },
+    "summary": {
+      "title": "deine Entscheidungen",
+      "book": "Buch",
+      "styles": "Stile",
+      "levels": "Ebenen",
+      "styleNotSelected": "{{style}} noch nicht ausgewählt",
+      "notSelected": "Noch nicht ausgewählt",
+      "bookValue": "Buch: {{title}}",
+      "gameType": "Spieltyp",
+      "bookLine": "Buch: {{value}}",
+      "stylesCount": "Stile: {{count}}",
+      "levelsCount": "Ebenen: {{completed}}/{{total}}",
+      "gameTypeLine": "Spieltyp: {{value}}",
+      "levelsComplete": "Levels: abgeschlossen",
+      "stylesLine": "Stile: {{value}}",
+      "levelsLine": "Ebenen: {{value}}",
+      "styleLevel": "{{style}}: Ebene {{level}}"
+    },
+    "actions": {
+      "continue": "Weitermachen",
+      "back": "Zurück",
+      "backToEdit": "Zurück zum Bearbeiten",
+      "startGame": "Spiel starten"
+    },
+    "chooseLevel": "Wähle eine Ebene",
+    "levelSelected": "Ebene {{level}}",
+    "alerts": {
+      "missingUserTitle": "Fehlender Nutzer",
+      "waitTitle": "Einen Moment",
+      "timeout": "Die Serveranfrage hat zu lange gedauert.",
+      "fetchFailed": "Wir konnten keine Forschungskarten abholen.",
+      "noCards": "Für diese Auswahlmöglichkeiten wurden keine Forschungskarten gefunden.",
+      "missingUserMessage": "Wir konnten keinen aktiven Nutzer identifizieren. Bitte melde dich erneut an.",
+      "completeSelection": "Schließe alle Auswahlschritte ab, bevor du das Spiel startest.",
+      "premiumOnly": "Diese Option ist nur für Premium Abonnenten verfügbar."
+    },
+    "premiumBadge": "Premium"
+  }
+}

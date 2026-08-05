@@ -1,25 +1,52 @@
-# Visual Studio
-.vs/
-.vscode/
-*.user
-*.suo
-
-# .NET build output
-bin/
-obj/
-**/bin/
-**/obj/
-
 # Local secrets
 service-account.json
 appsettings.Secrets.json
+appsettings.json
+appsettings.Development.json
+credentials.json
 .secrets/
+*firebase-adminsdk*.json
 *.pfx
 *.p12
+*.p8
 *.key
+*.jks
+*.keystore
+*.pem
+*.env
+*.env.local
+*.txt
+*.m4b
 
-# Local nested copy
-liba controler 0.1/
+# Backend secrets
+loveController/controlersLoveGame/service-account.json
+loveController/controlersLoveGame/liba-game-*.json
+loveController/controlersLoveGame/appsettings.Secrets.json
+loveController/controlersLoveGame/appsettings.json
+loveController/controlersLoveGame/appsettings.Development.json
+loveController/controlersLoveGame/.secrets/
+
+# Dependencies and build output
+node_modules/
+dist/
+web-build/
+.build-check/
+bin/
+obj/
+publish-out/
+*.log
+*.err.log
+.expo/
+.codex-remote-attachments/
+.vs/
+.vscode/
+.git-backups/
+_tmp_publish_check/
+game_love_client/.gradle/
+*.user
+*.suo
+*~
+~$*
 
 # OS/editor noise
 .DS_Store

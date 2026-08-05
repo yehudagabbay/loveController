@@ -1,0 +1,601 @@
+{
+  "meta": {
+    "name": "English",
+    "dir": "ltr"
+  },
+  "menu": {
+    "language": "Language",
+    "languageAria": "Choose language",
+    "main": {
+      "aria": "Main menu",
+      "home": "Home",
+      "games": "Games",
+      "research": "Research",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout"
+    },
+    "languages": {
+      "he": "עברית",
+      "en": "English",
+      "fr": "Français",
+      "ru": "Русский",
+      "ar": "العربية",
+      "es": "Español",
+      "zh": "中文"
+    }
+  },
+  "common": {
+    "brand": "LIBA WEB",
+    "brandShort": "LIBA",
+    "flowerLogo": "Spinning LIBA flower",
+    "password": {
+      "show": "Show",
+      "hide": "Hide"
+    }
+  },
+  "auth": {
+    "switcher": {
+      "aria": "Switch between registration and login",
+      "register": "Register",
+      "login": "Login"
+    },
+    "google": {
+      "or": "or",
+      "login": "Continue with Google",
+      "register": "Continue with Google",
+      "subtitle": "Fast sign-in or account creation with the same server logic.",
+      "loading": "Connecting with Google...",
+      "unavailable": "Google sign-in is not available right now.",
+      "scriptError": "Google cannot be loaded right now.",
+      "tokenError": "Could not verify the Google account.",
+      "serverError": "Google sign-in failed.",
+      "differentEmail": "This Google account is already linked to a different email address.",
+      "differentSocial": "This email is already linked to a different social account.",
+      "steps": {
+        "google": "Google verification",
+        "firebase": "Firebase connection",
+        "server": "Server account check",
+        "ready": "Opening home page"
+      }
+    }
+  },
+  "registration": {
+    "title": "Register",
+    "heroText": "Create a new account with username, email and password, using the same structure the app sends to the existing server.",
+    "note": "The connection goes directly to the existing server. No server-side change is made.",
+    "panelTitle": "Create Account",
+    "panelText": "All fields are required to complete registration.",
+    "fields": {
+      "nickname": {
+        "label": "Username",
+        "placeholder": "What should we call you?"
+      },
+      "gender": {
+        "label": "Gender",
+        "male": "Male",
+        "female": "Female"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "name@example.com"
+      },
+      "age": {
+        "label": "Age",
+        "placeholder": "18"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "At least one letter and number"
+      },
+      "confirmPassword": {
+        "label": "Confirm password",
+        "placeholder": "Type it again"
+      }
+    },
+    "submit": "Register",
+    "submitting": "Registering...",
+    "resend": {
+      "button": "Send verification email again",
+      "sending": "Sending verification email...",
+      "wait": "You can resend in {seconds} seconds"
+    },
+    "validation": {
+      "requiredName": "Please enter a username",
+      "requiredGender": "Please choose a gender",
+      "requiredEmail": "Please enter an email",
+      "invalidEmail": "Email format is invalid",
+      "requiredPassword": "Please enter a password",
+      "weakPassword": "Password must contain at least 6 characters, a letter and a number",
+      "passwordMismatch": "Passwords do not match",
+      "invalidAge": "Please enter a valid age",
+      "underAge": "Registration is allowed from age 18 and up"
+    },
+    "messages": {
+      "success": "Registration succeeded. Please check your email to verify the account before logging in.",
+      "verificationResent": "Another verification email has been sent.",
+      "emailExists": "This email already exists. If the account was created with Google, sign in with the Google button.",
+      "serverError": "Registration error ({status})",
+      "timeout": "The server request took too long. Please try again.",
+      "socialAccount": "This account was created with Google. Please sign in with the Google button.",
+      "network": "Cannot connect to the registration server right now."
+    }
+  },
+  "login": {
+    "title": "Login",
+    "heroText": "Sign in with email and password to your existing account.",
+    "note": "Login uses the existing server without changing the server side.",
+    "panelTitle": "Enter Account",
+    "panelText": "Enter your login details.",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "name@example.com"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter password"
+      }
+    },
+    "submit": "Login",
+    "submitting": "Logging in...",
+    "resend": {
+      "button": "Send verification email again",
+      "sending": "Sending verification email...",
+      "wait": "You can resend in {seconds} seconds"
+    },
+    "validation": {
+      "requiredEmail": "Please enter an email",
+      "invalidEmail": "Email format is invalid",
+      "requiredPassword": "Please enter a password"
+    },
+    "messages": {
+      "failed": "Could not complete login",
+      "timeout": "The server request took too long. Please try again.",
+      "verificationResent": "Another verification email has been sent.",
+      "socialAccount": "This account was created with Google. Please sign in with the Google button.",
+      "serverError": "Login error ({status})"
+    }
+  },
+  "welcome": {
+    "title": "WELCOME",
+    "registerSuccess": "Account created successfully",
+    "loginSuccess": "Login succeeded",
+    "googleSuccess": "Google sign-in succeeded",
+    "greetingPrefix": "Welcome",
+    "next": "This is the LIBA WEB home page.",
+    "startGames": "Choose a game mode"
+  },
+  "coupleSelect": {
+    "eyebrow": "LIBA COUPLES",
+    "title": "A couples night that starts with a real conversation",
+    "subtitle": "Choose the energy of the evening: soft and connecting, light and playful, or more intimate. This screen should feel like a shared space, not a form.",
+    "moodTitle": "Set the energy",
+    "moodText": "Every choice changes the cards that will be drawn for you.",
+    "categories": {
+      "connection": {
+        "title": "Connection and discovery",
+        "description": "Questions that deepen listening, familiarity and closeness.",
+        "accent": "Quiet conversation"
+      },
+      "fun": {
+        "title": "Light and playful",
+        "description": "Easy tasks, laughter, play and release.",
+        "accent": "Open energy"
+      },
+      "passion": {
+        "title": "Closeness and romance",
+        "description": "Cards that strengthen warmth, attention and intimacy.",
+        "accent": "Turn up the heat"
+      }
+    },
+    "levels": {
+      "1": {
+        "label": "Level 1",
+        "description": "Soft and easy"
+      },
+      "2": {
+        "label": "Level 2",
+        "description": "A little deeper"
+      },
+      "3": {
+        "label": "Level 3",
+        "description": "More open"
+      }
+    },
+    "selectAll": "Select all levels",
+    "allSelected": "All levels selected",
+    "filtersTitle": "Memories from earlier cards",
+    "filtersText": "Draw cards based on your previous marks.",
+    "filters": {
+      "liked": "Liked",
+      "loved": "Loved",
+      "shared": "Shared"
+    },
+    "playStyle": {
+      "title": "Choose how to play",
+      "text": "Start with the classic deck, or let the roulette choose the next mood and level.",
+      "deck": {
+        "title": "Classic deck",
+        "text": "Move through the cards one by one in a steady flow."
+      },
+      "roulette": {
+        "title": "Roulette game",
+        "text": "Spin between the moods and levels you selected."
+      }
+    },
+    "summaryTitle": "Is your evening ready?",
+    "summaryText": "{count} combinations selected from your categories and levels.",
+    "emptyText": "Choose at least one category and level to begin.",
+    "start": "Draw cards",
+    "alert": "Choose at least one category and one level to draw cards",
+    "loading": "Drawing cards...",
+    "messages": {
+      "noCards": "No cards were found for this choice. Try another category or level.",
+      "serverError": "Could not draw cards right now ({status}).",
+      "timeout": "The card request took too long. Please try again.",
+      "network": "Cannot connect to the cards server right now."
+    }
+  },
+  "coupleRoulette": {
+    "eyebrow": "LIBA ROULETTE",
+    "title": "Spin the next moment",
+    "subtitle": "The roulette moves between the moods and levels you selected. When it stops, one card opens for that exact energy.",
+    "remaining": "{count} cards left",
+    "segments": "{count} active spaces",
+    "panelTitle": "Tonight wheel",
+    "cardsLeft": "{count} cards",
+    "selected": "The wheel chose",
+    "spin": "Spin",
+    "spinning": "Spinning...",
+    "regularDeck": "Play as regular deck",
+    "doneMessage": "Done. The card left this round and the wheel is ready again.",
+    "waitingText": "Press spin. When the wheel stops, one matching card will open here.",
+    "skip": "Skip",
+    "skipMessage": "Skipped. The card was removed from this round only.",
+    "suspense": {
+      "0": "Mixing the energy you selected...",
+      "1": "Searching for the exact mission...",
+      "2": "Hold on... it is almost landing.",
+      "ready": "Ready? Press spin and let the roulette decide."
+    }
+  },
+  "coupleGame": {
+    "eyebrow": "LIBA COUPLES",
+    "title": "Your cards are ready",
+    "subtitle": "Move through the deck slowly. Let each card become a shared moment before you continue.",
+    "deckAria": "Deck details",
+    "progress": "Card {current} of {total}",
+    "selections": "{count} selections",
+    "cardNumber": "{current}/{total}",
+    "cardId": "Card {id}",
+    "category": "Category {value}",
+    "level": "Level {value}",
+    "unknown": "unknown",
+    "controlsAria": "Game controls",
+    "previous": "Previous",
+    "next": "Next",
+    "backToSelect": "Back to selection",
+    "emptyEyebrow": "No deck",
+    "emptyTitle": "Choose cards first",
+    "emptyText": "The game page needs cards from the selection screen before it can start.",
+    "flipCard": "Flip card",
+    "actions": {
+      "aria": "Card actions",
+      "like": "Liked",
+      "favorite": "Loved",
+      "share": "Share",
+      "saved": "Saved",
+      "shared": "Shared",
+      "saveFailed": "Could not save this action right now.",
+      "feedbackFailed": "Could not save the rating right now.",
+      "shareFailed": "Could not share this card right now.",
+      "loginRequired": "A logged in user is required for this action.",
+      "done": "Done",
+      "rate": "Rate",
+      "doneSaved": "Marked as done",
+      "ratingSaved": "Rating saved"
+    },
+    "feedback": {
+      "title": "Rate this card",
+      "subtitle": "Add a quick rating for this card.",
+      "comment": "Comment",
+      "placeholder": "Optional note about this card",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving...",
+      "ratingAria": "Rate {rating} out of 5"
+    },
+    "complete": {
+      "title": "The deck is complete",
+      "text": "You reached the last card. You can go back, choose a new mix and start another round.",
+      "action": "Choose another game"
+    }
+  },
+  "friendsSelect": {
+    "eyebrow": "LIBA FRIENDS",
+    "title": "A room that gets loud in the best way",
+    "subtitle": "Pick the kind of energy you want: easy icebreakers, shared laughter, or stronger group connection.",
+    "moodTitle": "Choose the group vibe",
+    "moodText": "Build a deck for friends, teams or a relaxed evening together.",
+    "summaryKicker": "Group deck",
+    "summaryTitle": "Ready to start?",
+    "summaryText": "{count} combinations selected for this group.",
+    "emptyText": "Choose at least one category and level.",
+    "categories": {
+      "intro": {
+        "title": "Icebreakers",
+        "description": "Quick questions that get everyone into the room.",
+        "accent": "Start light"
+      },
+      "fun": {
+        "title": "Laugh and play",
+        "description": "Prompts for movement, jokes and easy energy.",
+        "accent": "Raise the volume"
+      },
+      "team": {
+        "title": "Connection circle",
+        "description": "Cards that create listening, teamwork and stronger friendships.",
+        "accent": "Build trust"
+      }
+    },
+    "levels": {
+      "1": {
+        "label": "Level 1",
+        "description": "Easy opening"
+      },
+      "2": {
+        "label": "Level 2",
+        "description": "A little deeper"
+      },
+      "3": {
+        "label": "Level 3",
+        "description": "Open and bold"
+      }
+    },
+    "selectAll": "Select all levels",
+    "allSelected": "All levels selected",
+    "loading": "Drawing cards...",
+    "start": "Draw cards",
+    "alert": "Choose at least one category and one level to draw cards",
+    "filters": {
+      "liked": "Liked",
+      "loved": "Loved",
+      "shared": "Shared"
+    },
+    "messages": {
+      "noCards": "No cards were found for this choice. Try another category or level.",
+      "serverError": "Could not draw cards right now ({status}).",
+      "timeout": "The card request took too long. Please try again.",
+      "network": "Cannot connect to the cards server right now."
+    },
+    "playStyle": {
+      "title": "Choose how to play",
+      "text": "Start with the classic deck, or let the roulette choose the next mood and level.",
+      "deck": {
+        "title": "Classic deck",
+        "text": "Move through the cards one by one in a steady flow."
+      },
+      "roulette": {
+        "title": "Roulette game",
+        "text": "Spin between the moods and levels you selected."
+      }
+    }
+  },
+  "familySelect": {
+    "eyebrow": "LIBA FAMILY",
+    "title": "A family table with stories, laughter and closeness",
+    "subtitle": "Choose cards that fit everyone: gentle conversation, playful tasks and moments that bring generations closer.",
+    "moodTitle": "Choose the family pace",
+    "moodText": "Create a deck that feels warm, safe and active for the whole family.",
+    "summaryKicker": "Family deck",
+    "summaryTitle": "Is the family ready?",
+    "summaryText": "{count} combinations selected for the family.",
+    "emptyText": "Choose at least one category and level.",
+    "categories": {
+      "intro": {
+        "title": "Family stories",
+        "description": "Questions that invite memories, names, places and small discoveries.",
+        "accent": "Around the table"
+      },
+      "fun": {
+        "title": "Playful moments",
+        "description": "Simple tasks and laughter that work across ages.",
+        "accent": "Light and happy"
+      },
+      "team": {
+        "title": "Togetherness",
+        "description": "Cards for listening, appreciation and family cooperation.",
+        "accent": "Warm connection"
+      }
+    },
+    "levels": {
+      "1": {
+        "label": "Level 1",
+        "description": "Easy opening"
+      },
+      "2": {
+        "label": "Level 2",
+        "description": "A little deeper"
+      },
+      "3": {
+        "label": "Level 3",
+        "description": "Open and bold"
+      }
+    },
+    "selectAll": "Select all levels",
+    "allSelected": "All levels selected",
+    "loading": "Drawing cards...",
+    "start": "Draw cards",
+    "alert": "Choose at least one category and one level to draw cards",
+    "filters": {
+      "liked": "Liked",
+      "loved": "Loved",
+      "shared": "Shared"
+    },
+    "messages": {
+      "noCards": "No cards were found for this choice. Try another category or level.",
+      "serverError": "Could not draw cards right now ({status}).",
+      "timeout": "The card request took too long. Please try again.",
+      "network": "Cannot connect to the cards server right now."
+    },
+    "playStyle": {
+      "title": "Choose how to play",
+      "text": "Start with the classic deck, or let the roulette choose the next mood and level.",
+      "deck": {
+        "title": "Classic deck",
+        "text": "Move through the cards one by one in a steady flow."
+      },
+      "roulette": {
+        "title": "Roulette game",
+        "text": "Spin between the moods and levels you selected."
+      }
+    }
+  },
+  "gameMode": {
+    "eyebrow": "LIBA GAMES",
+    "title": "Choose your experience",
+    "subtitle": "Each game opens a different way to connect, laugh, share and learn something new.",
+    "comingSoon": "Soon",
+    "modes": {
+      "couples": {
+        "title": "Couples game",
+        "description": "Questions and tasks for closeness, conversation and romantic connection.",
+        "button": "Start couples game"
+      },
+      "family": {
+        "title": "Family game",
+        "description": "A warm family experience with questions, laughter and sharing.",
+        "button": "Start family game"
+      },
+      "friends": {
+        "title": "Friends and work",
+        "description": "A game for bonding, icebreaking, conversation and laughs.",
+        "button": "Start friends game"
+      },
+      "drinks": {
+        "title": "Drinks and laughs",
+        "description": "A light mode for relaxed social evenings.",
+        "button": "Soon"
+      },
+      "research": {
+        "title": "Research",
+        "description": "Choose prepared research-based cards for Premium members.",
+        "button": "Start research"
+      }
+    }
+  },
+  "profilePlan": {
+    "eyebrow": "My profile / Plan",
+    "title": "Your membership and plan",
+    "subtitle": "See your current plan and choose the package that fits how you play.",
+    "currentLabel": "Current plan",
+    "chooseTitle": "Choose plan",
+    "selectedLabel": "Selected plan",
+    "currentButton": "Current plan",
+    "chooseButton": "Choose {plan}",
+    "compareTitle": "Package comparison",
+    "compareText": "A basic comparison between plans. Payment and server connection can be added later.",
+    "featureColumn": "Feature",
+    "plans": {
+      "free": {
+        "name": "LIBA Free",
+        "tag": "Start",
+        "price": "Free",
+        "description": "A basic plan for trying the first games and cards."
+      },
+      "premium": {
+        "name": "LIBA Premium ⭐",
+        "tag": "Recommended",
+        "price": "₪14.90–24.90",
+        "description": "More cards, all levels, and basic AI capabilities."
+      },
+      "deep": {
+        "name": "LIBA Deep",
+        "tag": "Premium+",
+        "price": "₪49.90–69.90",
+        "description": "Full library, deep tracks, and advanced personalization."
+      }
+    },
+    "features": {
+      "price": {
+        "label": "Price",
+        "free": "Free",
+        "premium": "₪14.90–24.90",
+        "deep": "₪49.90–69.90"
+      },
+      "availableCards": {
+        "label": "Cards available",
+        "free": "Up to 60–90 cards",
+        "premium": "Up to 300",
+        "deep": "Full library + new cards"
+      },
+      "cardsPerRound": {
+        "label": "Cards per round",
+        "free": "Up to 18",
+        "premium": "Up to 18",
+        "deep": "Up to 18"
+      },
+      "levels": {
+        "label": "Game levels",
+        "free": "Level 1 only or 2",
+        "premium": "All levels",
+        "deep": "All levels"
+      },
+      "favorites": {
+        "label": "Favorites",
+        "free": "✓",
+        "premium": "✓",
+        "deep": "✓"
+      },
+      "sharing": {
+        "label": "Card sharing",
+        "free": "✓",
+        "premium": "✓",
+        "deep": "✓"
+      },
+      "bookResearch": {
+        "label": "Ready-made cards by books",
+        "free": "Sample from 1 book",
+        "premium": "Up to 3 books",
+        "deep": "Full knowledge library"
+      },
+      "aiCards": {
+        "label": "Dynamic AI cards",
+        "free": "",
+        "premium": "✓",
+        "deep": "✓ Advanced"
+      },
+      "perfectDate": {
+        "label": "Perfect date with AI",
+        "free": "",
+        "premium": "✓",
+        "deep": "✓ Advanced"
+      },
+      "challengeGame": {
+        "label": "Game by relationship challenge",
+        "free": "",
+        "premium": "✓",
+        "deep": "✓ Advanced"
+      },
+      "relationshipPatterns": {
+        "label": "Relationship pattern analysis",
+        "free": "",
+        "premium": "",
+        "deep": "✓"
+      },
+      "customTracks": {
+        "label": "Personalized tracks",
+        "free": "",
+        "premium": "",
+        "deep": "✓"
+      },
+      "earlyAccess": {
+        "label": "Early access to features",
+        "free": "",
+        "premium": "",
+        "deep": "✓"
+      }
+    }
+  }
+}

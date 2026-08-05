@@ -10,6 +10,9 @@ namespace controlersLoveGame
         public int CardID { get; set; }
         public string LanguageCode { get; set; }
         public string CardText { get; set; }
+        public string? ContentText { get; set; }
+        public string? ContentMaleSecret { get; set; }
+        public string? ContentFemaleSecret { get; set; }
         public DateTime CreatedAt { get; set; }
 
         public Card Card { get; set; }
